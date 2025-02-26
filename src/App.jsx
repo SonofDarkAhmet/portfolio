@@ -1,17 +1,19 @@
-import { StrictMode } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+import Layout, { loader as layoutLoader } from "./components/Layout";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />} loader={layoutLoader}></Route>
+  )
+);
 
 function App() {
-  return (
-    <StrictMode>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </StrictMode>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

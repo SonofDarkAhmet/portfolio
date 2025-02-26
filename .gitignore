@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 *.png
 *.jpeg
+*.env
 
 # Absolute file paths
 yarn.lock

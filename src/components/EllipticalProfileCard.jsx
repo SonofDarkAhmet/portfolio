@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardContent, CardMedia } from "@mui/material";
-import profileImg from "../assets/profile-pic.jpeg";
 
 const styles = {
   card: {
@@ -24,7 +23,9 @@ const styles = {
   },
 };
 
-function EllipticalProfileCard() {
+function EllipticalProfileCard(props) {
+  const profileImg = props.profileImg;
+
   return (
     <Card sx={styles.card}>
       <CardContent sx={styles.content}>

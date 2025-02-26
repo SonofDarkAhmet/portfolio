@@ -1,16 +1,17 @@
+import { Suspense } from "react";
 import {
   createTheme,
   ThemeProvider,
   CssBaseline,
   Grid2 as Grid,
   Divider,
-  Box,
 } from "@mui/material";
-
+import { Await, useLoaderData } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "../pages/Home";
 import Skills from "../pages/Skills";
+import { getImgLink } from "../utils";
 
 const theme = createTheme({
   palette: {
@@ -44,7 +45,23 @@ const styles = {
   },
 };
 
+export async function loader() {
+  const profileImgPromise = getImgLink(
+    JSON.parse(import.meta.env.VITE_PATH_PROFILE_PIC)
+  );
+  const eaLogoImgPromise = getImgLink(
+    JSON.parse(import.meta.env.VITE_PATH_EA_LOG)
+  );
+
+  return {
+    profileImgPromise: profileImgPromise,
+    eaLogoImgPromise: eaLogoImgPromise,
+  };
+}
+
 function Layout() {
+  const promisedData = useLoaderData();
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -55,13 +72,21 @@ function Layout() {
           <Divider />
         </Grid>
         <Grid style={styles.gridItem}>
-          <Home />
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <Await resolve={promisedData.profileImgPromise}>
+              {(profileImg) => <Home profileImg={profileImg} />}
+            </Await>
+          </Suspense>
         </Grid>
         <Grid size={12}>
           <Divider />
         </Grid>
         <Grid style={styles.gridItem}>
-          <Skills />
+          <Suspense fallback={<h2>Loading...</h2>}>
+            <Await resolve={promisedData.eaLogoImgPromise}>
+              {(eaLogoImg) => <Skills eaLogoImg={eaLogoImg} />}
+            </Await>
+          </Suspense>
         </Grid>
         <Grid size={12}>
           <Divider />

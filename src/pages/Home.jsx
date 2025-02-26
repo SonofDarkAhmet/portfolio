@@ -9,10 +9,12 @@ const styles = {
   },
 };
 
-function Home() {
+function Home(props) {
+  const profileImg = props.profileImg;
+
   return (
     <Stack direction="row" spacing={10} style={styles.stack}>
-      <EllipticalProfileCard />
+      <EllipticalProfileCard profileImg={profileImg} />
       <CirriculumCard />
     </Stack>
   );
