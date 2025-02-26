@@ -41,3 +41,4 @@ function CirriculumCard() {
 }
 
 export default CirriculumCard;
+s;
