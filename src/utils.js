@@ -5,7 +5,9 @@ export function getRandomInteger(min, max) {
 export async function getImgLink(relPath) {
   let module = null;
   if (import.meta.env.MODE === "production") {
-    module = await import(import.meta.env.VITE_IMAGE_PATH_PROD + relPath.prod);
+    module = await import(
+      `${import.meta.env.VITE_IMAGE_PATH_PROD}/${relPath.prod}`
+    );
   } else {
     module = await import(
       `${import.meta.env.VITE_IMAGE_PATH_LOCAL}/${relPath.local}`
