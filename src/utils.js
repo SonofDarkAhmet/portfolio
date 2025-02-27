@@ -3,8 +3,7 @@ export function getRandomInteger(min, max) {
 }
 
 export async function getImgLink(relPath) {
-  const imagePath = `${import.meta.env.VITE_IMAGE_PATH}/${relPath}`;
-  const imageModule = await import(imagePath);
+  const imagePath = await `${import.meta.env.VITE_IMAGE_PATH}/${relPath}`;
 
-  return imageModule.default;
+  return imagePath;
 }
