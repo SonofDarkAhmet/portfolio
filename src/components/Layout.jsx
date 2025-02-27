@@ -46,12 +46,8 @@ const styles = {
 };
 
 export async function loader() {
-  const profileImgPromise = getImgLink(
-    JSON.parse(import.meta.env.VITE_PATH_PROFILE_PIC)
-  );
-  const eaLogoImgPromise = getImgLink(
-    JSON.parse(import.meta.env.VITE_PATH_EA_LOG)
-  );
+  const profileImgPromise = getImgLink(import.meta.env.VITE_PATH_PROFILE_PIC);
+  const eaLogoImgPromise = getImgLink(import.meta.env.VITE_PATH_EA_LOG);
 
   return {
     profileImgPromise: profileImgPromise,
@@ -74,7 +70,9 @@ function Layout() {
         <Grid style={styles.gridItem}>
           <Suspense fallback={<h2>Loading...</h2>}>
             <Await resolve={promisedData.profileImgPromise}>
-              {(profileImg) => <Home profileImg={profileImg} />}
+              {(profileImg) => {
+                return <Home profileImg={profileImg} />;
+              }}
             </Await>
           </Suspense>
         </Grid>
