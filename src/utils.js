@@ -4,14 +4,14 @@ export function getRandomInteger(min, max) {
 
 export async function getImgLink(relPath) {
   if (import.meta.env.MODE === "production") {
-    return fetch(
-      `${import.meta.env.VITE_IMAGE_PATH_PROD}/${relPath.prod}`
-    ).then((res) => res.url);
+    return fetch(import.meta.env.VITE_IMAGE_PATH_PROD + relPath.prod).then(
+      (res) => res.url
+    );
+  } else {
+    const imageModule = await import(
+      `${import.meta.env.VITE_IMAGE_PATH_LOCAL}/${relPath.local}`
+    );
+
+    return imageModule.default;
   }
-
-  const promisedPath = await import(
-    `${import.meta.env.VITE_IMAGE_PATH_LOCAL}/${relPath.local}`
-  );
-
-  return promisedPath.default;
 }
