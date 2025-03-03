@@ -1,20 +1,25 @@
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, styled, Typography } from "@mui/material";
 
-const styles = {
-  container: {
-    width: "50vw",
-  },
-};
+const CirriculumCardBox = styled(Box)({
+  flex: 2,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+});
+
+const CirriculumCardElement = styled(Card)({
+  background: "#eeeeee",
+});
 
 function CirriculumCard() {
   return (
-    <Box style={styles.container}>
-      <Card style={{ background: "#eeeeee" }}>
+    <CirriculumCardBox>
+      <CirriculumCardElement>
         <CardContent>
           <Typography
             gutterBottom
             component="div"
-            variant="h3"
+            variant="h4"
             color="textPrimary"
           >
             BioSketch
@@ -35,8 +40,8 @@ function CirriculumCard() {
             innovative solutions to life.
           </Typography>
         </CardContent>
-      </Card>
-    </Box>
+      </CirriculumCardElement>
+    </CirriculumCardBox>
   );
 }
 

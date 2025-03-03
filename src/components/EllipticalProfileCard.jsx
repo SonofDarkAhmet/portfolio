@@ -1,42 +1,41 @@
 import React from "react";
-import { Card, CardContent, CardMedia } from "@mui/material";
+import { Box, Card, CardContent, CardMedia } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
-const styles = {
-  card: {
-    width: "235px",
-    height: "275px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    border: "3px solid #eeeeee",
-    borderRadius: "50%", // Makes the card elliptical
-  },
-  content: {
-    textAlign: "center",
-  },
-  media: {
-    width: "auto",
-    height: "400px",
-    objectFit: "cover",
-    marginTop: "4.5rem",
-    marginLeft: "0.35rem",
-  },
-};
+const ProfileBox = styled(Box)({
+  flex: 1,
+  display: "flex",
+  justifyContent: "flex-end",
+  alignItems: "center",
+});
+
+const ProfileCard = styled(Card)(({ theme }) => ({
+  height: "100px",
+  width: "75px",
+  border: "3px solid #eeeeee",
+  borderRadius: "50%",
+  [theme.breakpoints.up("sm")]: { height: "125px", width: "100px" },
+}));
+
+const ProfileCardContent = styled(CardContent)({
+  display: "contents",
+});
 
 function EllipticalProfileCard(props) {
   const profileImg = props.profileImg;
 
   return (
-    <Card sx={styles.card}>
-      <CardContent sx={styles.content}>
-        <CardMedia
-          component="img"
-          image={profileImg}
-          alt="Profile picture."
-          sx={styles.media}
-        />
-      </CardContent>
-    </Card>
+    <ProfileBox>
+      <ProfileCard>
+        <ProfileCardContent>
+          <CardMedia
+            component="img"
+            image={profileImg}
+            alt="Profile picture."
+          />
+        </ProfileCardContent>
+      </ProfileCard>
+    </ProfileBox>
   );
 }
 

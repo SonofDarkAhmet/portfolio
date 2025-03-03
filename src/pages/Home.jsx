@@ -1,22 +1,26 @@
-import { Stack } from "@mui/material";
+import { Box, Stack, styled } from "@mui/material";
 import EllipticalProfileCard from "../components/EllipticalProfileCard";
 import CirriculumCard from "../components/CirriculumCard";
 
-const styles = {
-  stack: {
-    alignItems: "center",
-    minWidth: "800px",
-  },
-};
+const StyledStack = styled(Stack)({
+  flexDirection: "row",
+  gap: "1em",
+});
+
+const PlaceHolderBox = styled(Box)({
+  flex: "1",
+});
 
 function Home(props) {
   const profileImg = props.profileImg;
 
   return (
-    <Stack direction="row" spacing={10} style={styles.stack}>
+    <StyledStack useFlexGap justifyContent="center" alignItems="center">
+      <PlaceHolderBox />
       <EllipticalProfileCard profileImg={profileImg} />
       <CirriculumCard />
-    </Stack>
+      <PlaceHolderBox bgcolor="red" />
+    </StyledStack>
   );
 }
 

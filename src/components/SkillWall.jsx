@@ -20,6 +20,11 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
 }));
 
 const styles = {
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   box: {
     display: "flex",
     justifyContent: "flex-start",
@@ -41,36 +46,50 @@ function SkillWall(props) {
   );
 
   return (
-    <Box sx={{ width: 800, minHeight: 377 }}>
-      <Masonry columns={{ xs: 3, sm: 4 }} spacing={3}>
-        {updatedSkillList.map((elements) => (
-          <Paper key={elements.id}>
-            <StyledAccordion sx={{ minHeight: getRandomInteger(30, 150) }}>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Box style={styles.box}>
-                  <img height="25px" src={elements.img} alt={elements.title} />
+    <Box sx={styles.container}>
+      <Box
+        component="div"
+        sx={{
+          width: "800px",
+          minHeight: "377px",
+          overflow: "hidden",
+          maxWidth: "100%",
+        }}
+      >
+        <Masonry width="fitContent" columns={{ xs: 3, sm: 4 }} spacing={3}>
+          {updatedSkillList.map((elements) => (
+            <Paper key={elements.id}>
+              <StyledAccordion sx={{ minHeight: getRandomInteger(30, 150) }}>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <Box style={styles.box}>
+                    <img
+                      height="25px"
+                      src={elements.img}
+                      alt={elements.title}
+                    />
+                    <Typography
+                      component="div"
+                      variant="caption"
+                      style={styles.typography}
+                    >
+                      {elements.title}
+                    </Typography>
+                  </Box>
+                </AccordionSummary>
+                <AccordionDetails>
                   <Typography
                     component="div"
                     variant="caption"
                     style={styles.typography}
                   >
-                    {elements.title}
+                    {elements.content}
                   </Typography>
-                </Box>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography
-                  component="div"
-                  variant="caption"
-                  style={styles.typography}
-                >
-                  {elements.content}
-                </Typography>
-              </AccordionDetails>
-            </StyledAccordion>
-          </Paper>
-        ))}
-      </Masonry>
+                </AccordionDetails>
+              </StyledAccordion>
+            </Paper>
+          ))}
+        </Masonry>
+      </Box>
     </Box>
   );
 }
