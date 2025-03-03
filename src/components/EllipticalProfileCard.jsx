@@ -10,11 +10,11 @@ const ProfileBox = styled(Box)({
 });
 
 const ProfileCard = styled(Card)(({ theme }) => ({
-  height: "100px",
-  width: "75px",
+  height: "125px",
+  width: "100px",
   border: "3px solid #eeeeee",
   borderRadius: "50%",
-  [theme.breakpoints.up("sm")]: { height: "125px", width: "100px" },
+  [theme.breakpoints.up("sm")]: { height: "200px", width: "150px" },
 }));
 
 const ProfileCardContent = styled(CardContent)({

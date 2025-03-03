@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
 import {
-  Box,
   AppBar,
   Toolbar,
   ButtonGroup,
@@ -13,28 +12,23 @@ const StyledAppbar = styled(AppBar)({
   position: "static",
 });
 
-const styles = {
-  toolBar: {
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "row",
-    flexShrink: "wrap",
-  },
-  buttonGroup: {
-    flexShrink: "wrap",
-    borderRadius: "1em",
-    boxShadow:
-      "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
-  },
-  buttons: {
-    flexShrink: 1,
-    color: "#37474f",
-    border: "none",
-  },
-};
+const StyledToolbar = styled(Toolbar)({
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "row",
+  flexShrink: "wrap",
+});
 
-const HeaderBox = styled(Box)({
-  flex: 1,
+const StyledButtonGroup = styled(ButtonGroup)({
+  flexShrink: "wrap",
+  borderRadius: "1em",
+  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
+});
+
+const StyledButton = styled(Button)({
+  flexShrink: 1,
+  color: "#37474f",
+  border: "none",
 });
 
 function Header() {
@@ -49,31 +43,29 @@ function Header() {
   }, []);
 
   return (
-    <HeaderBox width={boxSize.width} height={boxSize.height}>
-      <StyledAppbar
-        component="nav"
-        color="transparent"
-        elevation={0}
-        ref={appBarRef}
-      >
-        <Toolbar style={styles.toolBar}>
-          <ButtonGroup style={styles.buttonGroup}>
-            <Button variant="outlined" style={styles.buttons}>
-              <Typography>Home</Typography>
-            </Button>
-            <Button variant="outlined" style={styles.buttons}>
-              <Typography>Skills</Typography>
-            </Button>
-            <Button variant="outlined" style={styles.buttons}>
-              <Typography>Projects</Typography>
-            </Button>
-            <Button variant="outlined" style={styles.buttons}>
-              <Typography>Contacts</Typography>
-            </Button>
-          </ButtonGroup>
-        </Toolbar>
-      </StyledAppbar>
-    </HeaderBox>
+    <StyledAppbar
+      component="nav"
+      color="transparent"
+      elevation={0}
+      ref={appBarRef}
+    >
+      <StyledToolbar>
+        <StyledButtonGroup>
+          <StyledButton variant="outlined">
+            <Typography>Home</Typography>
+          </StyledButton>
+          <StyledButton variant="outlined">
+            <Typography>Skills</Typography>
+          </StyledButton>
+          <StyledButton variant="outlined">
+            <Typography>Projects</Typography>
+          </StyledButton>
+          <StyledButton variant="outlined">
+            <Typography>Contacts</Typography>
+          </StyledButton>
+        </StyledButtonGroup>
+      </StyledToolbar>
+    </StyledAppbar>
   );
 }
 

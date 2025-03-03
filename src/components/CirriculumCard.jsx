@@ -1,7 +1,7 @@
 import { Box, Card, CardContent, styled, Typography } from "@mui/material";
 
 const CirriculumCardBox = styled(Box)({
-  flex: 2,
+  flex: 3,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -19,8 +19,9 @@ function CirriculumCard() {
           <Typography
             gutterBottom
             component="div"
-            variant="h4"
+            variant="h6"
             color="textPrimary"
+            fontWeight="Bold"
           >
             BioSketch
           </Typography>
@@ -29,6 +30,7 @@ function CirriculumCard() {
             component="div"
             variant="subtitle1"
             color="textPrimary"
+            fontSize="1rem"
           >
             I am a mechatronics engineer who dedicate his carrer to the core
             pillars of mechatronics which are mechanical, control systems and

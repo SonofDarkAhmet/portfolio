@@ -4,7 +4,7 @@ import CirriculumCard from "../components/CirriculumCard";
 
 const StyledStack = styled(Stack)({
   flexDirection: "row",
-  gap: "1em",
+  gap: "20px",
 });
 
 const PlaceHolderBox = styled(Box)({
