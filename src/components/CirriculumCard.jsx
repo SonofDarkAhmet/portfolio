@@ -1,14 +1,14 @@
 import { Box, Card, CardContent, styled, Typography } from "@mui/material";
 
 const CirriculumCardBox = styled(Box)({
-  flex: 3,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  width: "70%",
 });
 
 const CirriculumCardElement = styled(Card)({
-  background: "#eeeeee",
+  background: "#f8f8fa",
 });
 
 function CirriculumCard() {

@@ -1,26 +1,35 @@
-import { Box, Stack, styled } from "@mui/material";
+import { Box, Typography, Stack, styled } from "@mui/material";
 import EllipticalProfileCard from "../components/EllipticalProfileCard";
 import CirriculumCard from "../components/CirriculumCard";
-
-const StyledStack = styled(Stack)({
-  flexDirection: "row",
-  gap: "20px",
-});
-
-const PlaceHolderBox = styled(Box)({
-  flex: "1",
-});
 
 function Home(props) {
   const profileImg = props.profileImg;
 
+  const BlockBox = styled(Box)({
+    display: "flex",
+  });
+
+  const SectionTitle = styled(Typography)({
+    display: "block",
+    width: "100%",
+    textDecoration: "underline",
+    color: "#885245",
+  });
+
   return (
-    <StyledStack useFlexGap justifyContent="center" alignItems="center">
-      <PlaceHolderBox />
-      <EllipticalProfileCard profileImg={profileImg} />
-      <CirriculumCard />
-      <PlaceHolderBox bgcolor="red" />
-    </StyledStack>
+    <Stack
+      flex={1}
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      spacing={2}
+    >
+      <SectionTitle variant="h5">Home</SectionTitle>
+      <BlockBox>
+        <EllipticalProfileCard profileImg={profileImg} />
+        <CirriculumCard />
+      </BlockBox>
+    </Stack>
   );
 }
 

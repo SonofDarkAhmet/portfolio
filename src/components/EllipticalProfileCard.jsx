@@ -28,11 +28,7 @@ function EllipticalProfileCard(props) {
     <ProfileBox>
       <ProfileCard>
         <ProfileCardContent>
-          <CardMedia
-            component="img"
-            image={profileImg}
-            alt="Profile picture."
-          />
+          <CardMedia component="img" src={profileImg} alt="Profile picture." />
         </ProfileCardContent>
       </ProfileCard>
     </ProfileBox>
