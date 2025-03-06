@@ -2,7 +2,7 @@ import { Box, styled } from "@mui/material";
 
 const SideBarBox = styled(Box)(({ theme }) => ({
   flex: 1,
-  backgroundColor: "red",
+  backgroundColor: "paleturquoise",
   display: "flex",
   [theme.breakpoints.down("sm")]: {
     display: "none",

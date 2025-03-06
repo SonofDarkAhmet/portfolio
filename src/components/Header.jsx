@@ -22,10 +22,9 @@ const StyledToolbar = styled(Toolbar)({
 const StyledStack = styled(Stack)({
   flexDirection: "row",
   flexShrink: "wrap",
-  backgroundColor: "transparent",
-  paddingLeft: "5px",
-  paddingRight: "5px",
-  borderRadius: "1em",
+  backgroundColor: "rgb(240, 242, 245)",
+  padding: "5px 25px",
+  borderRadius: "2em",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
 });
 
@@ -34,6 +33,10 @@ const StyledButton = styled(Button)({
   color: "#24262e",
   border: "none",
   borderRadius: "1em",
+});
+
+const ButtonTypo = styled(Typography)({
+  fontWeight: "Bold",
 });
 
 function Header() {
@@ -58,16 +61,16 @@ function Header() {
         <StyledToolbar>
           <StyledStack>
             <StyledButton variant="outlined">
-              <Typography>Home</Typography>
+              <ButtonTypo>Home</ButtonTypo>
             </StyledButton>
             <StyledButton variant="outlined">
-              <Typography>Skills</Typography>
+              <ButtonTypo>Skills</ButtonTypo>
             </StyledButton>
             <StyledButton variant="outlined">
-              <Typography>Projects</Typography>
+              <ButtonTypo>Projects</ButtonTypo>
             </StyledButton>
             <StyledButton variant="outlined">
-              <Typography>Contacts</Typography>
+              <ButtonTypo>Contacts</ButtonTypo>
             </StyledButton>
           </StyledStack>
         </StyledToolbar>

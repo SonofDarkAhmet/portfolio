@@ -1,4 +1,4 @@
-const skillList = [
+export const skillList = [
   {
     id: 1,
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg",
@@ -78,4 +78,47 @@ const skillList = [
   },
 ];
 
-export default skillList;
+export const projects = [
+  {
+    id: 1,
+    title: "GCDC",
+    description: "Grand Cooperative Driving Challange",
+    img: "https://www.gcdc.net/wp-content/uploads/2024/10/logo_gcdc2.png",
+    content: "",
+  },
+  {
+    id: 2,
+    title: "UCOK",
+    description: "Remote controlled weapon station",
+    img: "https://defense.otokar.com.tr/OtokarSavunma/media/Otokar-Savunma/urunler/kule-sistemleri/ucok/ucok-uzaktan-komutali-stabilize-makineli-tufek-platformu.JPG?ext=.jpg",
+    content: "",
+  },
+  {
+    id: 3,
+    title: "ICE Model",
+    description: "Internal combustion engine model",
+    img: "./public/images/ice-1.jpg",
+    content: "",
+  },
+  {
+    id: 4,
+    title: "Vehicle Dynamics",
+    description: "HIL simulation model",
+    img: "https://images.pexels.com/photos/30149547/pexels-photo-30149547/free-photo-of-camarolar.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    content: "",
+  },
+  {
+    id: 5,
+    title: "Automated Tractor",
+    description: "Automated steering system",
+    img: "public/images/automated-tractor-1.jpg",
+    content: "",
+  },
+  {
+    id: 6,
+    title: "GEM Model",
+    description: "The Greenhouse Gas Emissions Model",
+    img: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Seal_of_the_United_States_Environmental_Protection_Agency.svg",
+    content: "",
+  },
+];

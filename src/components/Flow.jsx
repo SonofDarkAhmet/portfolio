@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import { Await } from "react-router-dom";
-import { Stack, Box, Divider, styled } from "@mui/material";
+import { Stack, Divider, styled } from "@mui/material";
 import Home from "../pages/Home";
 import Skills from "../pages/Skills";
-import Projects from "./Projects";
-import Contacts from "./Contacts";
+import Projects from "../pages/Projects";
+import Contacts from "../pages/Contacts";
 
 const FlowStack = styled(Stack)({
   flex: 4,
@@ -12,27 +12,27 @@ const FlowStack = styled(Stack)({
   alignContent: "center",
 });
 
-function Flow({ data }) {
+function Flow({ flowData }) {
   return (
     <FlowStack
       divider={<Divider orientation="horizontal" variant="middle" flexItem />}
       spacing={2}
     >
       <Suspense fallback={<h2>Loading...</h2>}>
-        <Await resolve={data.profileImgPromise}>
+        <Await resolve={flowData.profileImgPromise}>
           {(profileImg) => {
             return <Home profileImg={profileImg} />;
           }}
         </Await>
       </Suspense>
 
+      <Projects />
+
       <Suspense fallback={<h2>Loading...</h2>}>
-        <Await resolve={data.eaLogoImgPromise}>
+        <Await resolve={flowData.eaLogoImgPromise}>
           {(eaLogoImg) => <Skills eaLogoImg={eaLogoImg} />}
         </Await>
       </Suspense>
-
-      <Projects />
 
       <Contacts />
     </FlowStack>

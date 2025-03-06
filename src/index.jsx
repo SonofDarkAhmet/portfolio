@@ -5,17 +5,10 @@ import App from "./App";
 
 let theme = createTheme({
   palette: {
-    background: { default: "#F7F5F4", paper: "#F7F5F4" },
+    background: { default: "#f0f2f5" },
   },
   typography: {
-    fontFamily: "'Graphik Web', sans-serif",
-    fontWeight: 400,
-    fontStyle: "normal",
-    fontStretch: "normal",
-    allVariants: {
-      fontVariantNumeric: "oldstyle-nums",
-      fontVariantLigatures: "common-ligatures",
-    },
+    fontFamily: "Roboto, Helvetica, Arial, sans-serif",
   },
 });
 

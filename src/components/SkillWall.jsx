@@ -12,7 +12,7 @@ import {
 import { Masonry } from "@mui/lab";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-import skillList from "../skillList";
+import { skillList } from "../data";
 
 const SkillWallBox = styled(Box)({
   flex: "1",
@@ -25,7 +25,6 @@ const SkillWallBox = styled(Box)({
 const StyledMasonry = styled(Masonry)({});
 
 const StyledAccordion = styled(Accordion)(({ theme }) => ({
-  backgroundColor: "#f8f8fa",
   minHeight: getRandomInteger(70, 150),
   color: theme.palette.text.secondary,
   ...theme.applyStyles("dark", {

@@ -7,9 +7,7 @@ const CirriculumCardBox = styled(Box)({
   width: "70%",
 });
 
-const CirriculumCardElement = styled(Card)({
-  background: "#f8f8fa",
-});
+const CirriculumCardElement = styled(Card)({});
 
 function CirriculumCard() {
   return (
