@@ -2,7 +2,7 @@ import { Box, styled } from "@mui/material";
 
 const SideBarBox = styled(Box)(({ theme }) => ({
   flex: 1,
-  backgroundColor: "paleturquoise",
+  backgroundColor: "transparent",
   display: "flex",
   [theme.breakpoints.down("sm")]: {
     display: "none",
@@ -10,7 +10,7 @@ const SideBarBox = styled(Box)(({ theme }) => ({
 }));
 
 const Sidebar = () => {
-  return <SideBarBox>Sidebar</SideBarBox>;
+  return <SideBarBox />;
 };
 
 export default Sidebar;

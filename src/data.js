@@ -97,7 +97,7 @@ export const projects = [
     id: 3,
     title: "ICE Model",
     description: "Internal combustion engine model",
-    img: "./public/images/ice-1.jpg",
+    img: "/images/ice-1.jpg",
     content: "",
   },
   {
@@ -111,7 +111,7 @@ export const projects = [
     id: 5,
     title: "Automated Tractor",
     description: "Automated steering system",
-    img: "public/images/automated-tractor-1.jpg",
+    img: "/images/automated-tractor-1.jpg",
     content: "",
   },
   {

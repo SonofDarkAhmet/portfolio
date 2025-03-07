@@ -15,7 +15,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { skillList } from "../data";
 
 const SkillWallBox = styled(Box)({
-  flex: "1",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -79,7 +78,7 @@ function SkillWall(props) {
 
   return (
     <SkillWallBox>
-      <StyledMasonry columns={{ xs: 2, sm: 4 }} spacing={3}>
+      <StyledMasonry columns={{ xs: 2, sm: 3 }} spacing={3}>
         {updatedSkillList.length > 0 && updatedSkillListElements}
       </StyledMasonry>
     </SkillWallBox>

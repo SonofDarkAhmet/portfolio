@@ -51,7 +51,8 @@ function Header() {
   }, []);
 
   return (
-    <Box sx={{ height: boxSize.height, width: boxSize.width }}>
+    // sx={{ height: boxSize.height, width: boxSize.width }}
+    <Box>
       <StyledAppbar
         component="nav"
         color="transparent"
@@ -70,7 +71,7 @@ function Header() {
               <ButtonTypo>Projects</ButtonTypo>
             </StyledButton>
             <StyledButton variant="outlined">
-              <ButtonTypo>Contacts</ButtonTypo>
+              <ButtonTypo>Contact</ButtonTypo>
             </StyledButton>
           </StyledStack>
         </StyledToolbar>

@@ -4,7 +4,7 @@ import { Stack, Divider, styled } from "@mui/material";
 import Home from "../pages/Home";
 import Skills from "../pages/Skills";
 import Projects from "../pages/Projects";
-import Contacts from "../pages/Contacts";
+import Contact from "../pages/Contact";
 
 const FlowStack = styled(Stack)({
   flex: 4,
@@ -34,7 +34,7 @@ function Flow({ flowData }) {
         </Await>
       </Suspense>
 
-      <Contacts />
+      <Contact />
     </FlowStack>
   );
 }

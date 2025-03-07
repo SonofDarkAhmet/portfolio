@@ -4,7 +4,7 @@ import { Box, styled } from "@mui/material";
 
 const RightBarBox = styled(Box)(({ theme }) => ({
   flex: 1,
-  backgroundColor: "red",
+  backgroundColor: "transparent",
   display: "flex",
   [theme.breakpoints.down("sm")]: {
     display: "none",
@@ -12,7 +12,7 @@ const RightBarBox = styled(Box)(({ theme }) => ({
 }));
 
 function Rightbar() {
-  return <RightBarBox>Rightbar</RightBarBox>;
+  return <RightBarBox />;
 }
 
 export default Rightbar;
