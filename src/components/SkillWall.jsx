@@ -16,12 +16,16 @@ import { skillList } from "../data";
 
 const SkillWallBox = styled(Box)({
   display: "flex",
+  flexDirection: "row",
   justifyContent: "center",
-  alignItems: "center",
   minHeight: "377px",
+  margin: "2% 2%",
   overflow: "hidden",
 });
-const StyledMasonry = styled(Masonry)({});
+
+const StyledMasonry = styled(Masonry)({
+  maxWidth: "70%",
+});
 
 const StyledAccordion = styled(Accordion)(({ theme }) => ({
   minHeight: getRandomInteger(70, 150),
@@ -78,7 +82,7 @@ function SkillWall(props) {
 
   return (
     <SkillWallBox>
-      <StyledMasonry columns={{ xs: 2, sm: 3 }} spacing={3}>
+      <StyledMasonry columns={{ xs: 2, sm: 3, md: 4 }} spacing={3}>
         {updatedSkillList.length > 0 && updatedSkillListElements}
       </StyledMasonry>
     </SkillWallBox>

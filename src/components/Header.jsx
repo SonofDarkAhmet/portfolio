@@ -36,7 +36,7 @@ const StyledButton = styled(Button)({
 });
 
 const ButtonTypo = styled(Typography)({
-  fontWeight: "Bold",
+  fontWeight: "400",
 });
 
 function Header() {
@@ -51,8 +51,7 @@ function Header() {
   }, []);
 
   return (
-    // sx={{ height: boxSize.height, width: boxSize.width }}
-    <Box>
+    <Box sx={{ height: boxSize.height, width: boxSize.width }}>
       <StyledAppbar
         component="nav"
         color="transparent"

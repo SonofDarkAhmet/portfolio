@@ -4,6 +4,9 @@ import Vitae from "../components/Vitae";
 
 const ProfileStack = styled(Stack)(({ theme }) => ({
   flexDirection: "row",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  },
   alignItems: "center",
   zIndex: -2,
   paddingLeft: "5rem",

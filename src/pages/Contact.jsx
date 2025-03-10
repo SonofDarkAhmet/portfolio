@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Box,
+  Typography,
   FormLabel,
   FormGroup,
   FormControl,
@@ -11,12 +12,26 @@ import {
   Button,
   styled,
 } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 import { useForm } from "react-hook-form";
+import SectionTitle from "../components/SectionTitle";
 
 const ContactBox = styled(Box)({
   display: "flex",
-  flexDirection: "row",
+  flexDirection: "column",
+});
+
+const ContactForm = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
   justifyContent: "center",
+  alignItems: "center",
+  margin: "2% 2%",
+});
+
+const StyledTextField = styled(TextField)({
+  width: "50%",
+  margin: "0% 0% 2% 0%",
 });
 
 function Contact() {
@@ -30,6 +45,7 @@ function Contact() {
 
   async function handleForm(formData) {
     try {
+      console.log(formData);
       console.log(isSubmitting);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       throw new Error();
@@ -39,25 +55,24 @@ function Contact() {
   }
 
   return (
-    <ContactBox component="form" onSubmit={handleSubmit(handleForm)}>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "50%",
-          gap: "2px",
-          margin: "2%",
-        }}
-      >
-        <TextField
+    <ContactBox>
+      <SectionTitle variant="h4">Contact Me</SectionTitle>
+      <ContactForm component="form" onSubmit={handleSubmit(handleForm)}>
+        <StyledTextField
+          {...register("subject")}
+          variant="outlined"
+          label="Subject"
+          type="text"
+          placeholder="Subject"
+        />
+        <StyledTextField
           {...register("name", { required: "true" })}
           variant="outlined"
+          label="Name"
           type="text"
           placeholder="Name"
         />
-        <TextField
+        <StyledTextField
           {...register("email", {
             register: "Email is required",
             validate: (value) => {
@@ -68,26 +83,29 @@ function Contact() {
             },
           })}
           variant="outlined"
+          label="Email"
           type="email"
           placeholder="Email"
         />
-        <TextField
-          {...register("password")}
-          variant="outlined"
-          type="password"
-          placeholder="password"
-        />
-        <TextField
+        <StyledTextField
           id="outlined-multiline-static"
-          label="Multiline"
+          {...register("message", { required: "true" })}
+          variant="outlined"
+          label="Message"
           multiline
-          rows={4}
-          defaultValue="Default Value"
+          rows={6}
+          defaultValue={`Hello,\n\nPlease describe your message here in detail...\n\nBest regards,`}
         />
-        <Button type="submit" variant="outlined" disabled={isSubmitting}>
+        <Button
+          type="submit"
+          variant="contained"
+          endIcon={<SendIcon />}
+          disabled={isSubmitting}
+          sx={{ width: "20%", fontSize: "1.25rem", padding: "0.75rem" }}
+        >
           {isSubmitting ? "Loading..." : "Send Message"}
         </Button>
-      </Box>
+      </ContactForm>
     </ContactBox>
   );
 }
