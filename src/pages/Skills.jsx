@@ -4,7 +4,7 @@ import SkillWall from "../components/SkillWall";
 const SkillWallBox = styled(Box)({
   display: "flex",
   justifyContent: "center",
-  height: "100vh",
+  minHeight: "100vh",
 });
 
 function Skills(props) {
@@ -12,7 +12,7 @@ function Skills(props) {
 
   return (
     <SkillWallBox>
-      <SkillWall eaLogoImg={eaLogoImg} />;
+      <SkillWall eaLogoImg={eaLogoImg} />
     </SkillWallBox>
   );
 }

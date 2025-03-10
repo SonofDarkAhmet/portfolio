@@ -8,7 +8,7 @@ const ProfileStack = styled(Stack)(({ theme }) => ({
   zIndex: -2,
   paddingLeft: "5rem",
   paddingRight: "5rem",
-  height: "100vh",
+  minHeight: "100vh",
   backgroundColor: "rgba(10,10,10,1)", // This is equivalent to bg-neutral-950 (dark background)
   backgroundImage:
     "radial-gradient(ellipse 80% 80% at 50% -20%,rgba(120,119,198,0.3),rgba(255,255,255,0))",

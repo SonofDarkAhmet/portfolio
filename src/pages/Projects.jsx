@@ -5,6 +5,7 @@ const ProjectBox = styled(Box)({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
+  minHeight: "100vh",
 });
 
 const SectionTitle = styled(Typography)({
