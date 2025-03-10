@@ -8,7 +8,7 @@ let theme = createTheme({
     background: { default: "#f0f2f5" },
   },
   typography: {
-    fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+    fontFamily: "Inter, sans-serif",
   },
 });
 

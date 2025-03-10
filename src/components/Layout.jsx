@@ -28,7 +28,7 @@ function Layout() {
 
   return (
     <LayoutBox>
-      {/* <Header /> */}
+      <Header />
       <LayoutStack>
         <Sidebar />
         <Flow flowData={promisedData} />
