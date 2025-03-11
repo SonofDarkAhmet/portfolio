@@ -14,7 +14,10 @@ import {
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
+
 import SectionTitle from "../components/SectionTitle";
+import { Subject } from "@mui/icons-material";
 
 const ContactBox = styled(Box)({
   display: "flex",
@@ -44,13 +47,31 @@ function Contact() {
   const [info, setInfo] = useState("Default Value");
 
   async function handleForm(formData) {
+    var template = {
+      subject: formData.subject,
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+    console.log(formData);
     try {
-      console.log(formData);
-      console.log(isSubmitting);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      throw new Error();
+      emailjs
+        .send(
+          "service_brf6bef",
+          "template_6kcj0nl",
+          template,
+          "YeNzxqOycwj6RTqvx"
+        )
+        .then(
+          () => {
+            console.log("SUCCESS!");
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
     } catch (error) {
-      setError("password", { message: "This email is already taken" });
+      setError("password", { message: error.message });
     }
   }
 
@@ -59,7 +80,7 @@ function Contact() {
       <SectionTitle variant="h4">Contact Me</SectionTitle>
       <ContactForm component="form" onSubmit={handleSubmit(handleForm)}>
         <StyledTextField
-          {...register("subject")}
+          {...register("subject", { required: "true" })}
           variant="outlined"
           label="Subject"
           type="text"

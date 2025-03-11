@@ -1,5 +1,5 @@
 import "./index.css";
-import { createRoot, CssBaseline } from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import App from "./App";
 
