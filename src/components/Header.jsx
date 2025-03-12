@@ -35,11 +35,11 @@ const StyledButton = styled(Button)({
   borderRadius: "1em",
 });
 
-const ButtonTypo = styled(Typography)({
+const ButtonTypography = styled(Typography)({
   fontWeight: "400",
 });
 
-function Header() {
+function Header({ refs }) {
   const appBarRef = useRef(null);
   const [boxSize, setBoxSize] = useState({ width: "auto", height: "auto" });
 
@@ -49,6 +49,22 @@ function Header() {
       setBoxSize({ width: offsetWidth, height: offsetHeight });
     }
   }, []);
+
+  function handleHomeSubmit() {
+    refs.profileSection.current.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function handleProjectsSubmit() {
+    refs.projectsSection.current.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function handleSkillsSubmit() {
+    refs.skillsSection.current.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function handleContactSubmit() {
+    refs.contactSection.current.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
     <Box sx={{ height: boxSize.height, width: boxSize.width }}>
@@ -60,17 +76,17 @@ function Header() {
       >
         <StyledToolbar>
           <StyledStack>
-            <StyledButton variant="outlined">
-              <ButtonTypo>Home</ButtonTypo>
+            <StyledButton variant="outlined" onClick={handleHomeSubmit}>
+              <ButtonTypography>Home</ButtonTypography>
             </StyledButton>
-            <StyledButton variant="outlined">
-              <ButtonTypo>Skills</ButtonTypo>
+            <StyledButton variant="outlined" onClick={handleProjectsSubmit}>
+              <ButtonTypography>Projects</ButtonTypography>
             </StyledButton>
-            <StyledButton variant="outlined">
-              <ButtonTypo>Projects</ButtonTypo>
+            <StyledButton variant="outlined" onClick={handleSkillsSubmit}>
+              <ButtonTypography>Skills</ButtonTypography>
             </StyledButton>
-            <StyledButton variant="outlined">
-              <ButtonTypo>Contact</ButtonTypo>
+            <StyledButton variant="outlined" onClick={handleContactSubmit}>
+              <ButtonTypography>Contact</ButtonTypography>
             </StyledButton>
           </StyledStack>
         </StyledToolbar>

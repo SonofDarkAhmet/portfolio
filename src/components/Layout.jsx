@@ -6,6 +6,7 @@ import Flow from "./Flow";
 import Rightbar from "./Rightbar";
 import Footer from "./Footer";
 import { getImgLink } from "../utils";
+import { useRef } from "react";
 
 export async function loader() {
   const profileImgPromise = getImgLink(import.meta.env.VITE_PATH_PROFILE_PIC);
@@ -25,13 +26,24 @@ const LayoutStack = styled(Stack)({
 
 function Layout() {
   const promisedData = useLoaderData();
+  const profileSection = useRef(null);
+  const projectsSection = useRef(null);
+  const skillsSection = useRef(null);
+  const contactSection = useRef(null);
+
+  const refs = {
+    profileSection,
+    projectsSection,
+    skillsSection,
+    contactSection,
+  };
 
   return (
     <LayoutBox>
-      <Header />
+      <Header refs={refs} />
       <LayoutStack>
         <Sidebar />
-        <Flow flowData={promisedData} />
+        <Flow flowData={promisedData} refs={refs} />
         <Rightbar />
       </LayoutStack>
       <Footer />

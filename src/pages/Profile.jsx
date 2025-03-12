@@ -45,7 +45,7 @@ function Profile(props) {
   const profileImg = props.profileImg;
 
   return (
-    <ProfileStack spacing={2}>
+    <ProfileStack spacing={2} ref={props.ref}>
       <ProfileTextStack>
         <NamePlate variant="h1">Raif Karaahmetoğlu</NamePlate>
         <JobTitle variant="h4">Software Control Developer</JobTitle>

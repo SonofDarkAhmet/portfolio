@@ -12,7 +12,7 @@ const FlowStack = styled(Stack)({
   alignContent: "center",
 });
 
-function Flow({ flowData }) {
+function Flow({ flowData, refs }) {
   return (
     <FlowStack
       divider={<Divider orientation="horizontal" variant="middle" flexItem />}
@@ -21,20 +21,24 @@ function Flow({ flowData }) {
       <Suspense fallback={<h2>Loading...</h2>}>
         <Await resolve={flowData.profileImgPromise}>
           {(profileImg) => {
-            return <Profile profileImg={profileImg} />;
+            return (
+              <Profile profileImg={profileImg} ref={refs.profileSection} />
+            );
           }}
         </Await>
       </Suspense>
 
-      <Projects />
+      <Projects ref={refs.projectsSection} />
 
       <Suspense fallback={<h2>Loading...</h2>}>
         <Await resolve={flowData.eaLogoImgPromise}>
-          {(eaLogoImg) => <Skills eaLogoImg={eaLogoImg} />}
+          {(eaLogoImg) => (
+            <Skills eaLogoImg={eaLogoImg} ref={refs.skillsSection} />
+          )}
         </Await>
       </Suspense>
 
-      <Contact />
+      <Contact ref={refs.contactSection} />
     </FlowStack>
   );
 }

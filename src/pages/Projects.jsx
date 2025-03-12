@@ -9,9 +9,9 @@ const ProjectBox = styled(Box)({
   minHeight: "100vh",
 });
 
-function Projects() {
+function Projects(props) {
   return (
-    <ProjectBox>
+    <ProjectBox ref={props.ref}>
       <SectionTitle variant="h4">Projects</SectionTitle>
       <ProjectList />
     </ProjectBox>

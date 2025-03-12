@@ -1,23 +1,11 @@
-import { useState } from "react";
-import {
-  Box,
-  Typography,
-  FormLabel,
-  FormGroup,
-  FormControl,
-  InputLabel,
-  Input,
-  FormHelperText,
-  TextField,
-  Button,
-  styled,
-} from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { Box, Typography, TextField, Button, styled } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 import SectionTitle from "../components/SectionTitle";
-import { Subject } from "@mui/icons-material";
 
 const ContactBox = styled(Box)({
   display: "flex",
@@ -37,14 +25,34 @@ const StyledTextField = styled(TextField)({
   margin: "0% 0% 2% 0%",
 });
 
-function Contact() {
+const StyledButton = styled(Button)({
+  flexShrink: 1,
+  color: "#24262e",
+  backgroundColor: "rgb(240, 242, 245)",
+  border: "none",
+  borderRadius: "1em",
+});
+
+const ButtonTypography = styled(Typography)({
+  fontWeight: "400",
+});
+
+const schema = z.object({
+  subject: z.string().min(3),
+  name: z.string().min(1),
+  email: z.string().email(),
+  message: z.string().min(10),
+});
+
+function Contact(props) {
   const {
     register,
     handleSubmit,
     setError,
     formState: { errors, isSubmitting, isLoading },
-  } = useForm();
-  const [info, setInfo] = useState("Default Value");
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
 
   async function handleForm(formData) {
     var template = {
@@ -53,79 +61,72 @@ function Contact() {
       email: formData.email,
       message: formData.message,
     };
-    console.log(formData);
+
     try {
-      emailjs
-        .send(
-          "service_brf6bef",
-          "template_6kcj0nl",
-          template,
-          "YeNzxqOycwj6RTqvx"
-        )
-        .then(
-          () => {
-            console.log("SUCCESS!");
-          },
-          (error) => {
-            console.log("FAILED...", error.text);
-          }
-        );
+      await emailjs.send(
+        "service_brf6bef",
+        "template_6kcj0nl",
+        template,
+        "YeNzxqOycwj6RTqv"
+      );
     } catch (error) {
-      setError("password", { message: error.message });
+      setError("name", { message: error.message });
     }
   }
 
   return (
-    <ContactBox>
+    <ContactBox ref={props.ref}>
       <SectionTitle variant="h4">Contact Me</SectionTitle>
       <ContactForm component="form" onSubmit={handleSubmit(handleForm)}>
         <StyledTextField
-          {...register("subject", { required: "true" })}
+          {...register("subject")}
           variant="outlined"
           label="Subject"
           type="text"
           placeholder="Subject"
+          error={Boolean(errors.subject)}
+          helperText={errors.subject?.message}
         />
         <StyledTextField
-          {...register("name", { required: "true" })}
+          {...register("name")}
           variant="outlined"
           label="Name"
           type="text"
           placeholder="Name"
+          error={Boolean(errors.name)}
+          helperText={errors.name?.message}
         />
         <StyledTextField
-          {...register("email", {
-            register: "Email is required",
-            validate: (value) => {
-              if (!value.includes("@")) {
-                return "Email must includes @";
-              }
-              return true;
-            },
-          })}
+          {...register("email")}
           variant="outlined"
           label="Email"
           type="email"
           placeholder="Email"
+          error={Boolean(errors.email)}
+          helperText={errors.email?.message}
         />
         <StyledTextField
           id="outlined-multiline-static"
-          {...register("message", { required: "true" })}
+          {...register("message")}
           variant="outlined"
           label="Message"
           multiline
           rows={6}
-          defaultValue={`Hello,\n\nPlease describe your message here in detail...\n\nBest regards,`}
+          placeholder={`Hello,\n\nPlease describe your message here in detail...\n\nBest regards,`}
+          error={Boolean(errors.message)}
+          helperText={errors.message?.message}
         />
-        <Button
+        <StyledButton
           type="submit"
           variant="contained"
           endIcon={<SendIcon />}
           disabled={isSubmitting}
-          sx={{ width: "20%", fontSize: "1.25rem", padding: "0.75rem" }}
+          sx={{ fontSize: "1rem", padding: "0.75rem" }}
         >
-          {isSubmitting ? "Loading..." : "Send Message"}
-        </Button>
+          <ButtonTypography>
+            {isSubmitting ? "Loading..." : "Send Message"}
+          </ButtonTypography>
+        </StyledButton>
       </ContactForm>
     </ContactBox>
   );
