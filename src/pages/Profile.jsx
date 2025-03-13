@@ -9,8 +9,8 @@ const ProfileStack = styled(Stack)(({ theme }) => ({
   },
   alignItems: "center",
   zIndex: -2,
-  paddingLeft: "5rem",
-  paddingRight: "5rem",
+  paddingLeft: "5%",
+  paddingRight: "5%",
   minHeight: "100vh",
   backgroundColor: "rgba(10,10,10,1)", // This is equivalent to bg-neutral-950 (dark background)
   backgroundImage:
@@ -36,7 +36,6 @@ const JobTitle = styled(Typography)({
   backgroundClip: "text",
   WebkitBackgroundClip: "text",
   color: "transparent",
-  fontSize: "2.25rem", // Equivalent to text-4xl
   fontWeight: "300",
   letterSpacing: "-0.01562em", // Tracking tight
 });
@@ -48,7 +47,7 @@ function Profile(props) {
     <ProfileStack spacing={2} ref={props.ref}>
       <ProfileTextStack>
         <NamePlate variant="h1">Raif Karaahmetoğlu</NamePlate>
-        <JobTitle variant="h4">Software Control Developer</JobTitle>
+        <JobTitle variant="h3">Software Control Developer</JobTitle>
         <Vitae />
       </ProfileTextStack>
       <EllipticalProfileCard profileImg={profileImg} />
