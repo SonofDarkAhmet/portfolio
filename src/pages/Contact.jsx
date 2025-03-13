@@ -1,10 +1,9 @@
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import emailjs from "@emailjs/browser";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Box, Typography, TextField, Button, styled } from "@mui/material";
+import emailjs from "@emailjs/browser";
 import SendIcon from "@mui/icons-material/Send";
-
 import SectionTitle from "../components/SectionTitle";
 
 const ContactBox = styled(Box)({
@@ -67,7 +66,7 @@ function Contact(props) {
         "service_brf6bef",
         "template_6kcj0nl",
         template,
-        "YeNzxqOycwj6RTqv"
+        "YeNzxqOycwj6RTqvx"
       );
     } catch (error) {
       setError("name", { message: error.message });

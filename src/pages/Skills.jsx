@@ -8,12 +8,6 @@ const SkillWallBox = styled(Box)({
   justifyContent: "center",
 });
 
-// const SectionTitle = styled(Typography)({
-//   display: "block",
-//   width: "100%",
-//   fontWeight: "300",
-// });
-
 function Skills(props) {
   const eaLogoImg = props.eaLogoImg;
 
