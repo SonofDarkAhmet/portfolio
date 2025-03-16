@@ -59,7 +59,7 @@ function ProjectCard(props) {
 
 function ProjectList() {
   return (
-    <ProjectGrid container spacing={{ xs: 12, sm: 6, md: 4 }}>
+    <ProjectGrid container spacing={{ xs: 4, sm: 6, md: 12 }}>
       {projects &&
         projects.map((item) => {
           return <ItemGrid key={item.id}>{ProjectCard(item)}</ItemGrid>;

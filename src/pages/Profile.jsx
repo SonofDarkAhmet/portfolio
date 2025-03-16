@@ -13,7 +13,7 @@ const ProfileGrid = styled(Grid)(({ theme }) => ({
   paddingLeft: "5%",
   paddingRight: "5%",
   minHeight: "100vh",
-  backgroundColor: "rgba(10,10,10,1)", // This is equivalent to bg-neutral-950 (dark background)
+  backgroundColor: "rgb(3, 3, 3)", // This is equivalent to bg-neutral-950 (dark background)
   backgroundImage:
     "radial-gradient(ellipse 80% 80% at 50% -20%,rgba(120,119,198,0.3),rgba(255,255,255,0))",
 }));
@@ -21,9 +21,6 @@ const ProfileGrid = styled(Grid)(({ theme }) => ({
 const ProfileTextStack = styled(Stack)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "flex-start",
-  [theme.breakpoints.down("md")]: {
-    alignItems: "center",
-  },
   minWidth: "300px",
 }));
 

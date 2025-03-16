@@ -7,7 +7,7 @@ import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
 
 const FlowStack = styled(Stack)({
-  flex: 6,
+  flex: 4,
   justifyContent: "center",
   alignContent: "center",
 });
