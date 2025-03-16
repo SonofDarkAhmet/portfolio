@@ -7,7 +7,6 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  CardMedia,
 } from "@mui/material";
 import { Masonry } from "@mui/lab";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -82,7 +81,7 @@ function SkillWall(props) {
 
   return (
     <SkillWallBox>
-      <StyledMasonry columns={{ xs: 2, sm: 3, md: 4 }} spacing={3}>
+      <StyledMasonry columns={{ xs: 1, sm: 2, md: 4 }} spacing={3}>
         {updatedSkillList.length > 0 && updatedSkillListElements}
       </StyledMasonry>
     </SkillWallBox>

@@ -1,22 +1,18 @@
-import React from "react";
-import { Box, Card, CardContent, CardMedia } from "@mui/material";
+import { Box, CardContent, CardMedia } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const ProfileBox = styled(Box)({
-  flex: 4,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  paddingLeft: "2rem",
 });
 
 const ProfileCard = styled(Box)(({ theme }) => ({
   position: "relative",
-  height: "250px",
-  width: "185px",
+  width: "clamp(120px, 100%, 250px)",
+  aspectRatio: "3/4",
   borderRadius: "50%",
   overflow: "hidden",
-  [theme.breakpoints.up("sm")]: { height: "500px", width: "375px" },
   "&::before": {
     content: '""',
     position: "absolute",

@@ -3,7 +3,6 @@ import { Box, Typography, styled } from "@mui/material";
 const VitaeBox = styled(Box)({ marginTop: "1rem" });
 
 const VitaeTypography = styled(Typography)({
-  maxWidth: "48rem", // Equivalent to max-w-xl
   fontWeight: "200", // Equivalent to font-light
   textAlign: "justify",
   letterSpacing: "-0.025em", // Tracking tighter

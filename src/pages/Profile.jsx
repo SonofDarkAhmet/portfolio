@@ -1,12 +1,13 @@
-import { Box, Typography, Stack, styled } from "@mui/material";
+import { Grid2 as Grid, Stack, Typography, styled } from "@mui/material";
 import EllipticalProfileCard from "../components/EllipticalProfileCard";
 import Vitae from "../components/Vitae";
 
-const ProfileStack = styled(Stack)(({ theme }) => ({
+const ProfileGrid = styled(Grid)(({ theme }) => ({
   flexDirection: "row",
   [theme.breakpoints.down("sm")]: {
     flexDirection: "column",
   },
+  justifyContent: "center",
   alignItems: "center",
   zIndex: -2,
   paddingLeft: "5%",
@@ -18,9 +19,12 @@ const ProfileStack = styled(Stack)(({ theme }) => ({
 }));
 
 const ProfileTextStack = styled(Stack)(({ theme }) => ({
-  flex: "6",
   justifyContent: "center",
   alignItems: "flex-start",
+  [theme.breakpoints.down("md")]: {
+    alignItems: "center",
+  },
+  minWidth: "300px",
 }));
 
 const NamePlate = styled(Typography)(({ theme }) => ({
@@ -44,14 +48,18 @@ function Profile(props) {
   const profileImg = props.profileImg;
 
   return (
-    <ProfileStack spacing={2} ref={props.ref}>
-      <ProfileTextStack>
-        <NamePlate variant="h1">Raif Karaahmetoğlu</NamePlate>
-        <JobTitle variant="h3">Software Control Developer</JobTitle>
-        <Vitae />
-      </ProfileTextStack>
-      <EllipticalProfileCard profileImg={profileImg} />
-    </ProfileStack>
+    <ProfileGrid container spacing={2} ref={props.ref}>
+      <Grid size={{ xs: 12, md: 8 }}>
+        <ProfileTextStack>
+          <NamePlate variant="h2">Raif Karaahmetoğlu</NamePlate>
+          <JobTitle variant="h4">Software Control Developer</JobTitle>
+          <Vitae />
+        </ProfileTextStack>
+      </Grid>
+      <Grid size={{ xs: 12, md: 4 }}>
+        <EllipticalProfileCard profileImg={profileImg} />
+      </Grid>
+    </ProfileGrid>
   );
 }
 
