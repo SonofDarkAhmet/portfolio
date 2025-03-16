@@ -1,7 +1,6 @@
 import { projects } from "../data";
 import {
   styled,
-  Stack,
   Card,
   CardHeader,
   CardMedia,
@@ -59,7 +58,7 @@ function ProjectCard(props) {
 
 function ProjectList() {
   return (
-    <ProjectGrid container spacing={{ xs: 4, sm: 6, md: 12 }}>
+    <ProjectGrid container spacing={{ xs: 4, sm: 6 }}>
       {projects &&
         projects.map((item) => {
           return <ItemGrid key={item.id}>{ProjectCard(item)}</ItemGrid>;

@@ -21,6 +21,9 @@ const ProfileGrid = styled(Grid)(({ theme }) => ({
 const ProfileTextStack = styled(Stack)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "flex-start",
+  [theme.breakpoints.down("md")]: {
+    alignItems: "center",
+  },
   minWidth: "300px",
 }));
 

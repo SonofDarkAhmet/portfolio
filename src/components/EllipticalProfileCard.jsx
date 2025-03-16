@@ -5,6 +5,7 @@ const ProfileBox = styled(Box)({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  padding: "2% 0",
 });
 
 const ProfileCard = styled(Box)(({ theme }) => ({
