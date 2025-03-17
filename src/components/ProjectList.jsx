@@ -11,7 +11,7 @@ import {
   Grid2 as Grid,
 } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
+import ShareLink from "./Projects/ShareLink";
 
 const ProjectGrid = styled(Grid)({
   margin: "2% 2%",
@@ -27,6 +27,12 @@ const ItemGrid = styled(Grid)({
 });
 
 function ProjectCard(props) {
+  const handleShareClick = () => {
+    navigator.clipboard.writeText(props.url).then(() => {
+      alert(`Link copied to clipboard: ${props.url}`);
+    });
+  };
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader title={props.title} subheader={props.description} />
@@ -48,9 +54,7 @@ function ProjectCard(props) {
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+        <ShareLink />
       </CardActions>
     </Card>
   );

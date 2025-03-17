@@ -5,6 +5,7 @@ import Profile from "../pages/Profile";
 import Skills from "../pages/Skills";
 import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
+import Footer from "./Footer";
 
 const FlowStack = styled(Stack)({
   flex: 4,
@@ -14,10 +15,7 @@ const FlowStack = styled(Stack)({
 
 function Flow({ flowData, refs }) {
   return (
-    <FlowStack
-      divider={<Divider orientation="horizontal" variant="middle" flexItem />}
-      spacing={2}
-    >
+    <FlowStack spacing={2}>
       <Suspense fallback={<h2>Loading...</h2>}>
         <Await resolve={flowData.profileImgPromise}>
           {(profileImg) => {
@@ -28,7 +26,11 @@ function Flow({ flowData, refs }) {
         </Await>
       </Suspense>
 
+      <Divider orientation="horizontal" variant="middle" flexItem />
+
       <Projects ref={refs.projectsSection} />
+
+      <Divider orientation="horizontal" variant="middle" flexItem />
 
       <Suspense fallback={<h2>Loading...</h2>}>
         <Await resolve={flowData.eaLogoImgPromise}>
@@ -38,7 +40,10 @@ function Flow({ flowData, refs }) {
         </Await>
       </Suspense>
 
+      <Divider orientation="horizontal" variant="middle" flexItem />
+
       <Contact ref={refs.contactSection} />
+      <Footer />
     </FlowStack>
   );
 }

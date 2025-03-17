@@ -5,7 +5,7 @@ export const vitaeContext = `I am a dedicated mechatronics engineer with a deep 
         implementation of sophisticated control strategies. I enjoy my ability
         to adapt quickly and continually expand my knowledge to integrate the
         latest software design principles and deliver innovative, high impact
-        solutions.`
+        solutions.`;
 
 export const skillList = [
   {
@@ -13,77 +13,77 @@ export const skillList = [
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg",
     title: "Matlab",
     content:
-      "Since 2009, I have been utilizing MATLAB and Simulink for the simulation and control of automotive systems, focusing on the development and testing of advanced technologies",
+      "MATLAB and Simulink have been utilized since 2009 for the simulation and control of automotive systems, with a focus on the development and testing of advanced technologies.",
   },
   {
     id: 2,
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
     title: "C",
     content:
-      "I have proficiently employed C to develop advanced simulation models, seamlessly integrating them with MATLAB and Simulink for real-time applications. Furthermore, I have leveraged C for real-time control applications within automotive systems.",
+      "C has been proficiently employed to develop advanced simulation models, which have been seamlessly integrated with MATLAB and Simulink for real-time applications. Additionally, C has been leveraged for real-time control applications within automotive systems.",
   },
   {
     id: 3,
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
     title: "C++",
     content:
-      "I acquired in-depth knowledge of C++ through a comprehensive course, after which I successfully implemented a FlexLM license solution, effectively applying my C++ skills.",
+      "In-depth knowledge of C++ was acquired through a comprehensive course, after which a FlexLM license solution was successfully implemented, effectively applying C++ skills.",
   },
   {
     id: 4,
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
     title: "Python",
     content:
-      "I utilized Python to develop a comprehensive vehicle dynamics library, automate HIL project creation, and contribute to various AI and statistical algorithm projects. Furthermore, I have professionally applied design patterns and SOLID principles, demonstrating my expertise in Python.",
+      "Python has been utilized to develop a comprehensive vehicle dynamics library, automate HIL project creation, and contribute to various AI and statistical algorithm projects. Furthermore, design patterns and SOLID principles have been professionally applied, demonstrating expertise in Python.",
   },
   {
     id: 5,
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
     title: "JavaScript",
     content:
-      "I uses JavaScript to develop AVL Route Studio projects, with a focus on the user interface components related to the algorithms for which I was responsible.",
+      "JavaScript has been used to develop AVL Route Studio projects, with a focus on the user interface components related to the algorithms for which responsibility was held.",
   },
   {
     id: 6,
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
     title: "HTML",
     content:
-      "I am currently learning HTML to enhance my skills in creating more sophisticated and visually appealing UI projects.",
+      "HTML is currently being learned to enhance skills in creating more sophisticated and visually appealing UI projects.",
   },
   {
     id: 7,
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
     title: "CSS",
     content:
-      "I am currently learning CSS to enhance my skills in creating more sophisticated and visually appealing UI projects.",
+      "CSS is currently being learned to enhance skills in creating more sophisticated and visually appealing UI projects.",
   },
   {
     id: 8,
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     title: "React",
     content:
-      "I learned the React framework and React Router to implement web-based UI developments, enhancing my ability to create dynamic and responsive user interfaces.",
+      "The React framework and React Router have been learned to implement web-based UI developments, enhancing the ability to create dynamic and responsive user interfaces.",
   },
   {
     id: 9,
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg",
     title: "Material UI",
     content:
-      "I learned the Material UI component library to enhance my UI development skills, creating more visually appealing and sophisticated interfaces.",
+      "The Material UI component library has been learned to enhance UI development skills, creating more visually appealing and sophisticated interfaces.",
   },
   {
     id: 10,
     img: "https://upload.wikimedia.org/wikipedia/commons/6/60/DS-CATIA-Logo.png",
     title: "Catia",
     content:
-      "I used CATIA to develop mechanical system designs, particularly for remote-controlled weapon systems such as OTOKAR - UCOK.",
+      "CATIA has been used to develop mechanical system designs, particularly for remote-controlled weapon systems such as OTOKAR - UCOK.",
   },
   {
     id: 11,
     img: null,
     title: "Enterprise Architect",
     content:
-      "I used Enterprise Architect to implement system engineering for the development of construction machinery, ensuring robust and efficient design processes.",
+      "Enterprise Architect has been used to implement system engineering for the development of construction machinery, ensuring robust and efficient design processes.",
   },
 ];
 
@@ -128,6 +128,20 @@ export const projects = [
     title: "GEM Model",
     description: "The Greenhouse Gas Emissions Model",
     img: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Seal_of_the_United_States_Environmental_Protection_Agency.svg",
+    content: "",
+  },
+  {
+    id: 7,
+    title: "AVL ISAC",
+    description: "Real time vehicle simulations on testbed",
+    img: "/images/isac-logo-1.png",
+    content: "",
+  },
+  {
+    id: 8,
+    title: "AVL Route Studio",
+    description: "Road digitalization on virtual testing",
+    img: "https://experience.avl.com/en-US/sfsites/c/cms/delivery/media/MCVPESGOY3FZDX7DC4RELSSC65Z4?version=2.1&channelId=0ap6M0000008OJ8",
     content: "",
   },
 ];

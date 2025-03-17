@@ -4,7 +4,7 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Flow from "./Flow";
 import Rightbar from "./Rightbar";
-import Footer from "./Footer";
+
 import { getImgLink } from "../utils";
 import { useRef } from "react";
 
@@ -46,7 +46,6 @@ function Layout() {
         <Flow flowData={promisedData} refs={refs} />
         <Rightbar />
       </LayoutStack>
-      <Footer />
     </LayoutBox>
   );
 }

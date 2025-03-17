@@ -9,6 +9,7 @@ import SectionTitle from "../components/SectionTitle";
 const ContactBox = styled(Box)({
   display: "flex",
   flexDirection: "column",
+  minHeight: "80vh",
 });
 
 const ContactForm = styled(Box)({
@@ -16,11 +17,11 @@ const ContactForm = styled(Box)({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  margin: "2% 2%",
+  margin: "5% 5%",
 });
 
 const StyledTextField = styled(TextField)({
-  width: "50%",
+  width: "70%",
   margin: "0% 0% 2% 0%",
 });
 
