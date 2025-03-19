@@ -9,7 +9,7 @@ import SectionTitle from "../components/SectionTitle";
 const ContactBox = styled(Box)({
   display: "flex",
   flexDirection: "column",
-  minHeight: "80vh",
+  minHeight: "70vh",
 });
 
 const ContactForm = styled(Box)({

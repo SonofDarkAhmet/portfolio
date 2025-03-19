@@ -1,4 +1,4 @@
-import { Box, Typography, styled } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import SkillWall from "../components/SkillWall";
 import SectionTitle from "../components/SectionTitle";
 

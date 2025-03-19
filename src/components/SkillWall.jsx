@@ -23,7 +23,7 @@ const SkillWallBox = styled(Box)({
 });
 
 const StyledMasonry = styled(Masonry)({
-  maxWidth: "70%",
+  maxWidth: "90%",
 });
 
 const StyledAccordion = styled(Accordion)(({ theme }) => ({
@@ -81,7 +81,7 @@ function SkillWall(props) {
 
   return (
     <SkillWallBox>
-      <StyledMasonry columns={{ xs: 1, sm: 2, md: 4 }} spacing={3}>
+      <StyledMasonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={3}>
         {updatedSkillList.length > 0 && updatedSkillListElements}
       </StyledMasonry>
     </SkillWallBox>

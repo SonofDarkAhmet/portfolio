@@ -39,8 +39,8 @@ const StyledIconButton = styled(IconButton)({
 
 const FooterTypography = styled(Typography)({
   fontWeight: "200", // Equivalent to font-light
-  textAlign: "justify",
-  letterSpacing: "-0.025em", // Tracking tighter
+  textAlign: "left",
+  letterSpacing: "-0.050em", // Tracking tighter
   color: "#D4D4D4",
 });
 

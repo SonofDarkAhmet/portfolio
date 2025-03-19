@@ -19,15 +19,6 @@ const ModalShareLink = styled(Modal)({
   alignItems: "center",
 });
 
-const ModelBox = styled(Box)({
-  position: "relative",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  backgroundColor: "transparent",
-});
-
 const TextBox = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
@@ -42,6 +33,15 @@ const TextBox = styled(Box)(({ theme }) => ({
   padding: "1% 2%",
   cursor: "pointer",
 }));
+
+const ModelBox = styled(Box)({
+  position: "relative",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: "transparent",
+});
 
 const ModalCancelIcon = styled(CancelPresentationIcon)({
   position: "absolute",
@@ -75,12 +75,10 @@ function ShareLink(props) {
 
   return (
     <>
-      <IconButton aria-label="share" onClick={handleOpen}>
-        <ShareIcon />
+      <IconButton onClick={handleOpen}>
+        <ShareIcon variant="contained" />
       </IconButton>
       <ModalShareLink
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
         open={open}
         onClose={handleClose}
         closeAfterTransition

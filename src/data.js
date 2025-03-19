@@ -7,6 +7,71 @@ export const vitaeContext = `I am a dedicated mechatronics engineer with a deep 
         latest software design principles and deliver innovative, high impact
         solutions.`;
 
+export const projects = [
+  {
+    id: 1,
+    title: "GCDC",
+    description: "Grand Cooperative Driving Challange",
+    img: "https://www.gcdc.net/wp-content/uploads/2024/10/logo_gcdc2.png",
+    headline: `The project involved designing and developing a semi-autonomous vehicle for the GCDC 2011 competition. The focus was on creating mechanical parts, developing a simulation model, and implementing a control algorithm for platooning.`,
+    content: "",
+  },
+  {
+    id: 2,
+    title: "UCOK",
+    description: "Remote controlled weapon station",
+    img: "https://defense.otokar.com.tr/OtokarSavunma/media/Otokar-Savunma/urunler/kule-sistemleri/ucok/ucok-uzaktan-komutali-stabilize-makineli-tufek-platformu.JPG?ext=.jpg",
+    headline:
+      "The project focused on developing a lightweight RCWS. Key design innovations included a new lightweight sight system, optimized balance, and improved overall functionality, resulting in a highly efficient and adaptable RCWS.",
+    content: "",
+  },
+  {
+    id: 3,
+    title: "ICE Model",
+    description: "Internal combustion engine model",
+    img: "/images/ice-1.jpg",
+    headline:
+      "The project aimed to upgrade Tümosan's mechanical engines with electronically controlled modern fuel injection systems. The project included developing a cranks angle-based diesel engine model.",
+    content: "",
+  },
+  {
+    id: 4,
+    title: "Automated Tractor",
+    description: "Automated steering system",
+    img: "/images/automated-tractor-1.jpg",
+    headline:
+      "The project aimed to develop an automatic steering system for agricultural vehicles. Key tasks included analyzing system requirements, developing algorithms for position and steering control.",
+    content: "",
+  },
+  {
+    id: 5,
+    title: "GEM Model",
+    description: "The Greenhouse Gas Emissions Model",
+    img: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Seal_of_the_United_States_Environmental_Protection_Agency.svg",
+    headline:
+      "The project involved integrating the GEM vehicle simulation model, developed by the EPA for estimating greenhouse gas emissions and fuel efficiency, with Puma/IGEM 2 software for real-time testing on a power pack test bench. Key tasks included adapting the model parameterization process, refactoring the GEM vehicle models, and simplifying the model structure for real-time application.",
+    content: "",
+  },
+  {
+    id: 6,
+    title: "AVL ISAC",
+    description: "Real time vehicle simulations on testbed",
+    img: "/images/isac-logo-1.png",
+    headline:
+      "The project focused on modernizing the ISAC vehicle simulation library by developing advanced vehicle subsystem models tailored for contemporary architectures. This included the creation of sophisticated powertrain elements, comprehensive vehicle kinematics and dynamics models, and detailed tire-road interaction models.",
+    content: "",
+  },
+  {
+    id: 7,
+    title: "AVL Route Studio",
+    description: "Road digitalization on virtual testing",
+    img: "https://experience.avl.com/en-US/sfsites/c/cms/delivery/media/MCVPESGOY3FZDX7DC4RELSSC65Z4?version=2.1&channelId=0ap6M0000008OJ8",
+    headline:
+      "The project aimed to enhance AVL Route Studio, a software solution for virtual vehicle testing, by developing advanced vehicle subsystem models, battery model identification solution and RDE route generation algorithms.",
+    content: "",
+  },
+];
+
 export const skillList = [
   {
     id: 1,
@@ -84,64 +149,5 @@ export const skillList = [
     title: "Enterprise Architect",
     content:
       "Enterprise Architect has been used to implement system engineering for the development of construction machinery, ensuring robust and efficient design processes.",
-  },
-];
-
-export const projects = [
-  {
-    id: 1,
-    title: "GCDC",
-    description: "Grand Cooperative Driving Challange",
-    img: "https://www.gcdc.net/wp-content/uploads/2024/10/logo_gcdc2.png",
-    content: "",
-  },
-  {
-    id: 2,
-    title: "UCOK",
-    description: "Remote controlled weapon station",
-    img: "https://defense.otokar.com.tr/OtokarSavunma/media/Otokar-Savunma/urunler/kule-sistemleri/ucok/ucok-uzaktan-komutali-stabilize-makineli-tufek-platformu.JPG?ext=.jpg",
-    content: "",
-  },
-  {
-    id: 3,
-    title: "ICE Model",
-    description: "Internal combustion engine model",
-    img: "/images/ice-1.jpg",
-    content: "",
-  },
-  {
-    id: 4,
-    title: "Vehicle Dynamics",
-    description: "HIL simulation model",
-    img: "https://images.pexels.com/photos/30149547/pexels-photo-30149547/free-photo-of-camarolar.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    content: "",
-  },
-  {
-    id: 5,
-    title: "Automated Tractor",
-    description: "Automated steering system",
-    img: "/images/automated-tractor-1.jpg",
-    content: "",
-  },
-  {
-    id: 6,
-    title: "GEM Model",
-    description: "The Greenhouse Gas Emissions Model",
-    img: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Seal_of_the_United_States_Environmental_Protection_Agency.svg",
-    content: "",
-  },
-  {
-    id: 7,
-    title: "AVL ISAC",
-    description: "Real time vehicle simulations on testbed",
-    img: "/images/isac-logo-1.png",
-    content: "",
-  },
-  {
-    id: 8,
-    title: "AVL Route Studio",
-    description: "Road digitalization on virtual testing",
-    img: "https://experience.avl.com/en-US/sfsites/c/cms/delivery/media/MCVPESGOY3FZDX7DC4RELSSC65Z4?version=2.1&channelId=0ap6M0000008OJ8",
-    content: "",
   },
 ];
