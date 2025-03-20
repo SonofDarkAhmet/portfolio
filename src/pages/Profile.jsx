@@ -4,7 +4,7 @@ import Vitae from "../components/Vitae";
 
 const ProfileGrid = styled(Grid)(({ theme }) => ({
   flexDirection: "row",
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     flexDirection: "column",
   },
   justifyContent: "center",
@@ -24,7 +24,6 @@ const ProfileTextStack = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     alignItems: "center",
   },
-  minWidth: "300px",
 }));
 
 const NamePlate = styled(Typography)(({ theme }) => ({
@@ -49,7 +48,7 @@ function Profile(props) {
 
   return (
     <ProfileGrid container spacing={2} ref={props.ref}>
-      <Grid size={{ xs: 12, md: 8 }}>
+      <Grid size={{ xs: 12, md: 6 }}>
         <ProfileTextStack>
           <NamePlate variant="h2">Raif Karaahmetoğlu</NamePlate>
           <JobTitle variant="h4">Software Control Developer</JobTitle>

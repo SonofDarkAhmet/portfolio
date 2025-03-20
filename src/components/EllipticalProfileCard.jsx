@@ -10,7 +10,7 @@ const ProfileBox = styled(Box)({
 
 const ProfileCard = styled(Box)(({ theme }) => ({
   position: "relative",
-  width: "clamp(120px, 100%, 250px)",
+  width: "clamp(250px, 100%, 300px)",
   aspectRatio: "3/4",
   borderRadius: "50%",
   overflow: "hidden",

@@ -23,7 +23,7 @@ const TextBox = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  width: "85%",
+  width: "100%",
   minHeight: "2rem",
   backgroundColor: "black",
   border: "0.2rem solid orange",
@@ -45,22 +45,19 @@ const ModelBox = styled(Box)({
 
 const ModalCancelIcon = styled(CancelPresentationIcon)({
   position: "absolute",
-  right: "1.5rem",
-  top: "-1.2rem",
+  right: "-25px",
+  top: "-25px",
   cursor: "pointer",
 });
 
-function ShareLink(props) {
+function ShareLink({ link }) {
+  console.log(link);
   const [open, setOpen] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handleSnackbarClose = () => setSnackbarOpen(false);
-
-  const link =
-    props.link ||
-    "https://raifkaraahmetoglu.netlify.app/sdajdkawildjaopweoawjdiawjdklzsjfopapkwdajwdijwapodkawkdisdfhdhgsopfdosk";
 
   function handleCopyLink() {
     navigator.clipboard

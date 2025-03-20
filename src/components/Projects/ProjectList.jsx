@@ -34,10 +34,27 @@ const StyledCard = styled(Card)({
   maxWidth: 345,
 });
 
+const Headline = styled(Typography)({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  maxWidth: 345,
+});
+
 function ProjectCard(props) {
+  const fullPathname = `${window.location.origin}${location.pathname}`;
+
   return (
     <StyledCard>
-      <NavLink to={`projects\\${props.id}`} style={{ textDecoration: "none" }}>
+      <NavLink
+        to={`projects/${props.id}`}
+        state={{
+          title: props.title,
+          content: props.content,
+          images: props.imgs,
+        }}
+        style={{ textDecoration: "none" }}
+      >
         <CardHeader
           title={props.title}
           subheader={props.description}
@@ -46,12 +63,12 @@ function ProjectCard(props) {
         <CardMedia
           component="img"
           height="194"
-          image={props.img}
+          image={props.imgs[0]}
           alt={props.title}
           sx={{ objectFit: "contain" }}
         />
         <CardContent>
-          <Typography
+          <Headline
             variant="body2"
             sx={{
               color: "text.secondary",
@@ -59,14 +76,14 @@ function ProjectCard(props) {
             }}
           >
             {props.headline}
-          </Typography>
+          </Headline>
         </CardContent>
       </NavLink>
       <CardActions disableSpacing>
         <IconButton>
           <FavoriteIcon />
         </IconButton>
-        <ShareLink />
+        <ShareLink link={`${fullPathname}projects/${props.id}`} />
       </CardActions>
     </StyledCard>
   );

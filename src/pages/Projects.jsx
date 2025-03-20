@@ -9,7 +9,6 @@ const ProjectBox = styled(Box)({
 });
 
 function Projects(props) {
-  console.log(props);
   return (
     <ProjectBox ref={props.ref}>
       <SectionTitle variant="h4">Projects</SectionTitle>
