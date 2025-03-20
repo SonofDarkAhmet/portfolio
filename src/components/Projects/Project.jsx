@@ -42,7 +42,7 @@ const PreformattedTypography = styled(Typography)({
   margin: "0% 2% 0% 0%",
 });
 
-function Project(props) {
+function Project() {
   const location = useLocation();
 
   function ProjectImages({ images, title }) {
