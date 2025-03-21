@@ -114,9 +114,7 @@ The GEM project was completed and delivered successfully. New methods for integr
     id: 7,
     title: "AVL Route Studio",
     description: "Road digitalization on virtual testing",
-    imgs: [
-      "https://experience.avl.com/en-US/sfsites/c/cms/delivery/media/MCVPESGOY3FZDX7DC4RELSSC65Z4?version=2.1&channelId=0ap6M0000008OJ8",
-    ],
+    imgs: ["/images/rs-1.png"],
     headline:
       "The project aimed to enhance AVL Route Studio, a software solution for virtual vehicle testing, by developing advanced vehicle subsystem models, battery model identification solution and RDE route generation algorithms.",
     content: `Route Studio is a software solution designed to transfer test activities from real-world environments to virtual test environments, reducing costs and saving development time. Within the Route Studio (RS) software tool, the lack of modern vehicle models was hindering wider use of the tools and integration of new features, especially for future features such as range estimation algorithms for battery electric vehicles.
