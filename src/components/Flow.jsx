@@ -19,7 +19,7 @@ function Flow({ refs }) {
     <FlowStack spacing={2}>
       <Profile profileImg={profilePic} ref={refs.profileSection} />
       <Divider orientation="horizontal" variant="middle" flexItem />
-      <Projects ref={refs.projectsSection} />;
+      <Projects ref={refs.projectsSection} />
       <Divider orientation="horizontal" variant="middle" flexItem />
       <Skills ref={refs.skillsSection} />
       <Divider orientation="horizontal" variant="middle" flexItem />

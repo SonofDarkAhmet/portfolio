@@ -36,7 +36,7 @@ const ContextBox = styled(Box)(({ theme }) => ({
   },
   overflowY: "auto",
   padding: "2rem",
-  margin: "2% 1%",
+  margin: "5% 1%",
   borderRadius: "1rem",
   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
 }));
@@ -80,7 +80,7 @@ function Project() {
           Return Back
         </ReturnBackTypoGraphy>
       </NavLink>
-      <ImageStack useFlexGap>
+      <ImageStack>
         <ContextBox>
           <Typography
             variant="h4"
