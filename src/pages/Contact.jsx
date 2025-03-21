@@ -64,10 +64,10 @@ function Contact(props) {
 
     try {
       await emailjs.send(
-        "service_brf6bef",
-        "template_6kcj0nl",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         template,
-        "YeNzxqOycwj6RTqvx"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
     } catch (error) {
       setError("name", { message: error.message });
