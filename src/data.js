@@ -1,3 +1,5 @@
+export const profilePic = ["/images/profile-pic.jpeg"];
+
 export const vitaeContext = `I am a dedicated mechatronics engineer with a deep commitment to the
         core pillars of mechatronics: mechanical design, control systems and
         software development. My expertise includes the design of complex
@@ -12,7 +14,7 @@ export const projects = [
     id: 1,
     title: "GCDC",
     description: "Grand Cooperative Driving Challange",
-    imgs: [
+    images: [
       "https://www.gcdc.net/wp-content/uploads/2024/10/logo_gcdc2.png",
       "https://www.okan.edu.tr/uploads/pages/mekar-grand-cooperative-driving-challenge-projesi/2.gif",
       "https://www.okan.edu.tr/uploads/pages/mekar-grand-cooperative-driving-challenge-projesi/4.gif",
@@ -27,7 +29,7 @@ Subsequently, the task included developing a simulation model for the car and a 
     id: 2,
     title: "UCOK",
     description: "Remote controlled weapon station",
-    imgs: [
+    images: [
       "https://defense.otokar.com.tr/OtokarSavunma/media/Otokar-Savunma/urunler/kule-sistemleri/ucok/ucok-uzaktan-komutali-stabilize-makineli-tufek-platformu.JPG?ext=.jpg",
       "https://armyrecognition.com/images/stories/independent/azerbaijan/exhibition/adex_2016/news/ADEX%202016%20Otokar%20presents%20new%20UCOK%20stabilized%20remote%20control%20weapon%20station_ADEX_2016_002.jpg",
       "https://ic.pics.livejournal.com/bmpd/38024980/2089179/2089179_original.jpg",
@@ -62,7 +64,7 @@ Subsequently, the task included developing a simulation model for the car and a 
     id: 3,
     title: "ICE Model",
     description: "Internal combustion engine model",
-    imgs: ["/images/ice-1.jpg", "/images/ice-2.jpg"],
+    images: ["/images/ice-1.jpg", "/images/ice-2.jpg"],
     headline:
       "The project aimed to upgrade Tümosan's mechanical engines with electronically controlled modern fuel injection systems. The project included developing a cranks angle-based diesel engine model.",
     content: `Responsibility was taken for the zero-dimensional modeling of the internal combustion engine. In this process, a crank angle-based diesel engine model was developed. The model's parameters were identified and validated with the industry-standard GT-SUITE model to assess performance.
@@ -73,7 +75,7 @@ The work in developing and validating the crank angle-based diesel engine model 
     id: 4,
     title: "Automated Tractor",
     description: "Automated steering system",
-    imgs: ["/images/automated-tractor-1.jpg"],
+    images: ["/images/automated-tractor-1.jpg"],
     headline:
       "The project aimed to develop an automatic steering system for agricultural vehicles. Key tasks included analyzing system requirements, developing algorithms for position and steering control.",
     content: `To meet the system requirements, a comprehensive analysis was carried out to identify the necessary sensors, actuators, and software components. The task began with the development of an algorithm to convert latitude-longitude position information into east-north position information. This algorithm generates the position of the vehicle on a Cartesian plane. Geometric relationships were then used to calculate the vehicle position error and heading error. These two errors were used in a subsequent control model to generate the desired steering angle of the vehicle at the front tires. Finally, at the lowest level of the control algorithm, a low-level controller was developed to control the hydraulic proportional valves used to steer the vehicle's tires.`,
@@ -82,7 +84,7 @@ The work in developing and validating the crank angle-based diesel engine model 
     id: 5,
     title: "GEM Model",
     description: "The Greenhouse Gas Emissions Model",
-    imgs: [
+    images: [
       "/images/gem-2.png",
       "/images/gem-1.png",
       "https://upload.wikimedia.org/wikipedia/commons/6/6f/Seal_of_the_United_States_Environmental_Protection_Agency.svg",
@@ -104,7 +106,7 @@ The GEM project was completed and delivered successfully. New methods for integr
     id: 6,
     title: "AVL ISAC",
     description: "Real time vehicle simulations on testbed",
-    imgs: ["/images/isac-logo-1.png"],
+    images: ["/images/isac-logo-1.png"],
     headline:
       "The project focused on modernizing the ISAC vehicle simulation library by developing advanced vehicle subsystem models tailored for contemporary architectures. This included the creation of sophisticated powertrain elements, comprehensive vehicle kinematics and dynamics models, and detailed tire-road interaction models.",
     content:
@@ -114,7 +116,7 @@ The GEM project was completed and delivered successfully. New methods for integr
     id: 7,
     title: "AVL Route Studio",
     description: "Road digitalization on virtual testing",
-    imgs: ["/images/rs-1.png"],
+    images: ["/images/rs-1.png"],
     headline:
       "The project aimed to enhance AVL Route Studio, a software solution for virtual vehicle testing, by developing advanced vehicle subsystem models, battery model identification solution and RDE route generation algorithms.",
     content: `Route Studio is a software solution designed to transfer test activities from real-world environments to virtual test environments, reducing costs and saving development time. Within the Route Studio (RS) software tool, the lack of modern vehicle models was hindering wider use of the tools and integration of new features, especially for future features such as range estimation algorithms for battery electric vehicles.
@@ -199,7 +201,7 @@ export const skillList = [
   },
   {
     id: 11,
-    img: null,
+    img: "/images/ea-logo.png",
     title: "Enterprise Architect",
     content:
       "Enterprise Architect has been used to implement system engineering for the development of construction machinery, ensuring robust and efficient design processes.",

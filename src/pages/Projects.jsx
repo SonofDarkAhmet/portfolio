@@ -12,7 +12,7 @@ function Projects(props) {
   return (
     <ProjectBox ref={props.ref}>
       <SectionTitle variant="h4">Projects</SectionTitle>
-      <Outlet context={{ ref: props.ref }} />
+      <Outlet context={props.ref} />
     </ProjectBox>
   );
 }

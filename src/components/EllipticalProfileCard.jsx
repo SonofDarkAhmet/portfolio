@@ -43,6 +43,7 @@ const ProfileCardContent = styled(CardContent)({
 
 function EllipticalProfileCard(props) {
   const profileImg = props.profileImg;
+  console.log(profileImg);
 
   return (
     <ProfileBox>

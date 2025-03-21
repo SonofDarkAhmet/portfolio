@@ -1,4 +1,5 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { projects } from "../../data";
+import { NavLink, useLoaderData } from "react-router-dom";
 import {
   Box,
   Stack,
@@ -47,7 +48,7 @@ const PreformattedTypography = styled(Typography)({
 });
 
 function Project() {
-  const location = useLocation();
+  const data = useLoaderData();
 
   function ProjectImages({ images, title }) {
     return (
@@ -85,18 +86,15 @@ function Project() {
             variant="h4"
             style={{ display: "inline-block", marginBottom: "2rem" }}
           >
-            {location.state.title}
+            {data.title}
             <Divider orientation="horizontal" variant="fullWidth" />
           </Typography>
           <PreformattedTypography variant="body1" component="p">
-            {location.state.content}
+            {data.content}
           </PreformattedTypography>
         </ContextBox>
         <ContextBox>
-          <ProjectImages
-            images={location.state.images}
-            title={location.state.title}
-          />
+          <ProjectImages images={data.images} title={data.title} />
         </ContextBox>
       </ImageStack>
     </Box>
@@ -104,3 +102,7 @@ function Project() {
 }
 
 export default Project;
+
+export function loader({ params }) {
+  return projects[params.id - 1];
+}

@@ -1,6 +1,6 @@
 import { projects } from "../../data";
 import { useState, useEffect } from "react";
-import { NavLink, useLocation, useOutletContext } from "react-router-dom";
+import { NavLink, useOutletContext } from "react-router-dom";
 import {
   styled,
   Card,
@@ -43,7 +43,6 @@ const Headline = styled(Typography)({
 });
 
 function ProjectCard({ ref, item }) {
-  const location = useLocation();
   const fullPathname = `${window.location.origin}${location.pathname}`;
 
   useEffect(() => {
@@ -58,18 +57,13 @@ function ProjectCard({ ref, item }) {
     <StyledCard>
       <NavLink
         to={`projects/${item.id}`}
-        state={{
-          title: item.title,
-          content: item.content,
-          images: item.imgs,
-        }}
         style={{ textDecoration: "none", color: "#24262e" }}
       >
         <CardHeader title={item.title} subheader={item.description} />
         <CardMedia
           component="img"
           height="194"
-          image={item.imgs[0]}
+          image={item.images[0]}
           alt={item.title}
           sx={{ objectFit: "contain" }}
         />
@@ -95,7 +89,7 @@ function ProjectCard({ ref, item }) {
 }
 
 function ProjectList() {
-  const { ref } = useOutletContext();
+  const context = useOutletContext();
 
   return (
     <ProjectGrid container spacing={{ xs: 4, sm: 6 }}>
@@ -103,7 +97,7 @@ function ProjectList() {
         projects.map((item) => {
           return (
             <ItemGrid key={item.id}>
-              {<ProjectCard ref={ref} item={item} />}
+              {<ProjectCard ref={context} item={item} />}
             </ItemGrid>
           );
         })}
