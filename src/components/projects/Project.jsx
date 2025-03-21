@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
   Box,
@@ -15,6 +14,7 @@ const ReturnBackTypoGraphy = styled(Typography)({
   display: "flex",
   alignItems: "center",
   marginTop: "1%",
+  color: "#24262e",
 });
 
 const ImageStack = styled(Stack)(({ theme }) => ({

@@ -63,13 +63,9 @@ function ProjectCard({ ref, item }) {
           content: item.content,
           images: item.imgs,
         }}
-        style={{ textDecoration: "none" }}
+        style={{ textDecoration: "none", color: "#24262e" }}
       >
-        <CardHeader
-          title={item.title}
-          subheader={item.description}
-          color="text.primary"
-        />
+        <CardHeader title={item.title} subheader={item.description} />
         <CardMedia
           component="img"
           height="194"
@@ -81,7 +77,6 @@ function ProjectCard({ ref, item }) {
           <Headline
             variant="body2"
             sx={{
-              color: "text.secondary",
               textAlign: "justify",
             }}
           >
