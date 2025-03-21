@@ -1,5 +1,6 @@
 import { projects } from "../../data";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, useLocation, useOutletContext } from "react-router-dom";
 import {
   styled,
   Card,
@@ -41,30 +42,39 @@ const Headline = styled(Typography)({
   maxWidth: 345,
 });
 
-function ProjectCard(props) {
+function ProjectCard({ ref, item }) {
+  const location = useLocation();
   const fullPathname = `${window.location.origin}${location.pathname}`;
+
+  useEffect(() => {
+    return () => {
+      if (ref) {
+        ref.current.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+  }, []);
 
   return (
     <StyledCard>
       <NavLink
-        to={`projects/${props.id}`}
+        to={`projects/${item.id}`}
         state={{
-          title: props.title,
-          content: props.content,
-          images: props.imgs,
+          title: item.title,
+          content: item.content,
+          images: item.imgs,
         }}
         style={{ textDecoration: "none" }}
       >
         <CardHeader
-          title={props.title}
-          subheader={props.description}
+          title={item.title}
+          subheader={item.description}
           color="text.primary"
         />
         <CardMedia
           component="img"
           height="194"
-          image={props.imgs[0]}
-          alt={props.title}
+          image={item.imgs[0]}
+          alt={item.title}
           sx={{ objectFit: "contain" }}
         />
         <CardContent>
@@ -75,7 +85,7 @@ function ProjectCard(props) {
               textAlign: "justify",
             }}
           >
-            {props.headline}
+            {item.headline}
           </Headline>
         </CardContent>
       </NavLink>
@@ -83,18 +93,24 @@ function ProjectCard(props) {
         <IconButton>
           <FavoriteIcon />
         </IconButton>
-        <ShareLink link={`${fullPathname}projects/${props.id}`} />
+        <ShareLink link={`${fullPathname}projects/${item.id}`} />
       </CardActions>
     </StyledCard>
   );
 }
 
 function ProjectList() {
+  const { ref } = useOutletContext();
+
   return (
     <ProjectGrid container spacing={{ xs: 4, sm: 6 }}>
       {projects &&
         projects.map((item) => {
-          return <ItemGrid key={item.id}>{ProjectCard(item)}</ItemGrid>;
+          return (
+            <ItemGrid key={item.id}>
+              {<ProjectCard ref={ref} item={item} />}
+            </ItemGrid>
+          );
         })}
     </ProjectGrid>
   );
