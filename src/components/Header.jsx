@@ -13,7 +13,8 @@ const StyledAppbar = styled(AppBar)({
   position: "fixed",
   top: "0%",
   left: "50%",
-  width: "0px",
+  transform: "translateX(-50%)",
+  width: "auto",
 });
 
 const StyledToolbar = styled(Toolbar)({
