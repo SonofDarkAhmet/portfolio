@@ -66,7 +66,7 @@ The engine is fast and accurately represented by the model built and tuned. This
     id: 4,
     title: "Automated Tractor",
     description: "Automated steering system",
-    images: ["/images/automated-tractor-1.jpg"],
+    images: ["/images/automated-tractor-1.png"],
     headline:
       "The project aimed to develop an automatic steering system for agricultural vehicles. Key tasks included analyzing system requirements, developing algorithms for position and steering control run on embedded controller fed by a GPS sensor.",
     content: `Automated tractors can significantly boost efficiency through continuous operation, enable precision farming to minimize crop waste, reduce operational costs, and ensure safe and convenient farming practices.

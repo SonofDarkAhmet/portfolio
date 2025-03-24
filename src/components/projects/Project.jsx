@@ -48,9 +48,9 @@ const PreformattedTypography = styled(Typography)({
 });
 
 const ProjectImageListItem = styled(ImageListItem)({
-  backGround:
-    "linear-gradient(90deg, rgba(240,242,245,1) 0%, rgba(212,212,212,1) 50%, rgba(255,255,255,1) 100%)",
+  backgroundColor: "rgb(240, 242, 245)",
   borderRadius: "1rem",
+  marginBottom: "2rem",
 });
 
 function Project() {
