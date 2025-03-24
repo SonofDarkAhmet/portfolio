@@ -1,5 +1,5 @@
 import { projects } from "../../data";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { NavLink, useOutletContext } from "react-router-dom";
 import {
   styled,
@@ -8,7 +8,6 @@ import {
   CardMedia,
   CardContent,
   CardActions,
-  IconButton,
   Typography,
   Grid2 as Grid,
 } from "@mui/material";
@@ -79,9 +78,6 @@ function ProjectCard({ ref, item }) {
         </CardContent>
       </NavLink>
       <CardActions disableSpacing>
-        <IconButton>
-          <FavoriteIcon />
-        </IconButton>
         <ShareLink link={`${fullPathname}projects/${item.id}`} />
       </CardActions>
     </StyledCard>
