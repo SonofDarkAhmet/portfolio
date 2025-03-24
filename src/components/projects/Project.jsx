@@ -47,14 +47,20 @@ const PreformattedTypography = styled(Typography)({
   margin: "0% 2% 0% 0%",
 });
 
+const ProjectImageListItem = styled(ImageListItem)({
+  backGround:
+    "linear-gradient(90deg, rgba(240,242,245,1) 0%, rgba(212,212,212,1) 50%, rgba(255,255,255,1) 100%)",
+  borderRadius: "1rem",
+});
+
 function Project() {
   const data = useLoaderData();
 
   function ProjectImages({ images, title }) {
     return (
-      <ImageList cols={1}>
+      <ImageList cols={1} rowHeight={426} sx={{ overflow: "unset" }}>
         {images.map((link, idx) => (
-          <ImageListItem key={idx}>
+          <ProjectImageListItem key={idx}>
             <img
               srcSet={`${link}?w=426&h=426&fit=crop&auto=format&dpr=1 1x`}
               src={`${link}?w=426&h=426&fit=crop&auto=format`}
@@ -66,7 +72,7 @@ function Project() {
                 borderRadius: "1rem",
               }}
             />
-          </ImageListItem>
+          </ProjectImageListItem>
         ))}
       </ImageList>
     );

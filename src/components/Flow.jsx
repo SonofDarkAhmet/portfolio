@@ -18,11 +18,26 @@ function Flow({ refs }) {
   return (
     <FlowStack spacing={2}>
       <Profile profileImg={profilePic} ref={refs.profileSection} />
-      <Divider orientation="horizontal" variant="middle" flexItem />
+      <Divider
+        orientation="horizontal"
+        variant="middle"
+        flexItem
+        aria-hidden="true"
+      />
       <Projects ref={refs.projectsSection} />
-      <Divider orientation="horizontal" variant="middle" flexItem />
+      <Divider
+        orientation="horizontal"
+        variant="middle"
+        flexItem
+        aria-hidden="true"
+      />
       <Skills ref={refs.skillsSection} />
-      <Divider orientation="horizontal" variant="middle" flexItem />
+      <Divider
+        orientation="horizontal"
+        variant="middle"
+        flexItem
+        aria-hidden="true"
+      />
       <Contact ref={refs.contactSection} />
       <Footer />
     </FlowStack>
