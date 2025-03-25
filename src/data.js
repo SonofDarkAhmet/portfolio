@@ -81,7 +81,6 @@ The prototype system was tested on an asphalt road, yielding accurate results. T
     description: "The Greenhouse Gas Emissions Model",
     images: [
       "/images/gem-2.png",
-      "/images/gem-1.png",
       "https://upload.wikimedia.org/wikipedia/commons/6/6f/Seal_of_the_United_States_Environmental_Protection_Agency.svg",
     ],
     headline:
