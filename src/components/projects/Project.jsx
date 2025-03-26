@@ -58,7 +58,7 @@ function Project() {
 
   function ProjectImages({ images, title }) {
     return (
-      <ImageList cols={1} rowHeight={426} sx={{ overflow: "unset" }}>
+      <ImageList cols={1} sx={{ overflow: "unset" }}>
         {images.map((link, idx) => (
           <ProjectImageListItem key={idx}>
             <img
@@ -67,8 +67,7 @@ function Project() {
               alt={`${title}-${idx}`}
               loading="lazy"
               style={{
-                objectFit: "contain",
-                marginTop: "1rem",
+                objectFit: "fill",
                 borderRadius: "1rem",
               }}
             />
