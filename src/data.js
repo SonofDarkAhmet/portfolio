@@ -35,7 +35,7 @@ export const projects = [
     title: "UCOK",
     description: "Remote controlled weapon station",
     images: [
-      "https://defense.otokar.com.tr/OtokarSavunma/media/Otokar-Savunma/urunler/kule-sistemleri/ucok/ucok-uzaktan-komutali-stabilize-makineli-tufek-platformu.JPG?ext=.jpg",
+      "/images/ucok-1.png",
       "https://armyrecognition.com/images/stories/independent/azerbaijan/exhibition/adex_2016/news/ADEX%202016%20Otokar%20presents%20new%20UCOK%20stabilized%20remote%20control%20weapon%20station_ADEX_2016_002.jpg",
       "https://ic.pics.livejournal.com/bmpd/38024980/2089179/2089179_original.jpg",
     ],
@@ -80,8 +80,8 @@ The prototype system was tested on an asphalt road, yielding accurate results. T
     title: "GEM Model",
     description: "The Greenhouse Gas Emissions Model",
     images: [
-      "/images/gem-2.png",
       "https://upload.wikimedia.org/wikipedia/commons/6/6f/Seal_of_the_United_States_Environmental_Protection_Agency.svg",
+      "/images/gem-2.png",
     ],
     headline:
       "The project involved integrating the GEM vehicle simulation model, developed by the EPA for estimating greenhouse gas emissions and fuel efficiency, with Puma/IGEM2 software for real-time testing on a power pack test bench. Key tasks included adapting the model parameterization process, refactoring the GEM vehicle models, and simplifying the model structure for real-time application.",
@@ -100,7 +100,7 @@ The GEM project was completed and delivered successfully. New methods for integr
     id: 6,
     title: "AVL ISAC",
     description: "Real time vehicle simulations on testbed",
-    images: ["/images/isac-logo-1.png"],
+    images: ["/images/isac-1.png"],
     headline:
       "The project focused on modernizing the ISAC vehicle simulation library by developing advanced vehicle subsystem models tailored for contemporary architectures. This included the creation of sophisticated powertrain elements, comprehensive vehicle kinematics and dynamics models, and detailed tire-road interaction models.",
     content:
@@ -110,7 +110,7 @@ The GEM project was completed and delivered successfully. New methods for integr
     id: 7,
     title: "AVL Route Studio",
     description: "Road digitalization on virtual testing",
-    images: ["/images/rs-1.png"],
+    images: ["/images/route-studio-1.png"],
     headline:
       "The project aimed to enhance AVL Route Studio, a software solution for virtual vehicle testing, by developing advanced vehicle subsystem models, battery model identification solution and RDE route generation algorithms.",
     content: `Route Studio is a software solution designed to transfer test activities from real-world environments to virtual test environments, reducing costs and saving development time. Within the Route Studio (RS) software tool, the lack of modern vehicle models was hindering wider use of the tools and integration of new features, especially for future features such as range estimation algorithms for battery electric vehicles.
