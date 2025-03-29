@@ -11,6 +11,10 @@ import {
 
 const StyledAppbar = styled(AppBar)({
   position: "fixed",
+  top: "0%",
+  left: "50%",
+  transform: "translateX(-50%)",
+  width: "auto",
 });
 
 const StyledToolbar = styled(Toolbar)({
@@ -50,20 +54,20 @@ function Header({ refs }) {
     }
   }, []);
 
-  function handleHomeSubmit() {
-    refs.profileSection.current.scrollIntoView({ behavior: "smooth" });
-  }
+  function handleSubmit(e) {
+    const offset = boxSize.height;
+    const ref = refs[e.currentTarget.name];
 
-  function handleProjectsSubmit() {
-    refs.projectsSection.current.scrollIntoView({ behavior: "smooth" });
-  }
+    if (ref) {
+      const elementPosition =
+        ref.current.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
 
-  function handleSkillsSubmit() {
-    refs.skillsSection.current.scrollIntoView({ behavior: "smooth" });
-  }
-
-  function handleContactSubmit() {
-    refs.contactSection.current.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
   }
 
   return (
@@ -76,16 +80,32 @@ function Header({ refs }) {
       >
         <StyledToolbar>
           <StyledStack>
-            <StyledButton variant="outlined" onClick={handleHomeSubmit}>
+            <StyledButton
+              name="profileSection"
+              variant="outlined"
+              onClick={handleSubmit}
+            >
               <ButtonTypography>Home</ButtonTypography>
             </StyledButton>
-            <StyledButton variant="outlined" onClick={handleProjectsSubmit}>
+            <StyledButton
+              name="projectsSection"
+              variant="outlined"
+              onClick={handleSubmit}
+            >
               <ButtonTypography>Projects</ButtonTypography>
             </StyledButton>
-            <StyledButton variant="outlined" onClick={handleSkillsSubmit}>
+            <StyledButton
+              name="skillsSection"
+              variant="outlined"
+              onClick={handleSubmit}
+            >
               <ButtonTypography>Skills</ButtonTypography>
             </StyledButton>
-            <StyledButton variant="outlined" onClick={handleContactSubmit}>
+            <StyledButton
+              name="contactSection"
+              variant="outlined"
+              onClick={handleSubmit}
+            >
               <ButtonTypography>Contact</ButtonTypography>
             </StyledButton>
           </StyledStack>

@@ -51,7 +51,6 @@ const ModalCancelIcon = styled(CancelPresentationIcon)({
 });
 
 function ShareLink({ link }) {
-  console.log(link);
   const [open, setOpen] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
 

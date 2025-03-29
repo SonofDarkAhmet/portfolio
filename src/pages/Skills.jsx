@@ -9,12 +9,10 @@ const SkillWallBox = styled(Box)({
 });
 
 function Skills(props) {
-  const eaLogoImg = props.eaLogoImg;
-
   return (
     <SkillWallBox ref={props.ref}>
       <SectionTitle variant="h4">Skills</SectionTitle>
-      <SkillWall eaLogoImg={eaLogoImg} />
+      <SkillWall />
     </SkillWallBox>
   );
 }

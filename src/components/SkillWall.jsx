@@ -49,17 +49,8 @@ const CardHeaderBox = styled(Box)({
   alignItems: "center",
 });
 
-function SkillWall(props) {
-  const eaLogoImg = props.eaLogoImg;
-
-  // Update the skillList with eaLogoImg
-  const updatedSkillList = skillList.map((skill) =>
-    skill.title === "Enterprise Architect"
-      ? { ...skill, img: eaLogoImg }
-      : skill
-  );
-
-  const updatedSkillListElements = updatedSkillList.map((elements) => (
+function SkillWall() {
+  const skillListElements = skillList.map((elements) => (
     <Paper key={elements.id}>
       <StyledAccordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -82,7 +73,7 @@ function SkillWall(props) {
   return (
     <SkillWallBox>
       <StyledMasonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={3}>
-        {updatedSkillList.length > 0 && updatedSkillListElements}
+        {skillList.length > 0 && skillListElements}
       </StyledMasonry>
     </SkillWallBox>
   );

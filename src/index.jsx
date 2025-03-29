@@ -3,6 +3,10 @@ import { createRoot } from "react-dom/client";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import App from "./App";
 
+emailjs.init({
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+});
+
 let theme = createTheme({
   palette: {
     background: { default: "#000" },

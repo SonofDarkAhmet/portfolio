@@ -1,3 +1,5 @@
+export const profilePic = ["/images/profile-pic.jpeg"];
+
 export const vitaeContext = `I am a dedicated mechatronics engineer with a deep commitment to the
         core pillars of mechatronics: mechanical design, control systems and
         software development. My expertise includes the design of complex
@@ -12,83 +14,77 @@ export const projects = [
     id: 1,
     title: "GCDC",
     description: "Grand Cooperative Driving Challange",
-    imgs: [
+    images: [
       "https://www.gcdc.net/wp-content/uploads/2024/10/logo_gcdc2.png",
       "https://www.okan.edu.tr/uploads/pages/mekar-grand-cooperative-driving-challenge-projesi/2.gif",
-      "https://www.okan.edu.tr/uploads/pages/mekar-grand-cooperative-driving-challenge-projesi/4.gif",
-      "https://www.okan.edu.tr/uploads/pages/mekar-grand-cooperative-driving-challenge-projesi/5.gif",
+      "/images/gcdc-2.png",
+      "/images/gcdc-3.png",
     ],
     headline: `The project involved designing and developing a semi-autonomous vehicle for the GCDC 2011 competition. The focus was on creating mechanical parts, developing a simulation model, and implementing a control algorithm for platooning.`,
-    content: `The task involved designing and manufacturing mechanical parts, such as a brake system actuator and fixtures for mounting devices in the vehicle. Mechanical system parts were designed using SolidWorks. Since interference with the car was not permitted, support points were identified to mount the braking system, fixtures for sensors, hardware, and PCs on the vehicle.
+    content: `The Grand Cooperative Driving Challenge (GCDC) is a prestigious European competition that showcases the capabilities of autonomous vehicles in cooperative driving scenarios. The challenge aims to demonstrate the feasibility of multiple autonomous vehicles working together via wireless communication on public roads. This competition not only highlights advancements in autonomous driving technology but also emphasizes the importance of vehicle-to-vehicle communication for enhancing road safety and traffic efficiency.
 
-Subsequently, the task included developing a simulation model for the car and a longitudinal control algorithm for platooning. A bicycle model along with longitudinal dynamics was developed. LuT-based engine and brake models were added. An LQR-based control algorithm was developed to control the longitudinal motion of the vehicle.`,
+    In the competition, the teams used a self-developed Co-operative Adaptive Cruise Control (CACC) with vehicle-to-vehicle communication. The vehicles in the competition followed each other autonomously in a convoy, using information received from the vehicles ahead and the lead vehicle via inter-vehicle communication modems. During the autonomous chase, the vehicles automatically accelerated and braked without driver intervention. We stopped automatically at red lights and started automatically at green lights by communicating with roadside modems providing traffic light and speed limit information. We automatically obeyed the various speed limits on the road. During the competition, a total of 20 race laps were completed on the 6km track on the A270 motorway, with a speed limit of 100km/h.
+    
+    The task involved designing and manufacturing mechanical parts, such as a brake system actuator and fixtures for mounting devices in the vehicle. The vehicle was tested in OTAM laboratories to obtain engine and brake maps for controller design. A vehicle dynamics model and longitudinal controller for regulating throttle and brake efforts were established. An LQR-based control algorithm was developed to control the longitudinal motion of the vehicle, with the main goal of maintaining the safest possible distance between preceding vehicles.
+    
+    Team Mekar finished 7th overall out of 11 teams. The control algorithm we used was very successful in following the previously unknown and very challenging speed profile of the lead car and was highly praised. We finished 5th out of 11 teams in following the speed profile of the lead car. 
+`,
   },
   {
     id: 2,
     title: "UCOK",
     description: "Remote controlled weapon station",
-    imgs: [
-      "https://defense.otokar.com.tr/OtokarSavunma/media/Otokar-Savunma/urunler/kule-sistemleri/ucok/ucok-uzaktan-komutali-stabilize-makineli-tufek-platformu.JPG?ext=.jpg",
+    images: [
+      "/images/ucok-1.png",
       "https://armyrecognition.com/images/stories/independent/azerbaijan/exhibition/adex_2016/news/ADEX%202016%20Otokar%20presents%20new%20UCOK%20stabilized%20remote%20control%20weapon%20station_ADEX_2016_002.jpg",
       "https://ic.pics.livejournal.com/bmpd/38024980/2089179/2089179_original.jpg",
     ],
     headline:
       "The project focused on developing a lightweight RCWS. Key design innovations included a new lightweight sight system, optimized balance, and improved overall functionality, resulting in a highly efficient and adaptable RCWS.",
-    content:
-      "The expertise was mainly in heavy gun systems above 12.7mm caliber, and the challenge was to create a new lightweight system with specific requirements such as an independent sight \
-    system at the front edge, increased elevation range, doubled ammunition capacity, recoil \
-    system on the elevation axis, and compatibility with three different purpose weapons on the \
-    same mount. The heavy sight system box and their drive units were the only available \
-    components.\n\nThe first task involved conducting a comprehensive benchmarking survey of \
-    competing systems. This survey helped to identify key design criteria and their impact on the \
-    systems. It became clear that precise design harmony was essential for success. However, the \
-    heavy sighting system resulted in a cascading design disaster. Although the proposal to optimize\
-    the heavy sighting system was initially rejected by management, an opportunity to innovate was \
-    found.\n\nA new, lightweight, compact, and easy-to-calibrate sight system was developed to overcome \
-    several challenges. This design significantly reduced unbalance, system size, and weight while increasing \
-    the range of the elevation axis. It was ensured that this new sight system was interchangeable with \
-    the heavy gun systems, a critical decision that solved several interrelated problems. By making the \
-    system narrower, the heavy ammunition box was strategically positioned closer to the azimuth axis, \
-    reducing centrifugal force. In addition, the reduced size of the sight system allowed the elevation \
-    assembly to be realigned, reducing the center of gravity misalignment with the elevation axis. \
-    Embedding the motor control units in the forks of the system provided a secure and invisible location \
-    for mission-critical parts.\n\nThese critical design decisions led to a breakthrough that solved several of the project's challenges. \
-    The new sight system not only met the demanding requirements of the lightweight RCWS but also provided \
-    interchangeability with the existing heavy gun systems. This solution optimized balance, reduced system \
-    size, and significantly improved overall functionality. The result was a highly efficient and adaptable \
-    lightweight RCWS that met the objectives.",
+    content: `The expertise was primarily in heavy gun systems above 12.7mm caliber. The challenge was to create a new lightweight system with specific requirements, including an independent sight system at the front edge, increased elevation range, doubled ammunition capacity, a recoil system on the elevation axis, and compatibility with three different purpose weapons on the same mount. The heavy sight system box and their drive units were the only available components.
+
+The first task involved conducting a comprehensive benchmarking survey of competing systems. This survey helped identify key design criteria and their impact on the systems. It became clear that precise design harmony was essential for success. However, the heavy sighting system resulted in a cascading design disaster. Although the proposal to optimize the heavy sighting system was initially rejected by management, an opportunity to innovate was found.
+
+A new, lightweight, compact, and easy-to-calibrate sight system was developed to overcome several challenges. This design significantly reduced unbalance, system size, and weight while increasing the range of the elevation axis. It was ensured that this new sight system was interchangeable with the heavy gun systems, a critical decision that solved several interrelated problems. By making the system narrower, the heavy ammunition box was strategically positioned closer to the azimuth axis, reducing centrifugal force. Additionally, the reduced size of the sight system allowed the elevation assembly to be realigned, reducing the center of gravity misalignment with the elevation axis. Embedding the motor control units in the forks of the system provided a secure and invisible location for mission-critical parts.
+
+These critical design decisions led to a breakthrough that solved several of the project's challenges. The new sight system not only met the demanding requirements of the lightweight RCWS but also provided interchangeability with the existing heavy gun systems. This solution optimized balance, reduced system size, and significantly improved overall functionality. The result was a highly efficient and adaptable lightweight RCWS that met the objectives.`,
   },
   {
     id: 3,
     title: "ICE Model",
     description: "Internal combustion engine model",
-    imgs: ["/images/ice-1.jpg", "/images/ice-2.jpg"],
+    images: ["/images/ice-1.jpg", "/images/ice-2.jpg"],
     headline:
-      "The project aimed to upgrade Tümosan's mechanical engines with electronically controlled modern fuel injection systems. The project included developing a cranks angle-based diesel engine model.",
-    content: `Responsibility was taken for the zero-dimensional modeling of the internal combustion engine. In this process, a crank angle-based diesel engine model was developed. The model's parameters were identified and validated with the industry-standard GT-SUITE model to assess performance.
+      "The project aimed to upgrade mechanical engines with electronically controlled modern fuel injection systems. The project included developing a cranks angle-based diesel engine model.",
+    content: `The internal combustion engine model was created to develop control algorithms. This simulation model needs to be both accurate and fast to meet performance and real-time calculation limits on HIL systems. Therefore, a zero-dimensional modeling technique was chosen to ensure a representative and quick simulation model. In this model, engine operational states can be determined at each sample time or crank angle used as the sampling rate.
 
-The work in developing and validating the crank angle-based diesel engine model ensured precise system development for diesel electronic control units.`,
+The model includes various equations: kinematics to calculate positions of slider crank mechanisms, fluid dynamics for air flows related to the cylinder, turbocharger, and intercooler components, and thermodynamics for in-cylinder calculations, especially for pressure and temperature states due to combustion. Building such a diverse model requires a solid foundation in mechanical engineering principles like fluid dynamics, thermodynamics, mechanism design, and even chemistry. Basic and detailed combustion models were developed, such as the Wiebe and Constien combustion models. The Constien model was highly accurate for mimicking the diesel combustion process, especially for multiple injection strategies. Critical states like in-cylinder pressure and temperature were captured with high precision while still providing real-time capabilities. The parameter identification process was done using different algorithms, such as genetic algorithms, simulated annealing, or simple gradient-based algorithms for linear-like systems.
+
+The engine is fast and accurately represented by the model built and tuned. This model showcases the detailed engineering work involved in its creation. It combines various mechanical engineering principles and advanced algorithms to create a robust and versatile tool. As a result, this engine model helps in developing advanced control algorithms, improving engine performance and efficiency. The process of building and refining this model highlights the importance of interdisciplinary collaboration and the pursuit of excellence in engineering.`,
   },
   {
     id: 4,
     title: "Automated Tractor",
     description: "Automated steering system",
-    imgs: ["/images/automated-tractor-1.jpg"],
+    images: ["/images/automated-tractor-1.png"],
     headline:
-      "The project aimed to develop an automatic steering system for agricultural vehicles. Key tasks included analyzing system requirements, developing algorithms for position and steering control.",
-    content: `To meet the system requirements, a comprehensive analysis was carried out to identify the necessary sensors, actuators, and software components. The task began with the development of an algorithm to convert latitude-longitude position information into east-north position information. This algorithm generates the position of the vehicle on a Cartesian plane. Geometric relationships were then used to calculate the vehicle position error and heading error. These two errors were used in a subsequent control model to generate the desired steering angle of the vehicle at the front tires. Finally, at the lowest level of the control algorithm, a low-level controller was developed to control the hydraulic proportional valves used to steer the vehicle's tires.`,
+      "The project aimed to develop an automatic steering system for agricultural vehicles. Key tasks included analyzing system requirements, developing algorithms for position and steering control run on embedded controller fed by a GPS sensor.",
+    content: `Automated tractors can significantly boost efficiency through continuous operation, enable precision farming to minimize crop waste, reduce operational costs, and ensure safe and convenient farming practices.
+
+To develop this system, comprehensive system analysis was first conducted to determine the requirements. Subsequently, GPS localization, trajectory construction, and path-following algorithms were developed. The GPS localization algorithm converts latitude-longitude data into easting and northing positions, considering the current position's datum. Trajectories are provided as waypoints and processed by the trajectory construction algorithm to create the route and headings for the vehicle to follow. The path-following algorithm then regulates the vehicle's position and heading, ensuring it adheres to the reference positions and headings by manipulating the steering valves.
+
+The prototype system was tested on an asphalt road, yielding accurate results. The successful implementation of these algorithms demonstrates the potential for automated tractors to revolutionize modern farming. By integrating advanced technologies, farmers can achieve greater precision in their operations, leading to higher crop yields and more sustainable farming practices. Additionally, the ability to remotely monitor and control these tractors enhances operational flexibility and reduces the physical strain on farmers.`,
   },
   {
     id: 5,
     title: "GEM Model",
     description: "The Greenhouse Gas Emissions Model",
-    imgs: [
-      "/images/gem-2.png",
-      "/images/gem-1.png",
+    images: [
       "https://upload.wikimedia.org/wikipedia/commons/6/6f/Seal_of_the_United_States_Environmental_Protection_Agency.svg",
+      "/images/gem-2.png",
     ],
     headline:
-      "The project involved integrating the GEM vehicle simulation model, developed by the EPA for estimating greenhouse gas emissions and fuel efficiency, with Puma/IGEM 2 software for real-time testing on a power pack test bench. Key tasks included adapting the model parameterization process, refactoring the GEM vehicle models, and simplifying the model structure for real-time application.",
+      "The project involved integrating the GEM vehicle simulation model, developed by the EPA for estimating greenhouse gas emissions and fuel efficiency, with Puma/IGEM2 software for real-time testing on a power pack test bench. Key tasks included adapting the model parameterization process, refactoring the GEM vehicle models, and simplifying the model structure for real-time application.",
     content: `The GEM model is a vehicle simulation model used for estimating greenhouse gas emissions and fuel efficiency performance of specific aspects of heavy-duty vehicles. The GEM model, developed by the EPA in the USA, was to be integrated with Puma/IGEM 2 software to run on a power pack test bench in real time. GEM was intended to represent the real vehicle in the test environment. Initially, GEM was developed for offline simulation only, with no real-time application of the model.
 
 The first task involved adapting the model parameterization process to the PUMA/IGEM2 workflow. This was followed by the adaptation and refactoring of the GEM vehicle models to fit the workflow. It was determined that a pure offline simulation was needed to estimate the cycle performances for the respective test runs, which are sorted according to the energy consumed by the vehicles.
@@ -104,7 +100,7 @@ The GEM project was completed and delivered successfully. New methods for integr
     id: 6,
     title: "AVL ISAC",
     description: "Real time vehicle simulations on testbed",
-    imgs: ["/images/isac-logo-1.png"],
+    images: ["/images/isac-1.png"],
     headline:
       "The project focused on modernizing the ISAC vehicle simulation library by developing advanced vehicle subsystem models tailored for contemporary architectures. This included the creation of sophisticated powertrain elements, comprehensive vehicle kinematics and dynamics models, and detailed tire-road interaction models.",
     content:
@@ -114,9 +110,7 @@ The GEM project was completed and delivered successfully. New methods for integr
     id: 7,
     title: "AVL Route Studio",
     description: "Road digitalization on virtual testing",
-    imgs: [
-      "https://experience.avl.com/en-US/sfsites/c/cms/delivery/media/MCVPESGOY3FZDX7DC4RELSSC65Z4?version=2.1&channelId=0ap6M0000008OJ8",
-    ],
+    images: ["/images/route-studio-1.png"],
     headline:
       "The project aimed to enhance AVL Route Studio, a software solution for virtual vehicle testing, by developing advanced vehicle subsystem models, battery model identification solution and RDE route generation algorithms.",
     content: `Route Studio is a software solution designed to transfer test activities from real-world environments to virtual test environments, reducing costs and saving development time. Within the Route Studio (RS) software tool, the lack of modern vehicle models was hindering wider use of the tools and integration of new features, especially for future features such as range estimation algorithms for battery electric vehicles.
@@ -201,7 +195,7 @@ export const skillList = [
   },
   {
     id: 11,
-    img: null,
+    img: "/images/ea-logo.png",
     title: "Enterprise Architect",
     content:
       "Enterprise Architect has been used to implement system engineering for the development of construction machinery, ensuring robust and efficient design processes.",

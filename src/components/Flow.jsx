@@ -1,3 +1,4 @@
+import { profilePic } from "../data";
 import { Suspense } from "react";
 import { Await } from "react-router-dom";
 import { Stack, Divider, styled } from "@mui/material";
@@ -13,35 +14,30 @@ const FlowStack = styled(Stack)({
   alignContent: "center",
 });
 
-function Flow({ flowData, refs }) {
+function Flow({ refs }) {
   return (
     <FlowStack spacing={2}>
-      <Suspense fallback={<h2>Loading...</h2>}>
-        <Await resolve={flowData.profileImgPromise}>
-          {(profileImg) => {
-            return (
-              <Profile profileImg={profileImg} ref={refs.profileSection} />
-            );
-          }}
-        </Await>
-      </Suspense>
-
-      <Divider orientation="horizontal" variant="middle" flexItem />
-
+      <Profile profileImg={profilePic} ref={refs.profileSection} />
+      <Divider
+        orientation="horizontal"
+        variant="middle"
+        flexItem
+        aria-hidden="true"
+      />
       <Projects ref={refs.projectsSection} />
-
-      <Divider orientation="horizontal" variant="middle" flexItem />
-
-      <Suspense fallback={<h2>Loading...</h2>}>
-        <Await resolve={flowData.eaLogoImgPromise}>
-          {(eaLogoImg) => (
-            <Skills eaLogoImg={eaLogoImg} ref={refs.skillsSection} />
-          )}
-        </Await>
-      </Suspense>
-
-      <Divider orientation="horizontal" variant="middle" flexItem />
-
+      <Divider
+        orientation="horizontal"
+        variant="middle"
+        flexItem
+        aria-hidden="true"
+      />
+      <Skills ref={refs.skillsSection} />
+      <Divider
+        orientation="horizontal"
+        variant="middle"
+        flexItem
+        aria-hidden="true"
+      />
       <Contact ref={refs.contactSection} />
       <Footer />
     </FlowStack>

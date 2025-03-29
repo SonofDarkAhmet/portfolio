@@ -1,4 +1,5 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { projects } from "../../data";
+import { NavLink, useLoaderData } from "react-router-dom";
 import {
   Box,
   Stack,
@@ -14,27 +15,31 @@ const ReturnBackTypoGraphy = styled(Typography)({
   display: "flex",
   alignItems: "center",
   marginTop: "1%",
+  color: "#24262e",
 });
 
 const ImageStack = styled(Stack)(({ theme }) => ({
-  display: "flex",
   flexDirection: "row",
   [theme.breakpoints.down("lg")]: {
     flexDirection: "column",
   },
   justifyContent: "center",
   alignItems: "center",
-  margin: "1% 1%",
-  gap: "5%",
+  margin: "1% 2%",
 }));
 
-const ContextBox = styled(Box)({
+const ContextBox = styled(Box)(({ theme }) => ({
   height: "50vh",
   width: "50%",
+  [theme.breakpoints.down("lg")]: {
+    width: "100%",
+  },
   overflowY: "auto",
-  padding: 2,
-  margin: "1% 1%",
-});
+  padding: "2rem",
+  margin: "5% 1%",
+  borderRadius: "1rem",
+  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
+}));
 
 const PreformattedTypography = styled(Typography)({
   textAlign: "justify",
@@ -42,26 +47,31 @@ const PreformattedTypography = styled(Typography)({
   margin: "0% 2% 0% 0%",
 });
 
+const ProjectImageListItem = styled(ImageListItem)({
+  backgroundColor: "rgb(240, 242, 245)",
+  borderRadius: "1rem",
+  marginBottom: "2rem",
+});
+
 function Project() {
-  const location = useLocation();
+  const data = useLoaderData();
 
   function ProjectImages({ images, title }) {
     return (
-      <ImageList sx={{ width: 426, height: "50vh" }} cols={1}>
+      <ImageList cols={1} sx={{ overflow: "unset" }}>
         {images.map((link, idx) => (
-          <ImageListItem key={idx} sx={{ margin: "1%" }}>
+          <ProjectImageListItem key={idx}>
             <img
               srcSet={`${link}?w=426&h=426&fit=crop&auto=format&dpr=1 1x`}
               src={`${link}?w=426&h=426&fit=crop&auto=format`}
               alt={`${title}-${idx}`}
               loading="lazy"
               style={{
-                objectFit: "contain",
-                marginTop: "1rem",
+                objectFit: "fill",
                 borderRadius: "1rem",
               }}
             />
-          </ImageListItem>
+          </ProjectImageListItem>
         ))}
       </ImageList>
     );
@@ -75,26 +85,29 @@ function Project() {
           Return Back
         </ReturnBackTypoGraphy>
       </NavLink>
-      <ImageStack useFlexGap>
+      <ImageStack>
         <ContextBox>
           <Typography
             variant="h4"
             style={{ display: "inline-block", marginBottom: "2rem" }}
           >
-            {location.state.title}
+            {data.title}
             <Divider orientation="horizontal" variant="fullWidth" />
           </Typography>
           <PreformattedTypography variant="body1" component="p">
-            {location.state.content}
+            {data.content}
           </PreformattedTypography>
         </ContextBox>
-        <ProjectImages
-          images={location.state.images}
-          title={location.state.title}
-        />
+        <ContextBox>
+          <ProjectImages images={data.images} title={data.title} />
+        </ContextBox>
       </ImageStack>
     </Box>
   );
 }
 
 export default Project;
+
+export function loader({ params }) {
+  return projects[params.id - 1];
+}
