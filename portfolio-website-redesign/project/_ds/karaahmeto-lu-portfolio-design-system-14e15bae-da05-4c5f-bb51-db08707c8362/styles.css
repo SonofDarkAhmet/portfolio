@@ -1,0 +1,9 @@
+@import 'tokens/fonts.css';
+@import 'tokens/colors.css';
+@import 'tokens/typography.css';
+@import 'tokens/spacing.css';
+@import 'tokens/effects.css';
+html,body{margin:0;background:var(--surface-canvas);color:var(--text-primary);font-family:var(--font-sans);}
+*{box-sizing:border-box;}
+a{color:var(--accent-primary-strong);}
+a:hover{color:var(--accent-primary);}

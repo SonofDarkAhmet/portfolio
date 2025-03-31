@@ -1,41 +1,87 @@
-# Personal Portfolio Website
+# Welcome to React Router!
 
-Welcome to my personal portfolio website! This project showcases my skills, projects, and experiences as a developer.
+A modern, production-ready template for building full-stack React applications using React Router.
 
-## Table of Contents
-
-- Introduction
-- Features
-- Technologies Used
-- Installation
-- Usage
-- Contributing
-- License
-- Contact
-
-## Introduction
-
-This is my personal portfolio website where I display my projects, skills, and experiences. It's designed to give visitors a comprehensive overview of my work and capabilities.
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
 ## Features
 
-- **Responsive Design**: Works on all devices, including mobile, tablet, and desktop.
-- **Project Showcase**: Highlights my key projects with descriptions and links.
-- **Skills Section**: Lists my technical skills and proficiencies.
-- **Contact Form**: Allows visitors to get in touch with me directly through the website.
+- 🚀 Server-side rendering
+- ⚡️ Hot Module Replacement (HMR)
+- 📦 Asset bundling and optimization
+- 🔄 Data loading and mutations
+- 🔒 TypeScript by default
+- 🎉 TailwindCSS for styling
+- 📖 [React Router docs](https://reactrouter.com/)
 
-## Technologies Used
+## Getting Started
 
-- **React**: JavaScript library for building user interfaces.
-- **React Router**: For handling navigation within the single-page application.
-- **MUI**: Material-UI for styling and layout.
-- **EmailJS**: For handling contact form submissions.
+### Installation
 
-## Installation
+Install the dependencies:
 
-To run this project locally, follow these steps:
+```bash
+npm install
+```
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/SonofDarkAhmet/portfolio.git
-   ```
+### Development
+
+Start the development server with HMR:
+
+```bash
+npm run dev
+```
+
+Your application will be available at `http://localhost:5173`.
+
+## Building for Production
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## Deployment
+
+### Docker Deployment
+
+To build and run using Docker:
+
+```bash
+docker build -t my-app .
+
+# Run the container
+docker run -p 3000:3000 my-app
+```
+
+The containerized application can be deployed to any platform that supports Docker, including:
+
+- AWS ECS
+- Google Cloud Run
+- Azure Container Apps
+- Digital Ocean App Platform
+- Fly.io
+- Railway
+
+### DIY Deployment
+
+If you're familiar with deploying Node applications, the built-in app server is production-ready.
+
+Make sure to deploy the output of `npm run build`
+
+```
+├── package.json
+├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
+├── build/
+│   ├── client/    # Static assets
+│   └── server/    # Server-side code
+```
+
+## Styling
+
+This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+
+---
+
+Built with ❤️ using React Router.
