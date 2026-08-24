@@ -1,82 +1,51 @@
-import { getRandomInteger } from "../utils";
-import {
-  styled,
-  Box,
-  Paper,
-  Typography,
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-} from "@mui/material";
-import { Masonry } from "@mui/lab";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Box, Typography, styled } from "@mui/material";
 
-import { skillList } from "../data";
+import { skillGroups } from "../data";
 
-const SkillWallBox = styled(Box)({
+const SkillsGrid = styled(Box)({
+  display: "grid",
+  gridTemplateColumns: "repeat(4, 1fr)",
+  gap: "20px",
+});
+
+const GroupCard = styled(Box)({
+  background: "var(--surface-card)",
+  border: "1px solid var(--border-subtle)",
+  borderRadius: "var(--radius-md)",
+  padding: "16px",
+});
+
+const GroupName = styled(Typography)({
+  fontSize: "12px",
+  color: "var(--text-muted)",
+  marginBottom: "10px",
+});
+
+const ItemsStack = styled(Box)({
   display: "flex",
-  flexDirection: "row",
-  justifyContent: "center",
-  minHeight: "377px",
-  margin: "2% 2%",
-  overflow: "hidden",
+  flexDirection: "column",
+  gap: "6px",
 });
 
-const StyledMasonry = styled(Masonry)({
-  maxWidth: "90%",
+const Item = styled(Typography)({
+  fontFamily: "var(--font-mono)",
+  fontSize: "12px",
+  color: "var(--text-secondary)",
 });
 
-const StyledAccordion = styled(Accordion)(({ theme }) => ({
-  minHeight: getRandomInteger(70, 150),
-  color: theme.palette.text.secondary,
-  ...theme.applyStyles("dark", {
-    backgroundColor: "#1A2027",
-  }),
-}));
-
-const StyledTitleTypography = styled(Typography)({
-  marginLeft: "5px",
-  fontWeight: "bold",
-});
-
-const StyledTypography = styled(Typography)({
-  marginLeft: "5px",
-});
-
-const CardHeaderBox = styled(Box)({
-  display: "flex",
-  justifyContent: "flex-start",
-  alignItems: "center",
-});
-
-function SkillWall() {
-  const skillListElements = skillList.map((elements) => (
-    <Paper key={elements.id}>
-      <StyledAccordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <CardHeaderBox>
-            <img src={elements.img} alt={elements.title} height="25px" />
-            <StyledTitleTypography component="div" variant="subtitle2">
-              {elements.title}
-            </StyledTitleTypography>
-          </CardHeaderBox>
-        </AccordionSummary>
-        <AccordionDetails>
-          <StyledTypography component="div" variant="caption">
-            {elements.content}
-          </StyledTypography>
-        </AccordionDetails>
-      </StyledAccordion>
-    </Paper>
-  ));
-
+export default function SkillWall(): React.ReactElement {
   return (
-    <SkillWallBox>
-      <StyledMasonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={3}>
-        {skillList.length > 0 && skillListElements}
-      </StyledMasonry>
-    </SkillWallBox>
+    <SkillsGrid>
+      {skillGroups.map((group) => (
+        <GroupCard key={group.name}>
+          <GroupName>{group.name}</GroupName>
+          <ItemsStack>
+            {group.items.map((item) => (
+              <Item key={item}>{item}</Item>
+            ))}
+          </ItemsStack>
+        </GroupCard>
+      ))}
+    </SkillsGrid>
   );
 }
-
-export default SkillWall;

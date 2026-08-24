@@ -1,46 +1,39 @@
-import { useRef } from "react";
-import { Box, Stack, styled } from "@mui/material";
+import { useRef, useState } from "react";
+import { styled, Box } from "@mui/material";
 
 import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
 import Flow from "../components/Flow";
-import Rightbar from "../components/Rightbar";
+import type { SectionRefs } from "../types";
 
-const LayoutStack = styled(Stack)({
-  flexDirection: "row",
-  // backgroundColor: "#0a0c10",
-  zIndex: 0,
+
+const LayoutBox = styled(Box)({
+  display: "grid",
+  justifyContent: "center",
+  alignContent: "center"
 });
-
-type SectionRefs = {
-  profileSection: React.RefObject<HTMLDivElement | null>;
-  projectsSection: React.RefObject<HTMLDivElement | null>;
-  skillsSection: React.RefObject<HTMLDivElement | null>;
-  contactSection: React.RefObject<HTMLDivElement | null>;
-};
 
 function Layout(): React.ReactElement {
   const profileSection = useRef<HTMLDivElement>(null);
+  const experienceSection = useRef<HTMLDivElement>(null);
   const projectsSection = useRef<HTMLDivElement>(null);
   const skillsSection = useRef<HTMLDivElement>(null);
   const contactSection = useRef<HTMLDivElement>(null);
 
+  const [appBarHeight, setAppBarHeight] = useState(0);
+
   const refs: SectionRefs = {
     profileSection,
+    experienceSection,
     projectsSection,
     skillsSection,
     contactSection,
   };
 
   return (
-    <Box>
-      <Header refs={refs} />
-      <LayoutStack>
-        <Sidebar />
-        <Flow refs={refs} />
-        <Rightbar />
-      </LayoutStack>
-    </Box>
+    <LayoutBox>
+      <Header refs={refs} onHeightChange={setAppBarHeight} />
+      <Flow refs={refs} appBarHeight={appBarHeight} />
+    </LayoutBox>
   );
 }
 

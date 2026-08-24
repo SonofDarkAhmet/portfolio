@@ -1,111 +1,107 @@
 import { projects, type Project } from "../../data";
-import { useEffect } from "react";
 import type React from "react";
-import { NavLink, useOutletContext } from "react-router";
-import {
-  styled,
-  Card,
-  CardHeader,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Typography,
-  Grid,
-} from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareLink from "./ShareLink";
+import { Box, Typography, styled } from "@mui/material";
 
-const ProjectGrid = styled(Grid)({
-  margin: "2% 2%",
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "center",
-});
-
-const ItemGrid = styled(Grid)({
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "center",
-});
-
-const StyledCard = styled(Card)({
+const ListStack = styled(Box)({
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-between",
-  maxWidth: 345,
+  gap: "36px",
+  marginTop: "24px",
+});
+
+const Row = styled(Box)({
+  display: "flex",
+  gap: "28px",
+  alignItems: "flex-start",
+  background: "var(--surface-card)",
+  border: "1px solid var(--border-subtle)",
+  borderRadius: "var(--radius-lg)",
+  padding: "16px",
+  cursor: "pointer",
+  transition:
+    "transform var(--duration-base) var(--ease-out), border-color var(--duration-base) var(--ease-out)",
+  "&:hover": {
+    transform: "translateY(-4px)",
+    borderColor: "var(--border-strong)",
+  },
+});
+
+const Thumb = styled(Box)({
+  width: "280px",
+  height: "180px",
+  borderRadius: "var(--radius-md)",
+  overflow: "hidden",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flex: "none",
+  background: "var(--surface-sunken)",
+});
+
+const RowContent = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+  flex: 1,
+  height: "180px",
+});
+
+const Badge = styled(Typography)({
+  fontFamily: "var(--font-mono)",
+  fontSize: "12px",
+  color: "var(--accent-primary)",
+  background: "var(--accent-on-accent)",
+  border: "1px solid var(--border-subtle)",
+  borderRadius: "var(--radius-pill)",
+  padding: "4px 12px",
+  whiteSpace: "nowrap",
+});
+
+const HeadlineWrap = styled(Box)({
+  flex: 1,
+  display: "flex",
+  alignItems: "center",
 });
 
 const Headline = styled(Typography)({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  maxWidth: 345,
+  fontSize: "15px",
+  lineHeight: 1.6,
+  color: "var(--text-secondary)",
 });
 
-type ProjectCardProps = {
-  ref: React.RefObject<HTMLDivElement | null> | undefined;
-  item: Project;
+const ReadMore = styled(Typography)({
+  fontSize: "13px",
+  fontWeight: 500,
+  color: "var(--accent-primary)",
+});
+
+type ProjectListProps = {
+  onOpen: (id: number) => void;
 };
 
-function ProjectCard({ ref, item }: ProjectCardProps): React.ReactElement {
-  const fullPathname = `${window.location.origin}${location.pathname}`;
-
-  useEffect(() => {
-    return () => {
-      if (ref?.current) {
-        ref.current.scrollIntoView({ behavior: "smooth" });
-      }
-    };
-  }, []);
-
+export default function ProjectList({
+  onOpen,
+}: ProjectListProps): React.ReactElement {
   return (
-    <StyledCard>
-      <NavLink
-        to={`projects/${item.id}`}
-        style={{ textDecoration: "none", color: "#24262e" }}
-      >
-        <CardHeader title={item.title} subheader={item.description} />
-        <CardMedia
-          component="img"
-          height="194"
-          image={item.images[0]}
-          alt={item.title}
-          sx={{ objectFit: "contain" }}
-        />
-        <CardContent>
-          <Headline
-            variant="body2"
-            sx={{
-              textAlign: "justify",
-            }}
-          >
-            {item.headline}
-          </Headline>
-        </CardContent>
-      </NavLink>
-      <CardActions disableSpacing>
-        <ShareLink link={`${fullPathname}projects/${item.id}`} />
-      </CardActions>
-    </StyledCard>
+    <ListStack>
+      {projects.map((item: Project) => (
+        <Row key={item.id} onClick={() => onOpen(item.id)}>
+          <Thumb>
+            <img
+              src={item.images[0]}
+              alt={item.title}
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            />
+          </Thumb>
+          <RowContent>
+            <Badge>{item.description}</Badge>
+            <HeadlineWrap>
+              <Headline>{item.headline}</Headline>
+            </HeadlineWrap>
+            <ReadMore>Read case study →</ReadMore>
+          </RowContent>
+        </Row>
+      ))}
+    </ListStack>
   );
 }
-
-function ProjectList(): React.ReactElement {
-  const context =
-    useOutletContext<React.RefObject<HTMLDivElement | null>>();
-
-  return (
-    <ProjectGrid container spacing={{ xs: 4, sm: 6 }}>
-      {projects &&
-        projects.map((item) => {
-          return (
-            <ItemGrid key={item.id}>
-              {<ProjectCard ref={context} item={item} />}
-            </ItemGrid>
-          );
-        })}
-    </ProjectGrid>
-  );
-}
-
-export default ProjectList;

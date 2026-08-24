@@ -1,19 +1,3 @@
-export type Project = {
-  id: number;
-  title: string;
-  description: string;
-  images: string[];
-  headline: string;
-  content: string;
-};
-
-export type Skill = {
-  id: number;
-  img: string;
-  title: string;
-  content: string;
-};
-
 export const profilePic: string[] = ["/images/profile-pic.jpeg"];
 
 export const vitaeContext: string =
@@ -21,7 +5,8 @@ export const vitaeContext: string =
   "the core pillars of mechatronics: mechanical design, control systems and " +
   "software development. I enjoy adapting quickly and expanding my " +
   "knowledge to deliver innovative, high-impact solutions.";
-
+  
+export const heroName: string = "Raif Karaahmetoğlu";
 export const jobTitle: string = "SOFTWARE & CONTROL ENGINEER";
 
 export type Stat = {
@@ -103,6 +88,15 @@ export const experience: ExperienceItem[] = [
     detail: "Team Mekar finished 7th of 11 overall entries at GCDC 2011 in the Netherlands; the work was later published in IEEE Transactions on Intelligent Transportation Systems.",
   },
 ];
+
+export type Project = {
+  id: number;
+  title: string;
+  description: string;
+  images: string[];
+  headline: string;
+  content: string;
+};
 
 export const projects: Project[] = [
   {
@@ -219,82 +213,55 @@ Advanced vehicle system models were successfully introduced to the project, sign
   },
 ];
 
-export const skillList: Skill[] = [
+export type SkillGroup = {
+  name: string;
+  items: string[];
+};
+
+export const skillGroups: SkillGroup[] = [
   {
-    id: 1,
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg",
-    title: "Matlab",
-    content:
-      "MATLAB and Simulink have been utilized since 2009 for the simulation and control of automotive systems, with a focus on the development and testing of advanced technologies.",
+    name: "Control & Simulation",
+    items: [
+      "MATLAB/Simulink",
+      "CarMaker",
+      "GT-SUITE",
+      "AVL Puma",
+      "AVL Concerto",
+      "AVL Model.CONNECT",
+      "AVL fmi.lab",
+      "AVL Testbed.Connect",
+    ],
   },
   {
-    id: 2,
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
-    title: "C",
-    content:
-      "C has been proficiently employed to develop advanced simulation models, which have been seamlessly integrated with MATLAB and Simulink for real-time applications. Additionally, C has been leveraged for real-time control applications within automotive systems.",
+    name: "Software Engineering",
+    items: [
+      "C",
+      "C++",
+      "Python",
+      "JavaScript",
+      "React & Router",
+      "HTML/CSS",
+      "MUI",
+      "OOP",
+      "SOLID",
+      "Unit Testing",
+    ],
   },
   {
-    id: 3,
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
-    title: "C++",
-    content:
-      "In-depth knowledge of C++ was acquired through a comprehensive course, after which a FlexLM license solution was successfully implemented, effectively applying C++ skills.",
+    name: "Engineering Design",
+    items: ["CATIA", "Enterprise Architect"],
   },
   {
-    id: 4,
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-    title: "Python",
-    content:
-      "Python has been utilized to develop a comprehensive vehicle dynamics library, automate HIL project creation, and contribute to various AI and statistical algorithm projects. Furthermore, design patterns and SOLID principles have been professionally applied, demonstrating expertise in Python.",
-  },
-  {
-    id: 5,
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-    title: "JavaScript",
-    content:
-      "JavaScript has been used to develop AVL Route Studio projects, with a focus on the user interface components related to the algorithms for which responsibility was held.",
-  },
-  {
-    id: 6,
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-    title: "HTML",
-    content:
-      "HTML is currently being learned to enhance skills in creating more sophisticated and visually appealing UI projects.",
-  },
-  {
-    id: 7,
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-    title: "CSS",
-    content:
-      "CSS is currently being learned to enhance skills in creating more sophisticated and visually appealing UI projects.",
-  },
-  {
-    id: 8,
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-    title: "React",
-    content:
-      "The React framework and React Router have been learned to implement web-based UI developments, enhancing the ability to create dynamic and responsive user interfaces.",
-  },
-  {
-    id: 9,
-    img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg",
-    title: "Material UI",
-    content:
-      "The Material UI component library has been learned to enhance UI development skills, creating more visually appealing and sophisticated interfaces.",
-  },
-  {
-    id: 10,
-    img: "https://upload.wikimedia.org/wikipedia/commons/6/60/DS-CATIA-Logo.png",
-    title: "Catia",
-    content:
-      "CATIA has been used to develop mechanical system designs, particularly for remote-controlled weapon systems such as OTOKAR - UCOK.",
-  },
-  {
-    id: 11,
-    img: "/images/ea-logo.png",
-    title: "Enterprise Architect",
-    content:
-      "Enterprise Architect has been used to implement system engineering for the development of construction machinery, ensuring robust and efficient design processes.",
+    name: "DevOps & Delivery",
+    items: [
+      "AWS",
+      "Docker",
+      "Git",
+      "GitHub CI/CD",
+      "TeamCity",
+      "Microsoft TFS",
+      "Jira/Confluence",
+      "Scrum/Agile",
+    ],
   },
 ];

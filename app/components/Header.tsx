@@ -8,6 +8,8 @@ import {
   styled,
   Box,
 } from "@mui/material";
+import type { SectionRefs } from "../types";
+import { scrollToRef } from "../lib/scroll";
 
 const StyledAppbar = styled(AppBar)({
   position: "fixed",
@@ -26,32 +28,33 @@ const StyledToolbar = styled(Toolbar)({
 const StyledStack = styled(Stack)({
   flexDirection: "row",
   flexWrap: "wrap",
-  backgroundColor: "rgb(240, 242, 245)",
-  padding: "5px 25px",
-  borderRadius: "2em",
-  boxShadow:
-    "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
+  backgroundColor: "var(--surface-pill)",
+  padding: "5px 10px",
+  borderRadius: "var(--radius-pill)",
+  boxShadow: "var(--shadow-card)",
 });
 
-const StyledButton = styled(Button)({
+const StyledButton = styled(Button, {
+  shouldForwardProp: (prop) => prop !== "active",
+})<{ active?: boolean }>(({ active }) => ({
   flexShrink: 1,
-  color: "#24262e",
-  borderRadius: "1em",
-});
+  minWidth: "auto",
+  padding: "8px 16px",
+  color: active ? "var(--accent-primary-strong)" : "var(--text-on-pill)",
+  backgroundColor: active ? "var(--accent-on-accent)" : "transparent",
+  borderRadius: "var(--radius-pill)",
+  border: "none",
+  textTransform: "none",
+}));
 
 const ButtonTypography = styled(Typography)({
-  fontWeight: 400,
+  fontWeight: 500,
+  fontSize: "14px",
 });
-
-type SectionRefs = {
-  profileSection: React.RefObject<HTMLDivElement | null>;
-  projectsSection: React.RefObject<HTMLDivElement | null>;
-  skillsSection: React.RefObject<HTMLDivElement | null>;
-  contactSection: React.RefObject<HTMLDivElement | null>;
-};
 
 type HeaderProps = {
   refs: SectionRefs;
+  onHeightChange?: (height: number) => void;
 };
 
 type BoxSize = {
@@ -59,13 +62,26 @@ type BoxSize = {
   height: number | string;
 };
 
-function Header({ refs }: HeaderProps): React.ReactElement {
+const NAV_ITEMS: { key: keyof SectionRefs; label: string }[] = [
+  { key: "profileSection", label: "Home" },
+  { key: "experienceSection", label: "Experience" },
+  { key: "projectsSection", label: "Projects" },
+  { key: "skillsSection", label: "Skills" },
+  { key: "contactSection", label: "Contact" },
+];
+
+export default function Header({
+  refs,
+  onHeightChange,
+}: HeaderProps): React.ReactElement {
   const appBarRef = useRef<HTMLDivElement | null>(null);
 
   const [boxSize, setBoxSize] = useState<BoxSize>({
     width: "auto",
     height: "auto",
   });
+
+  const [active, setActive] = useState<keyof SectionRefs>("profileSection");
 
   useEffect(() => {
     if (appBarRef.current) {
@@ -75,34 +91,78 @@ function Header({ refs }: HeaderProps): React.ReactElement {
         width: offsetWidth,
         height: offsetHeight,
       });
+      onHeightChange?.(offsetHeight);
     }
-  }, []);
+  }, [onHeightChange]);
 
-  const handleSubmit = (
-    e: React.MouseEvent<HTMLButtonElement>
-  ): void => {
-    const offset =
-      typeof boxSize.height === "number" ? boxSize.height : 0;
+  useEffect(() => {
+    const visibleRatios = new Map<keyof SectionRefs, number>();
 
-    const ref =
-      refs[e.currentTarget.name as keyof SectionRefs];
+    const recompute = () => {
+      const se = document.scrollingElement || document.documentElement;
+      if (se && se.scrollHeight - (se.scrollTop + se.clientHeight) < 4) {
+        setActive(NAV_ITEMS[NAV_ITEMS.length - 1].key);
+        return;
+      }
+
+      let best: keyof SectionRefs | null = null;
+      let bestRatio = -1;
+      NAV_ITEMS.forEach(({ key }) => {
+        const ratio = visibleRatios.get(key) ?? 0;
+        if (ratio > bestRatio) {
+          bestRatio = ratio;
+          best = key;
+        }
+      });
+      if (best && bestRatio > 0) setActive(best);
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const match = NAV_ITEMS.find(
+            ({ key }) => refs[key].current === entry.target
+          );
+          if (match) {
+            visibleRatios.set(
+              match.key,
+              entry.isIntersecting ? entry.intersectionRatio : 0
+            );
+          }
+        });
+        recompute();
+      },
+      { rootMargin: "-100px 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+    );
+
+    NAV_ITEMS.forEach(({ key }) => {
+      if (refs[key].current) io.observe(refs[key].current);
+    });
+
+    window.addEventListener("scroll", recompute, { passive: true });
+
+    return () => {
+      io.disconnect();
+      window.removeEventListener("scroll", recompute);
+    };
+  }, [refs]);
+
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    const offset = typeof boxSize.height === "number" ? boxSize.height : 0;
+
+    const key = e.currentTarget.name as keyof SectionRefs;
+    const ref = refs[key];
 
     if (ref?.current) {
-      const elementPosition =
-        ref.current.getBoundingClientRect().top + window.scrollY;
-
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      scrollToRef(ref, offset);
+      setActive(key);
     }
   };
 
   return (
     <Box sx={{ height: boxSize.height, width: boxSize.width }}>
       <StyledAppbar
+        // @ts-expect-error MUI v9 styled(AppBar) drops the polymorphic `component` prop from its type
         component="nav"
         color="transparent"
         elevation={0}
@@ -110,42 +170,19 @@ function Header({ refs }: HeaderProps): React.ReactElement {
       >
         <StyledToolbar>
           <StyledStack>
-            <StyledButton
-              name="profileSection"
-              variant="outlined"
-              onClick={handleSubmit}
-            >
-              <ButtonTypography>Home</ButtonTypography>
-            </StyledButton>
-
-            <StyledButton
-              name="projectsSection"
-              variant="outlined"
-              onClick={handleSubmit}
-            >
-              <ButtonTypography>Projects</ButtonTypography>
-            </StyledButton>
-
-            <StyledButton
-              name="skillsSection"
-              variant="outlined"
-              onClick={handleSubmit}
-            >
-              <ButtonTypography>Skills</ButtonTypography>
-            </StyledButton>
-
-            <StyledButton
-              name="contactSection"
-              variant="outlined"
-              onClick={handleSubmit}
-            >
-              <ButtonTypography>Contact</ButtonTypography>
-            </StyledButton>
+            {NAV_ITEMS.map(({ key, label }) => (
+              <StyledButton
+                key={key}
+                name={key}
+                active={active === key}
+                onClick={handleSubmit}
+              >
+                <ButtonTypography>{label}</ButtonTypography>
+              </StyledButton>
+            ))}
           </StyledStack>
         </StyledToolbar>
       </StyledAppbar>
     </Box>
   );
 }
-
-export default Header;

@@ -8,6 +8,13 @@ const SkillWallBox = styled(Box)({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
+  padding: "20px 80px 100px",
+  maxWidth: "var(--content-max)",
+  margin: "0 auto",
+});
+
+const SkillsGridWrap = styled(Box)({
+  marginTop: "24px",
 });
 
 type SkillsProps = {
@@ -16,9 +23,11 @@ type SkillsProps = {
 
 function Skills({ sectionRef }: SkillsProps): React.ReactElement {
   return (
-    <SkillWallBox ref={sectionRef}>
+    <SkillWallBox id="skills" ref={sectionRef}>
       <SectionTitle variant="h4">Skills</SectionTitle>
-      <SkillWall />
+      <SkillsGridWrap>
+        <SkillWall />
+      </SkillsGridWrap>
     </SkillWallBox>
   );
 }
