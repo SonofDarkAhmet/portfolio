@@ -95,7 +95,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Outlet />;
+      <Outlet />
     </ThemeProvider>
   );
 }

@@ -13,7 +13,7 @@ const LayoutBox = styled(Box)({
   alignItems: "center",
 });
 
-function Layout(): React.ReactElement {
+export default function Layout(): React.ReactElement {
   const profileSection = useRef<HTMLDivElement>(null);
   const experienceSection = useRef<HTMLDivElement>(null);
   const projectsSection = useRef<HTMLDivElement>(null);
@@ -37,5 +37,3 @@ function Layout(): React.ReactElement {
     </LayoutBox>
   );
 }
-
-export default Layout;
