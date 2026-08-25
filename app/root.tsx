@@ -1,5 +1,5 @@
 import appCss from "./app.css?url";
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   isRouteErrorResponse,
   Links,
@@ -13,30 +13,34 @@ import type { Route } from "./+types/root";
 import { createTheme, responsiveFontSizes, ThemeProvider } from "@mui/material";
 import emailjs from "@emailjs/browser";
 
-let theme = createTheme({
-  palette: {
-    mode: "dark",
-    background: {
-      default: "#05070b",
-      paper: "#0d121b",
-    },
-    primary: {
-      main: "#5fa8b8",
-    },
-    text: {
-      primary: "#f3f6f9",
-      secondary: "#b7c2d1",
-    },
-  },
-  typography: {
-    fontFamily: "Inter, sans-serif",
-  },
-  shape: {
-    borderRadius: 12,
-  },
-});
+import type { ThemeMode } from "./lib/theme";
+import { applyTheme, getStoredTheme, storeTheme } from "./lib/theme";
 
-theme = responsiveFontSizes(theme);
+const LIGHT_PALETTE = {
+  background: { default: "#f8fafc", paper: "#ffffff" },
+  primary: { main: "#1a7a8f" },
+  text: { primary: "#0f172a", secondary: "#334155" },
+} as const;
+
+const DARK_PALETTE = {
+  background: { default: "#05070b", paper: "#0d121b" },
+  primary: { main: "#5fa8b8" },
+  text: { primary: "#f3f6f9", secondary: "#b7c2d1" },
+} as const;
+
+function buildTheme(mode: ThemeMode) {
+  const palette = mode === "dark" ? DARK_PALETTE : LIGHT_PALETTE;
+  let theme = createTheme({
+    palette: { mode, ...palette },
+    typography: {
+      fontFamily: "Inter, sans-serif",
+    },
+    shape: {
+      borderRadius: 12,
+    },
+  });
+  return responsiveFontSizes(theme);
+}
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -86,16 +90,42 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+export type ThemeContext = {
+  mode: ThemeMode;
+  toggle: () => void;
+};
+
 export default function App() {
+  const [mode, setMode] = useState<ThemeMode>("light");
+
   useEffect(() => {
     emailjs.init({
       publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
     });
   }, []);
 
+  useEffect(() => {
+    const stored = getStoredTheme();
+    if (stored) setMode(stored);
+  }, []);
+
+  useEffect(() => {
+    applyTheme(mode);
+  }, [mode]);
+
+  const toggle = () => {
+    setMode((prev) => {
+      const next = prev === "light" ? "dark" : "light";
+      storeTheme(next);
+      return next;
+    });
+  };
+
+  const muiTheme = useMemo(() => buildTheme(mode), [mode]);
+
   return (
-    <ThemeProvider theme={theme}>
-      <Outlet />
+    <ThemeProvider theme={muiTheme}>
+      <Outlet context={{ mode, toggle } satisfies ThemeContext} />
     </ThemeProvider>
   );
 }

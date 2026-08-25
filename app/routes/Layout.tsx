@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
+import { useOutletContext } from "react-router";
 import { styled, Box } from "@mui/material";
 
 import Header from "../components/Header";
 import Flow from "../components/Flow";
 import type { SectionRefs } from "../types";
+import type { ThemeContext } from "../root";
 
 
 const LayoutBox = styled(Box)({
@@ -21,6 +23,7 @@ export default function Layout(): React.ReactElement {
   const contactSection = useRef<HTMLDivElement>(null);
 
   const [appBarHeight, setAppBarHeight] = useState(0);
+  const { mode, toggle } = useOutletContext<ThemeContext>();
 
   const refs: SectionRefs = {
     profileSection,
@@ -32,7 +35,12 @@ export default function Layout(): React.ReactElement {
 
   return (
     <LayoutBox>
-      <Header refs={refs} onHeightChange={setAppBarHeight} />
+      <Header
+        refs={refs}
+        onHeightChange={setAppBarHeight}
+        themeMode={mode}
+        onToggleTheme={toggle}
+      />
       <Flow refs={refs} appBarHeight={appBarHeight} />
     </LayoutBox>
   );

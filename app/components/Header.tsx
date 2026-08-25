@@ -9,6 +9,7 @@ import {
   Box,
 } from "@mui/material";
 import type { SectionRefs } from "../types";
+import type { ThemeMode } from "../lib/theme";
 import { scrollToRef } from "../lib/scroll";
 
 const StyledAppbar = styled(AppBar)({
@@ -70,9 +71,30 @@ const ButtonTypography = styled(Typography)(({ theme }) => ({
   },
 }));
 
+const ThemeToggleButton = styled("button")({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexShrink: 0,
+  width: "32px",
+  height: "32px",
+  marginLeft: "4px",
+  padding: 0,
+  border: "none",
+  borderRadius: "var(--radius-pill)",
+  background: "transparent",
+  color: "var(--text-on-pill)",
+  cursor: "pointer",
+  "&:hover": {
+    color: "var(--accent-primary-strong)",
+  },
+});
+
 type HeaderProps = {
   refs: SectionRefs;
   onHeightChange?: (height: number) => void;
+  themeMode: ThemeMode;
+  onToggleTheme: () => void;
 };
 
 type BoxSize = {
@@ -91,6 +113,8 @@ const NAV_ITEMS: { key: keyof SectionRefs; label: string }[] = [
 export default function Header({
   refs,
   onHeightChange,
+  themeMode,
+  onToggleTheme,
 }: HeaderProps): React.ReactElement {
   const appBarRef = useRef<HTMLDivElement | null>(null);
 
@@ -198,6 +222,25 @@ export default function Header({
                 <ButtonTypography>{label}</ButtonTypography>
               </StyledButton>
             ))}
+            <ThemeToggleButton
+              onClick={onToggleTheme}
+              aria-label={
+                themeMode === "light"
+                  ? "Switch to dark theme"
+                  : "Switch to light theme"
+              }
+            >
+              {themeMode === "light" ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                </svg>
+              )}
+            </ThemeToggleButton>
           </StyledStack>
         </StyledToolbar>
       </StyledAppbar>

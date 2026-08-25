@@ -1,10 +1,24 @@
-/* Tokens: colors */
+/* Tokens: colors (light theme — default) */
 :root{
 --ink-950:#05070b;--ink-900:#0a0e15;--ink-850:#0d121b;--ink-800:#121826;--ink-700:#1b2231;--ink-600:#2a3344;--ink-500:#3d4a5f;--ink-400:#5b6b82;--ink-300:#8797ac;--ink-200:#b7c2d1;--ink-100:#dbe2ea;--ink-050:#f3f6f9;
 --paper-050:#f0f2f5;--paper-100:#e4e7eb;--paper-white:#ffffff;
 --signal-100:oklch(93% 0.035 205);--signal-300:oklch(82% 0.08 205);--signal-500:oklch(70% 0.125 205);--signal-600:oklch(60% 0.12 205);--signal-700:oklch(50% 0.105 205);--signal-900:oklch(32% 0.07 205);
 --amber-400:oklch(80% 0.14 70);--amber-500:oklch(72% 0.15 65);--amber-600:oklch(62% 0.15 60);
 --danger-500:oklch(62% 0.19 25);--success-500:oklch(72% 0.13 155);
+
+--surface-canvas:#f8fafc;--surface-sunken:#eef2f6;--surface-card:#ffffff;--surface-card-hover:#f5f8fa;--surface-raised:#ffffff;
+--surface-pill:#0d121b;--surface-pill-hover:#121826;
+--border-subtle:#e2e8f0;--border-strong:#cbd5e1;--border-on-pill:rgba(255,255,255,0.12);
+--text-primary:#0f172a;--text-secondary:#334155;--text-muted:#64748b;--text-on-pill:#f3f6f9;--text-on-pill-muted:#8797ac;
+--accent-primary:oklch(55% 0.14 205);--accent-primary-strong:oklch(48% 0.15 205);--accent-primary-hover:oklch(45% 0.15 205);--accent-on-accent:#ffffff;
+--accent-secondary:oklch(62% 0.16 60);
+--focus-ring:oklch(55% 0.14 205);
+--gradient-aurora:radial-gradient(ellipse 80% 80% at 50% -20%, oklch(85% 0.06 205 / 0.5), oklch(100% 0 0 / 0));
+--gradient-legacy-ring:linear-gradient(to right,#205072,#329D9C,#56C596,#7BE495,#CFF4D2);
+}
+
+/* Tokens: colors (dark theme) */
+[data-theme="dark"]{
 --surface-canvas:var(--ink-950);--surface-sunken:var(--ink-900);--surface-card:var(--ink-850);--surface-card-hover:var(--ink-800);--surface-raised:var(--ink-800);
 --surface-pill:var(--paper-050);--surface-pill-hover:var(--paper-white);
 --border-subtle:var(--ink-700);--border-strong:var(--ink-600);--border-on-pill:rgba(5,7,11,0.08);
@@ -13,7 +27,6 @@
 --accent-secondary:var(--amber-500);
 --focus-ring:var(--signal-300);
 --gradient-aurora:radial-gradient(ellipse 80% 80% at 50% -20%, oklch(45% 0.1 210 / 0.35), oklch(100% 0 0 / 0));
---gradient-legacy-ring:linear-gradient(to right,#205072,#329D9C,#56C596,#7BE495,#CFF4D2);
 }
 
 /* Tokens: typography */
