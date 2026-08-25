@@ -1,6 +1,6 @@
 import React from "react";
 import { profilePic } from "../data";
-import { Stack, Divider, styled } from "@mui/material";
+import { Box, Divider, styled } from "@mui/material";
 import Profile from "../routes/Profile";
 import Experience from "../routes/Experience";
 import Skills from "../routes/Skills";
@@ -15,7 +15,9 @@ function FlowDivider(): React.ReactElement {
   );
 }
 
-const FlowStack = styled(Stack)({
+const FlowStack = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
   justifyContent: "center",
   alignContent: "center",
   zIndex: 1,
@@ -31,7 +33,7 @@ export default function Flow({
   appBarHeight,
 }: FlowProps): React.ReactElement {
   return (
-    <FlowStack spacing={2}>
+    <FlowStack id="test" spacing={2}>
       <Profile
         profileImg={profilePic[0]}
         ref={refs.profileSection}

@@ -8,6 +8,7 @@ import emailjs from "@emailjs/browser";
 import SectionTitle from "../components/SectionTitle";
 
 const ContactBox = styled(Box)({
+  width: "100%",
   padding: "40px 80px 110px",
   maxWidth: "var(--content-narrow)",
   margin: "0 auto",
@@ -83,7 +84,7 @@ type ContactProps = {
   sectionRef: React.RefObject<HTMLDivElement | null>;
 };
 
-function Contact({ sectionRef }: ContactProps): React.ReactElement {
+export default function Contact({ sectionRef }: ContactProps): React.ReactElement {
   const [submitted, setSubmitted] = useState(false);
 
   const {
@@ -179,5 +180,3 @@ function Contact({ sectionRef }: ContactProps): React.ReactElement {
     </ContactBox>
   );
 }
-
-export default Contact;

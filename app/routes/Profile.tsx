@@ -6,9 +6,6 @@ import { vitaeContext, heroName, jobTitle, stats } from "../data";
 import { scrollToRef } from "../lib/scroll";
 
 const HeroSection = styled(Box)({
-  position: "relative",
-  padding: "170px 80px 90px",
-  background: "var(--gradient-aurora)",
   display: "grid",
   gridTemplateColumns: "auto auto",
   gap: "60px",
@@ -16,6 +13,8 @@ const HeroSection = styled(Box)({
   justifyContent: "center",
   maxWidth: "1400px",
   margin: "0 auto",
+  background: "var(--gradient-aurora)",
+  padding: "170px 80px 90px",
 });
 
 const ContentStack = styled(Stack)({

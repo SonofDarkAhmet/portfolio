@@ -7,9 +7,10 @@ import type { SectionRefs } from "../types";
 
 
 const LayoutBox = styled(Box)({
-  display: "grid",
+  display: "flex",
+  flexDirection: "column",
   justifyContent: "center",
-  alignContent: "center"
+  alignItems: "center",
 });
 
 function Layout(): React.ReactElement {
