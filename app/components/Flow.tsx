@@ -20,6 +20,7 @@ const FlowStack = styled(Box)({
   flexDirection: "column",
   justifyContent: "center",
   alignContent: "center",
+  width: "100%",
   zIndex: 1,
 });
 
