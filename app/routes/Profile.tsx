@@ -20,6 +20,7 @@ const HeroSection = styled(Box)(({ theme }) => ({
   gap: "60px",
   alignItems: "center",
   justifyContent: "center",
+  width: "100%",
   maxWidth: "1400px",
   margin: "0 auto",
   background: "var(--gradient-aurora)",

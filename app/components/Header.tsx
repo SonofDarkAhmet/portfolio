@@ -34,6 +34,7 @@ const StyledStack = styled(Stack)(({ theme }) => ({
   boxShadow: "var(--shadow-card)",
   [theme.breakpoints.down("sm")]: {
     justifyContent: "flex-start",
+    minWidth: "340px",
     maxWidth: "94vw",
     padding: "4px 6px",
     overflowX: "auto",
