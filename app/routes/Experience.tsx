@@ -3,7 +3,7 @@ import { Box, styled } from "@mui/material";
 
 import SectionTitle from "../components/SectionTitle";
 import ExperienceCard from "../components/ExperienceCard";
-import { experience } from "../data";
+import { experience, sectionTitles } from "../data";
 
 const ExperienceBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -39,7 +39,7 @@ export default function Experience({
 }: ExperienceProps): React.ReactElement {
   return (
     <ExperienceBox id="experience" ref={sectionRef}>
-      <SectionTitle variant="h4">Experience</SectionTitle>
+      <SectionTitle variant="h4">{sectionTitles.experience}</SectionTitle>
       <ExperienceGrid>
         {experience.map((item) => (
           <ExperienceCard key={item.id} item={item} />

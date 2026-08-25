@@ -6,6 +6,7 @@ import { Box, Typography, TextField, Button, styled } from "@mui/material";
 import emailjs from "@emailjs/browser";
 
 import SectionTitle from "../components/SectionTitle";
+import { sectionTitles, contactSuccessMessage } from "../data";
 
 const ContactBox = styled(Box)(({ theme }) => ({
   width: "100%",
@@ -77,6 +78,12 @@ const SuccessMessage = styled(Typography)({
   color: "var(--text-secondary)",
 });
 
+const FormErrorMessage = styled(Typography)({
+  fontSize: "13px",
+  color: "var(--danger-500)",
+  textAlign: "center",
+});
+
 const schema = z.object({
   subject: z.string().min(3),
   name: z.string().min(1),
@@ -119,7 +126,8 @@ export default function Contact({ sectionRef }: ContactProps): React.ReactElemen
       );
       setSubmitted(true);
     } catch (error) {
-      setError("name", {
+      console.log(error)
+      setError("root", {
         message: error instanceof Error ? error.message : "Failed to send message",
       });
     }
@@ -128,12 +136,10 @@ export default function Contact({ sectionRef }: ContactProps): React.ReactElemen
   return (
     <ContactBox id="contact" ref={sectionRef}>
       <ContactCard>
-        <SectionTitle variant="h4">Contact</SectionTitle>
+        <SectionTitle variant="h4">{sectionTitles.contact}</SectionTitle>
 
         {submitted ? (
-          <SuccessMessage>
-            Thanks — your message has been sent. I&apos;ll get back to you soon.
-          </SuccessMessage>
+          <SuccessMessage>{contactSuccessMessage}</SuccessMessage>
         ) : (
           <ContactForm
             // @ts-expect-error MUI v9 styled(Box) drops the polymorphic `component` prop from its type
@@ -176,6 +182,10 @@ export default function Contact({ sectionRef }: ContactProps): React.ReactElemen
               error={Boolean(errors.message)}
               helperText={errors.message?.message}
             />
+
+            {errors.root?.message && (
+              <FormErrorMessage>{errors.root.message}</FormErrorMessage>
+            )}
 
             <SubmitButton type="submit" variant="outlined" disabled={isSubmitting}>
               {isSubmitting ? "Sending..." : "Send message"}

@@ -2,7 +2,16 @@ import React from "react";
 import { Box, Stack, Typography, Button, styled } from "@mui/material";
 
 import EllipticalProfileCard from "../components/EllipticalProfileCard";
-import { vitaeContext, heroName, jobTitle, stats } from "../data";
+import {
+  vitaeContext,
+  heroName,
+  jobTitle,
+  stats,
+  resumeFileName,
+  resumeHref,
+  heroCtaLabel,
+  resumeCtaLabel,
+} from "../data";
 import { scrollToRef } from "../lib/scroll";
 
 const HeroSection = styled(Box)(({ theme }) => ({
@@ -154,15 +163,15 @@ export default function Profile({
                 scrollToRef(contactRef, appBarHeight);
               }}
             >
-              Get in touch
+              {heroCtaLabel}
             </AccentButton>
             <OutlineButton
               variant="outlined"
-              href="/Raif_Karaahmetoglu_Resume.pdf"
+              href={resumeHref}
               // @ts-expect-error MUI v9 styled(Button) drops the `download` prop that's valid when rendered as an <a>
-              download="Raif_Karaahmetoglu_Resume.pdf"
+              download={resumeFileName}
             >
-              Résumé
+              {resumeCtaLabel}
             </OutlineButton>
           </ButtonStack>
         </Stack>

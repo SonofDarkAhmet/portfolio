@@ -9,6 +9,33 @@ export const vitaeContext: string =
 export const heroName: string = "Raif Karaahmetoğlu";
 export const jobTitle: string = "SOFTWARE & CONTROL ENGINEER";
 
+export const resumeFileName: string = "Raif_Karaahmetoglu_Resume.pdf";
+export const resumeHref: string = "/Raif_Karaahmetoglu_Resume.pdf";
+
+export const heroCtaLabel: string = "Get in touch";
+export const resumeCtaLabel: string = "Résumé";
+
+export const socialLinks = {
+  linkedin: "https://linkedin.com/in/raif-karaahmetoglu",
+  github: "https://github.com/SonofDarkAhmet",
+};
+
+export const footerCopyright: string = "© 2026 All rights reserved.";
+export const footerTagline: string =
+  "Thanks for visiting! Feel free to connect with me.";
+
+export const sectionTitles = {
+  experience: "Experience",
+  projects: "Selected projects",
+  skills: "Skills",
+  contact: "Contact",
+};
+
+export const readCaseStudyLabel: string = "Read case study →";
+
+export const contactSuccessMessage: string =
+  "Thanks — your message has been sent. I'll get back to you soon.";
+
 export type Stat = {
   value: string;
   label: string;
@@ -240,6 +267,7 @@ export const skillGroups: SkillGroup[] = [
       "C++",
       "Python",
       "JavaScript",
+      "TypeScript",
       "React & Router",
       "HTML/CSS",
       "MUI",

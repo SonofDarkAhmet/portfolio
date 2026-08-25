@@ -3,6 +3,7 @@ import { Box, styled } from "@mui/material";
 
 import SkillWall from "../components/SkillWall";
 import SectionTitle from "../components/SectionTitle";
+import { sectionTitles } from "../data";
 
 const SkillWallBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -27,7 +28,7 @@ type SkillsProps = {
 function Skills({ sectionRef }: SkillsProps): React.ReactElement {
   return (
     <SkillWallBox id="skills" ref={sectionRef}>
-      <SectionTitle variant="h4">Skills</SectionTitle>
+      <SectionTitle variant="h4">{sectionTitles.skills}</SectionTitle>
       <SkillsGridWrap>
         <SkillWall />
       </SkillsGridWrap>

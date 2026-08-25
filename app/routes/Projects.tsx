@@ -5,7 +5,7 @@ import { Box, styled } from "@mui/material";
 import SectionTitle from "../components/SectionTitle";
 import ProjectList from "../components/projects/ProjectList";
 import ProjectModal from "../components/projects/ProjectModal";
-import { projects } from "../data";
+import { projects, sectionTitles } from "../data";
 
 const ProjectBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -55,7 +55,7 @@ export default function Projects({ ref }: ProjectsProps): React.ReactElement {
 
   return (
     <ProjectBox id="projects" ref={ref}>
-      <SectionTitle variant="h4">Selected projects</SectionTitle>
+      <SectionTitle variant="h4">{sectionTitles.projects}</SectionTitle>
       <ProjectList onOpen={handleOpen} />
       <ProjectModal project={openProject} onClose={handleClose} />
     </ProjectBox>

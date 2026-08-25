@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Stack, Typography, IconButton, styled } from "@mui/material";
 
+import { socialLinks, footerCopyright, footerTagline } from "../data";
+
 const FooterBox = styled(Box)(({ theme }) => ({
   padding: "28px 80px",
   background: "var(--gradient-aurora)",
@@ -53,15 +55,13 @@ function Footer(): React.ReactElement {
   return (
     <FooterBox>
       <FooterStack>
-        <CopyrightText>© 2026 All rights reserved.</CopyrightText>
-        <TaglineText>
-          Thanks for visiting! Feel free to connect with me.
-        </TaglineText>
+        <CopyrightText>{footerCopyright}</CopyrightText>
+        <TaglineText>{footerTagline}</TaglineText>
         <IconStack>
           <StyledIconButton
             // @ts-expect-error MUI v9 styled(IconButton) drops the polymorphic `component` prop from its type
             component="a"
-            href="https://linkedin.com/in/raif-karaahmetoglu"
+            href={socialLinks.linkedin}
             target="_blank"
             rel="noopener"
             aria-label="LinkedIn"
@@ -73,7 +73,7 @@ function Footer(): React.ReactElement {
           <StyledIconButton
             // @ts-expect-error MUI v9 styled(IconButton) drops the polymorphic `component` prop from its type
             component="a"
-            href="https://github.com/SonofDarkAhmet"
+            href={socialLinks.github}
             target="_blank"
             rel="noopener"
             aria-label="GitHub"

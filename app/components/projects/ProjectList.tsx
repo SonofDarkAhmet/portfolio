@@ -1,4 +1,4 @@
-import { projects, type Project } from "../../data";
+import { projects, readCaseStudyLabel, type Project } from "../../data";
 import type React from "react";
 import { Box, Typography, styled } from "@mui/material";
 
@@ -107,7 +107,7 @@ export default function ProjectList({
             <HeadlineWrap>
               <Headline>{item.headline}</Headline>
             </HeadlineWrap>
-            <ReadMore>Read case study →</ReadMore>
+            <ReadMore>{readCaseStudyLabel}</ReadMore>
           </RowContent>
         </Row>
       ))}
