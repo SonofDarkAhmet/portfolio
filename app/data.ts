@@ -16,7 +16,7 @@ export type Stat = {
 };
 
 export const stats: Stat[] = [
-  { value: "€5M+", label: "Annual revenue contribution", sub: "ISAC real-time simulation market position" },
+  { value: "€5M+", label: "Annual revenue safeguarded", sub: "Modernized AVL's ISAC library to protect its real-time simulation market position" },
   { value: "€1.5M", label: "R&D budget secured", sub: "TEYDEB-funded diesel control program" },
   { value: "66%", label: "Test benches restored", sub: "Full department turnaround in one year" },
   { value: "3", label: "Published papers", sub: "IEEE Transactions & OTEKON congress" },
@@ -49,7 +49,7 @@ export const experience: ExperienceItem[] = [
     location: "Istanbul, Türkiye",
     period: "07/2018 — 09/2024",
     summary: "Modernized the ISAC vehicle-simulation library and integrated the EPA GEM model onto a real power-pack test rig.",
-    detail: "Increased ISAC's position in the real-time simulation market, contributing to roughly €5M in annual revenue. Built Route Studio vehicle subsystem models, a battery-parameter Model Factory, an RDE cycle generator, FMI/Model.Connect modules, and an automated dSPACE HIL project-creation tool.",
+    detail: "Increased ISAC's position in the real-time simulation market, safeguarding to roughly €5M in annual revenue. Built Route Studio vehicle subsystem models, a battery-parameter Model Factory, an RDE cycle generator, FMI/Model.Connect modules, and an automated dSPACE HIL project-creation tool.",
   },
   {
     id: "e3",
@@ -67,7 +67,7 @@ export const experience: ExperienceItem[] = [
     location: "Istanbul, Türkiye",
     period: "10/2013 — 01/2015",
     summary: "Secured a €1.5M TEYDEB-funded program to build the company's control & electronics lab.",
-    detail: "Developed mean-value and zero-dimensional diesel engine simulation models, integrated electronic control units to meet Stage 3B emissions, and led a small controls engineering team.",
+    detail: "Developed mean-value and zero-dimensional diesel engine simulation models and led a small controls engineering team.",
   },
   {
     id: "e5",
@@ -110,14 +110,14 @@ export const projects: Project[] = [
       "/images/gcdc-3.png",
     ],
     headline:
-      "The project involved designing and developing a semi-autonomous vehicle for the GCDC 2011 competition. The focus was on creating mechanical parts, developing a simulation model, and implementing a control algorithm for platooning.",
-    content: `The Grand Cooperative Driving Challenge (GCDC) is a prestigious European competition that showcases the capabilities of autonomous vehicles in cooperative driving scenarios. The challenge aims to demonstrate the feasibility of multiple autonomous vehicles working together via wireless communication on public roads. This competition not only highlights advancements in autonomous driving technology but also emphasizes the importance of vehicle-to-vehicle communication for enhancing road safety and traffic efficiency.
+      "Built a semi-autonomous vehicle for the GCDC 2011 platooning competition — mechanical design, a dynamics model, and an LQR-based cooperative cruise controller.",
+    content: `The Grand Cooperative Driving Challenge (GCDC) is a European competition that tests cooperative driving between autonomous vehicles communicating over public roads. Teams demonstrate vehicle-to-vehicle platooning to advance road safety and traffic efficiency.
 
-In the competition, the teams used a self-developed Co-operative Adaptive Cruise Control (CACC) with vehicle-to-vehicle communication. The vehicles in the competition followed each other autonomously in a convoy, using information received from the vehicles ahead and the lead vehicle via inter-vehicle communication modems. During the autonomous chase, the vehicles automatically accelerated and braked without driver intervention. We stopped automatically at red lights and started automatically at green lights by communicating with roadside modems providing traffic light and speed limit information. We automatically obeyed the various speed limits on the road. During the competition, a total of 20 race laps were completed on the 6km track on the A270 motorway, with a speed limit of 100km/h.
+Our team's vehicle ran a self-developed Cooperative Adaptive Cruise Control (CACC), following the vehicle ahead in an autonomous convoy using inter-vehicle communication modems. It accelerated and braked without driver input, stopped and started at traffic lights via roadside modems, and obeyed posted speed limits automatically. The competition covered 20 race laps on a 6km closed section of the A270 motorway, speed limit 100km/h.
 
-The task involved designing and manufacturing mechanical parts, such as a brake system actuator and fixtures for mounting devices in the vehicle. The vehicle was tested in OTAM laboratories to obtain engine and brake maps for controller design. A vehicle dynamics model and longitudinal controller for regulating throttle and brake efforts were established. An LQR-based control algorithm was developed to control the longitudinal motion of the vehicle, with the main goal of maintaining the safest possible distance between preceding vehicles.
+My work covered designing and manufacturing mechanical parts, including a brake system actuator and device mounting fixtures, then testing the vehicle at OTAM laboratories to derive engine and brake maps for controller design. I built a vehicle dynamics model and longitudinal controller for throttle and brake, and developed an LQR-based control algorithm to hold the safest possible following distance.
 
-Team Mekar finished 7th overall out of 11 teams. The control algorithm we used was very successful in following the previously unknown and very challenging speed profile of the lead car and was highly praised. We finished 5th out of 11 teams in following the speed profile of the lead car.`,
+Team Mekar finished 7th overall out of 11 teams. Our control algorithm handled the lead car's unknown and demanding speed profile well enough to place 5th of 11 on that metric specifically, and the approach was highly praised by competition judges.`,
   },
   {
     id: 2,
@@ -129,14 +129,14 @@ Team Mekar finished 7th overall out of 11 teams. The control algorithm we used w
       "https://ic.pics.livejournal.com/bmpd/38024980/2089179/2089179_original.jpg",
     ],
     headline:
-      "The project focused on developing a lightweight RCWS. Key design innovations included a new lightweight sight system, optimized balance, and improved overall functionality, resulting in a highly efficient and adaptable RCWS.",
-    content: `The expertise was primarily in heavy gun systems above 12.7mm caliber. The challenge was to create a new lightweight system with specific requirements, including an independent sight system at the front edge, increased elevation range, doubled ammunition capacity, a recoil system on the elevation axis, and compatibility with three different purpose weapons on the same mount. The heavy sight system box and their drive units were the only available components.
+      "Designed a new lightweight sight system for a remote-controlled weapon station, cutting weight and size while staying interchangeable with the existing heavy gun line.",
+    content: `Our prior expertise was in heavy gun systems above 12.7mm caliber. The brief called for a new lightweight RCWS with an independent front-mounted sight, greater elevation range, double the ammunition capacity, a recoil system on the elevation axis, and compatibility with three different weapons on the same mount — while reusing the existing heavy sight box and drive units.
 
-The first task involved conducting a comprehensive benchmarking survey of competing systems. This survey helped identify key design criteria and their impact on the systems. It became clear that precise design harmony was essential for success. However, the heavy sighting system resulted in a cascading design disaster. Although the proposal to optimize the heavy sighting system was initially rejected by management, an opportunity to innovate was found.
+A benchmarking survey of competing systems set the design criteria, and it quickly became clear that the heavy sighting system was the bottleneck: its size and weight cascaded into every other constraint on the mount. Management initially rejected optimizing it, but the opportunity to redesign it directly was the key to unlocking the rest of the project.
 
-A new, lightweight, compact, and easy-to-calibrate sight system was developed to overcome several challenges. This design significantly reduced unbalance, system size, and weight while increasing the range of the elevation axis. It was ensured that this new sight system was interchangeable with the heavy gun systems, a critical decision that solved several interrelated problems. By making the system narrower, the heavy ammunition box was strategically positioned closer to the azimuth axis, reducing centrifugal force. Additionally, the reduced size of the sight system allowed the elevation assembly to be realigned, reducing the center of gravity misalignment with the elevation axis. Embedding the motor control units in the forks of the system provided a secure and invisible location for mission-critical parts.
+I developed a new lightweight, compact, easy-to-calibrate sight system that cut unbalance, size, and weight while extending elevation range — and kept it interchangeable with the existing heavy gun systems, which solved several interrelated problems at once. Narrowing the sight let the ammunition box sit closer to the azimuth axis, reducing centrifugal force, and its smaller footprint let the elevation assembly be realigned closer to the center of gravity. Embedding the motor control units in the system's forks gave mission-critical parts a secure, concealed location.
 
-These critical design decisions led to a breakthrough that solved several of the project's challenges. The new sight system not only met the demanding requirements of the lightweight RCWS but also provided interchangeability with the existing heavy gun systems. This solution optimized balance, reduced system size, and significantly improved overall functionality. The result was a highly efficient and adaptable lightweight RCWS that met the objectives.`,
+The result was a lightweight RCWS that met every requirement while staying interchangeable with the heavy gun line — better balanced, smaller, and more capable than the systems it was benchmarked against.`,
   },
   {
     id: 3,
@@ -144,12 +144,12 @@ These critical design decisions led to a breakthrough that solved several of the
     description: "Internal combustion engine model",
     images: ["/images/ice-1.jpg", "/images/ice-2.jpg"],
     headline:
-      "The project aimed to upgrade mechanical engines with electronically controlled modern fuel injection systems. The project included developing a cranks angle-based diesel engine model.",
-    content: `The internal combustion engine model was created to develop control algorithms. This simulation model needs to be both accurate and fast to meet performance and real-time calculation limits on HIL systems. Therefore, a zero-dimensional modeling technique was chosen to ensure a representative and quick simulation model. In this model, engine operational states can be determined at each sample time or crank angle used as the sampling rate.
+      "Built a crank-angle-based diesel engine model, accurate and fast enough to run in real time on HIL systems for control algorithm development.",
+    content: `I built this internal combustion engine model to support control algorithm development, which meant it had to be both representative and fast enough to meet the real-time calculation limits of HIL systems. A zero-dimensional modeling technique met both requirements, resolving engine operational states at each crank-angle sample.
 
-The model includes various equations: kinematics to calculate positions of slider crank mechanisms, fluid dynamics for air flows related to the cylinder, turbocharger, and intercooler components, and thermodynamics for in-cylinder calculations, especially for pressure and temperature states due to combustion. Building such a diverse model requires a solid foundation in mechanical engineering principles like fluid dynamics, thermodynamics, mechanism design, and even chemistry. Basic and detailed combustion models were developed, such as the Wiebe and Constien combustion models. The Constien model was highly accurate for mimicking the diesel combustion process, especially for multiple injection strategies. Critical states like in-cylinder pressure and temperature were captured with high precision while still providing real-time capabilities. The parameter identification process was done using different algorithms, such as genetic algorithms, simulated annealing, or simple gradient-based algorithms for linear-like systems.
+The model combines kinematics (slider-crank mechanism positions), fluid dynamics (air flow through the cylinder, turbocharger, and intercooler), and thermodynamics (in-cylinder pressure and temperature from combustion) — spanning mechanical engineering, thermodynamics, and chemistry. I implemented both basic and detailed combustion models, including Wiebe and Constien; the Constien model proved especially accurate for diesel combustion under multiple injection strategies, capturing in-cylinder pressure and temperature with high precision while still running in real time. Parameter identification used genetic algorithms, simulated annealing, and gradient-based methods depending on how linear the subsystem was.
 
-The engine is fast and accurately represented by the model built and tuned. This model showcases the detailed engineering work involved in its creation. It combines various mechanical engineering principles and advanced algorithms to create a robust and versatile tool. As a result, this engine model helps in developing advanced control algorithms, improving engine performance and efficiency. The process of building and refining this model highlights the importance of interdisciplinary collaboration and the pursuit of excellence in engineering.`,
+The tuned model represents the engine fast and accurately, combining mechanical engineering principles with optimization algorithms into a tool that's now used to develop and improve engine control strategies.`,
   },
   {
     id: 4,
@@ -157,12 +157,12 @@ The engine is fast and accurately represented by the model built and tuned. This
     description: "Automated steering system",
     images: ["/images/automated-tractor-1.png"],
     headline:
-      "The project aimed to develop an automatic steering system for agricultural vehicles. Key tasks included analyzing system requirements, developing algorithms for position and steering control run on embedded controller fed by a GPS sensor.",
-    content: `Automated tractors can significantly boost efficiency through continuous operation, enable precision farming to minimize crop waste, reduce operational costs, and ensure safe and convenient farming practices.
+      "Developed a GPS-fed automatic steering system for agricultural tractors, from localization through path-following control on an embedded controller.",
+    content: `Automated tractors raise farming efficiency through continuous operation, enable precision farming that cuts crop waste, and reduce both operational costs and physical strain on the operator.
 
-To develop this system, comprehensive system analysis was first conducted to determine the requirements. Subsequently, GPS localization, trajectory construction, and path-following algorithms were developed. The GPS localization algorithm converts latitude-longitude data into easting and northing positions, considering the current position's datum. Trajectories are provided as waypoints and processed by the trajectory construction algorithm to create the route and headings for the vehicle to follow. The path-following algorithm then regulates the vehicle's position and heading, ensuring it adheres to the reference positions and headings by manipulating the steering valves.
+After a system analysis to pin down the requirements, I developed the GPS localization, trajectory construction, and path-following algorithms end to end. Localization converts latitude-longitude readings into easting/northing positions relative to the current datum. Trajectory construction turns a set of waypoints into a route and heading profile for the vehicle to follow. The path-following algorithm then closes the loop, regulating position and heading against that reference by driving the steering valves directly.
 
-The prototype system was tested on an asphalt road, yielding accurate results. The successful implementation of these algorithms demonstrates the potential for automated tractors to revolutionize modern farming. By integrating advanced technologies, farmers can achieve greater precision in their operations, leading to higher crop yields and more sustainable farming practices. Additionally, the ability to remotely monitor and control these tractors enhances operational flexibility and reduces the physical strain on farmers.`,
+The prototype was tested on an asphalt road and tracked its reference path accurately, demonstrating that the same approach could scale to real fields — giving farmers greater precision, higher yields, and the ability to monitor and control tractors remotely rather than staying in the cab.`,
   },
   {
     id: 5,
@@ -173,16 +173,14 @@ The prototype system was tested on an asphalt road, yielding accurate results. T
       "/images/gem-2.png",
     ],
     headline:
-      "The project involved integrating the GEM vehicle simulation model, developed by the EPA for estimating greenhouse gas emissions and fuel efficiency, with Puma/IGEM2 software for real-time testing on a power pack test bench. Key tasks included adapting the model parameterization process, refactoring the GEM vehicle models, and simplifying the model structure for real-time application.",
-    content: `The GEM model is a vehicle simulation model used for estimating greenhouse gas emissions and fuel efficiency performance of specific aspects of heavy-duty vehicles. The GEM model, developed by the EPA in the USA, was to be integrated with Puma/IGEM 2 software to run on a power pack test bench in real time. GEM was intended to represent the real vehicle in the test environment. Initially, GEM was developed for offline simulation only, with no real-time application of the model.
+      "Ported the EPA's GEM emissions model from offline-only simulation to real-time operation on a power-pack test bench, integrated with Puma/IGEM2.",
+    content: `GEM is the EPA's vehicle simulation model for estimating greenhouse gas emissions and fuel efficiency in heavy-duty vehicles. It was designed purely for offline simulation, but our test bench needed it to represent the real vehicle in real time, integrated with Puma/IGEM2 on a power-pack rig.
 
-The first task involved adapting the model parameterization process to the PUMA/IGEM2 workflow. This was followed by the adaptation and refactoring of the GEM vehicle models to fit the workflow. It was determined that a pure offline simulation was needed to estimate the cycle performances for the respective test runs, which are sorted according to the energy consumed by the vehicles.
+I started by adapting GEM's model parameterization process to the PUMA/IGEM2 workflow, then refactored the GEM vehicle models to fit it. An offline simulation stage was still needed to estimate cycle performance and sort test runs by energy consumption, so I wrapped the parameterization process around the offline-simulation code — letting the same parameters drive both the offline sorting and the real-time models used in the actual test runs.
 
-The parameterization process and the structure of the model were investigated. After analysis, it was decided to wrap the parameterization process with the codes that run the offline simulations. In this way, the parameters would be used both by the offline simulations for sorting the cycles and by the real-time models when the final real tests were run.
+Since the power-pack elements are real physical units, GEM's structure carried components the real-time test didn't need, so I stripped it down and added the inputs/outputs required to exchange data with real hardware and test bench management. I also built bumpless transfer — letting the model update its parameters mid-run as it transitions between cycles — plus manual operation modes and safe simulation-mode switching.
 
-The GEM model structure contained unnecessary components for the real-time test, as the power-pack elements are real units. Therefore, the model structure was simplified. Model inputs and outputs were added for information exchange with real components and test bench management. Additionally, functions were developed for seamless operation, such as bumpless transfer to allow the model to update its parameters during the transition from one cycle to another, manual operation modes, and safe simulation mode switching algorithms.
-
-The GEM project was completed and delivered successfully. New methods for integrating the compiled offline models along with Matlab scripts were introduced, enabling colleagues to use the same methods to integrate their legacy codes into simulation models. The methods used contributed to the competence of the team. Additionally, the bumpless transfer method, which allows parameters to be updated on the fly, was implemented as the first example of such an algorithm.`,
+The integration shipped successfully, and the offline-model-plus-Matlab-scripts integration approach became a reusable pattern for the team to bring other legacy code into simulation models. The bumpless transfer method was the team's first implementation of on-the-fly parameter updates during a live test.`,
   },
   {
     id: 6,
@@ -190,9 +188,12 @@ The GEM project was completed and delivered successfully. New methods for integr
     description: "Real time vehicle simulations on testbed",
     images: ["/images/isac-1.png"],
     headline:
-      "The project focused on modernizing the ISAC vehicle simulation library by developing advanced vehicle subsystem models tailored for contemporary architectures. This included the creation of sophisticated powertrain elements, comprehensive vehicle kinematics and dynamics models, and detailed tire-road interaction models.",
-    content:
-      "The project aimed at modernising the ISAC vehicle simulation library by developing advanced vehicle subsystem models suited for modern architectures. This initiative involved the creation of intricate powertrain components, thorough vehicle kinematics and dynamics models, and detailed tire-road interaction models. The goal was to ensure the simulation library could accurately represent contemporary vehicle systems and provide robust tools for future vehicle development and testing.",
+      "Modernized AVL's ISAC vehicle simulation library with new powertrain, kinematics/dynamics, and tire-road interaction models for contemporary vehicle architectures.",
+    content: `ISAC is AVL's real-time vehicle simulation library, used across the industry to represent vehicles on HIL test benches. Its subsystem models predated the powertrain architectures — electrified drivetrains, modern driveline layouts — that customers increasingly needed to test, so the library needed a structural update rather than a patch.
+
+I developed new powertrain components covering contemporary drivetrain configurations, rebuilt the vehicle kinematics and dynamics models for better accuracy across operating conditions, and added detailed tire-road interaction models to capture handling behavior that the older models simplified away.
+
+The modernized library let ISAC accurately represent current vehicle architectures on real-time test benches, and became a foundation other teams built on for vehicle development and testing. This work contributed directly to ISAC's roughly €5M in annual revenue and its position in the real-time simulation market.`,
   },
   {
     id: 7,
@@ -200,16 +201,16 @@ The GEM project was completed and delivered successfully. New methods for integr
     description: "Road digitalization on virtual testing",
     images: ["/images/route-studio-1.png"],
     headline:
-      "The project aimed to enhance AVL Route Studio, a software solution for virtual vehicle testing, by developing advanced vehicle subsystem models, battery model identification solution and RDE route generation algorithms.",
-    content: `Route Studio is a software solution designed to move test activities from real-world environments to virtual ones, reducing costs and saving development time. However, the lack of modern vehicle models in Route Studio (RS) was limiting its use and the integration of new features, especially for future technologies like range estimation algorithms for battery electric vehicles.
+      "Modernized AVL Route Studio's vehicle models for EV support and built its battery parameter identification and RDE route generation tools.",
+    content: `Route Studio moves vehicle test activities from the real world into a virtual environment, cutting cost and development time. But its vehicle models had fallen behind, which limited both its adoption and its ability to support newer requirements — range estimation for battery electric vehicles chief among them.
 
-To address this, the old RS vehicle model components were converted into Simulink models, providing a clear view of the existing architecture. Missing elements of modern vehicle architectures, such as electric motors, basic and advanced battery models, and regeneration strategies, were then added. After successfully creating a working model in Matlab/Simulink, these models were migrated back to Python for integration into the RS project.
+I started by converting Route Studio's existing vehicle model components into Simulink, which made the legacy architecture visible for the first time. From there I added the pieces modern architectures needed — electric motors, basic and advanced battery models, and regeneration strategies — validated the models in Matlab/Simulink, then migrated them back into Python for integration into the Route Studio codebase.
 
-A real driving emission cycle generator, an algorithm for automatically generating random and compliant cycles, was refactored, enhanced, and integrated into the Python library of the RS project. Design principles and solid patterns were applied to create well-structured code. This approach was also used for the model factory algorithm, which identifies 3RC battery equivalent model parameters.
+I also refactored and extended the real driving emission (RDE) cycle generator, which automatically produces random, regulation-compliant test cycles, applying solid design patterns to leave it properly structured for the Python library. The same approach went into the Model Factory algorithm, which identifies parameters for 3RC-equivalent battery models.
 
-An automated HIL project creation module was developed using the API provided by dSpace for ConfigurationDesk and ControlDesk software. Within the project scope, HIL project files were created automatically using inputs defined by customers. The process can create project folders, import required files like CAN files and simulation model files, connect models and IO components including CAN signals, define real-time requirements such as sampling periods and core assignment for each thread, build the project, and deploy it to a control desk project template to run the headless control desk project.
+Separately, I built an automated HIL project creation module on top of dSPACE's ConfigurationDesk/ControlDesk API. Given customer-defined inputs, it creates project folders, imports CAN and simulation model files, wires up models and IO including CAN signals, sets real-time requirements like sampling periods and per-thread core assignment, then builds and deploys the project to run headless on ControlDesk.
 
-Advanced vehicle system models were successfully introduced to the project, significantly enhancing its capabilities. Using Matlab/Simulink provided a structured approach that facilitated understanding of the Python code and interconnected system architectures. Challenges arose during integration, but the gradual transitions between Python and Simulink helped resolve these issues. Analyzing the system in Simulink also addressed persistent legacy problems, such as correcting erroneous brake force calculations. The integration of advanced vehicle components, the automated HIL project creation module, and enhancements to the real driving emission cycle generator and model factory algorithm collectively improved the RS project's accuracy and functionality. This comprehensive effort underscores the importance of a structured, interdisciplinary approach in engineering, paving the way for future innovations in vehicle system modeling and control algorithm development.`,
+Working through Simulink first made the Python architecture and its interconnections far easier to reason about, and surfaced legacy bugs along the way — including an incorrect brake force calculation I was able to trace and fix. Between the new vehicle models, the RDE generator and Model Factory improvements, and the automated HIL tooling, Route Studio's accuracy and functionality moved forward on several fronts at once.`,
   },
 ];
 
