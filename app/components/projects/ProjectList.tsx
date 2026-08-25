@@ -9,7 +9,7 @@ const ListStack = styled(Box)({
   marginTop: "24px",
 });
 
-const Row = styled(Box)({
+const Row = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: "28px",
   alignItems: "flex-start",
@@ -24,9 +24,12 @@ const Row = styled(Box)({
     transform: "translateY(-4px)",
     borderColor: "var(--border-strong)",
   },
-});
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+  },
+}));
 
-const Thumb = styled(Box)({
+const Thumb = styled(Box)(({ theme }) => ({
   width: "280px",
   height: "180px",
   borderRadius: "var(--radius-md)",
@@ -36,15 +39,21 @@ const Thumb = styled(Box)({
   justifyContent: "center",
   flex: "none",
   background: "var(--surface-sunken)",
-});
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+  },
+}));
 
-const RowContent = styled(Box)({
+const RowContent = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
   flex: 1,
   height: "180px",
-});
+  [theme.breakpoints.down("sm")]: {
+    height: "auto",
+  },
+}));
 
 const Badge = styled(Typography)({
   fontFamily: "var(--font-mono)",

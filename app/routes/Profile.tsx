@@ -5,7 +5,7 @@ import EllipticalProfileCard from "../components/EllipticalProfileCard";
 import { vitaeContext, heroName, jobTitle, stats } from "../data";
 import { scrollToRef } from "../lib/scroll";
 
-const HeroSection = styled(Box)({
+const HeroSection = styled(Box)(({ theme }) => ({
   display: "grid",
   gridTemplateColumns: "auto auto",
   gap: "60px",
@@ -15,7 +15,14 @@ const HeroSection = styled(Box)({
   margin: "0 auto",
   background: "var(--gradient-aurora)",
   padding: "170px 80px 90px",
-});
+  [theme.breakpoints.down("md")]: {
+    gridTemplateColumns: "1fr",
+    justifyItems: "center",
+    textAlign: "center",
+    padding: "140px 24px 60px",
+    gap: "32px",
+  },
+}));
 
 const ContentStack = styled(Stack)({
   gap: "28px",
@@ -43,13 +50,17 @@ const VitaeText = styled(Typography)({
   maxWidth: "620px",
 });
 
-const ButtonStack = styled(Stack)({
+const ButtonStack = styled(Stack)(({ theme }) => ({
   display: "grid",
   gridTemplateColumns: "auto auto",
   gap: "14px",
   alignItems: "center",
   justifyContent: "center",
-});
+  [theme.breakpoints.down("sm")]: {
+    gridTemplateColumns: "1fr",
+    width: "100%",
+  },
+}));
 
 const AccentButton = styled(Button)({
   backgroundColor: "var(--accent-primary)",
@@ -76,12 +87,15 @@ const OutlineButton = styled(Button)({
   },
 });
 
-const StatsGrid = styled(Box)({
+const StatsGrid = styled(Box)(({ theme }) => ({
   display: "grid",
   gridTemplateColumns: "1fr 1fr",
   gap: "16px",
   maxWidth: "620px",
-});
+  [theme.breakpoints.down("sm")]: {
+    gridTemplateColumns: "1fr",
+  },
+}));
 
 const StatCard = styled(Box)({
   background: "var(--surface-card)",

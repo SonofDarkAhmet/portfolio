@@ -2,11 +2,17 @@ import { Box, Typography, styled } from "@mui/material";
 
 import { skillGroups } from "../data";
 
-const SkillsGrid = styled(Box)({
+const SkillsGrid = styled(Box)(({ theme }) => ({
   display: "grid",
   gridTemplateColumns: "repeat(4, 1fr)",
   gap: "20px",
-});
+  [theme.breakpoints.down("md")]: {
+    gridTemplateColumns: "repeat(2, 1fr)",
+  },
+  [theme.breakpoints.down("sm")]: {
+    gridTemplateColumns: "1fr",
+  },
+}));
 
 const GroupCard = styled(Box)({
   background: "var(--surface-card)",

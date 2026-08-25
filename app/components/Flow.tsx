@@ -33,7 +33,7 @@ export default function Flow({
   appBarHeight,
 }: FlowProps): React.ReactElement {
   return (
-    <FlowStack id="test" spacing={2}>
+    <FlowStack>
       <Profile
         profileImg={profilePic[0]}
         ref={refs.profileSection}

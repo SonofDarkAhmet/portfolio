@@ -7,14 +7,17 @@ import emailjs from "@emailjs/browser";
 
 import SectionTitle from "../components/SectionTitle";
 
-const ContactBox = styled(Box)({
+const ContactBox = styled(Box)(({ theme }) => ({
   width: "100%",
   padding: "40px 80px 110px",
   maxWidth: "var(--content-narrow)",
   margin: "0 auto",
-});
+  [theme.breakpoints.down("sm")]: {
+    padding: "24px 16px 60px",
+  },
+}));
 
-const ContactCard = styled(Box)({
+const ContactCard = styled(Box)(({ theme }) => ({
   background: "var(--surface-card)",
   border: "1px solid var(--border-subtle)",
   borderRadius: "var(--radius-lg)",
@@ -22,7 +25,10 @@ const ContactCard = styled(Box)({
   display: "flex",
   flexDirection: "column",
   gap: "20px",
-});
+  [theme.breakpoints.down("sm")]: {
+    padding: "24px",
+  },
+}));
 
 const ContactForm = styled(Box)({
   display: "flex",

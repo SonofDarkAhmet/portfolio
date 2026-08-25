@@ -22,21 +22,26 @@ const StyledAppbar = styled(AppBar)({
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "center",
-  flexWrap: "wrap",
+  flexWrap: "nowrap",
 });
 
-const StyledStack = styled(Stack)({
+const StyledStack = styled(Stack)(({ theme }) => ({
   flexDirection: "row",
-  flexWrap: "wrap",
+  flexWrap: "nowrap",
   backgroundColor: "var(--surface-pill)",
   padding: "5px 10px",
   borderRadius: "var(--radius-pill)",
   boxShadow: "var(--shadow-card)",
-});
+  [theme.breakpoints.down("sm")]: {
+    justifyContent: "center",
+    maxWidth: "94vw",
+    padding: "4px 6px",
+  },
+}));
 
 const StyledButton = styled(Button, {
   shouldForwardProp: (prop) => prop !== "active",
-})<{ active?: boolean }>(({ active }) => ({
+})<{ active?: boolean }>(({ theme, active }) => ({
   flexShrink: 1,
   minWidth: "auto",
   padding: "8px 16px",
@@ -45,12 +50,19 @@ const StyledButton = styled(Button, {
   borderRadius: "var(--radius-pill)",
   border: "none",
   textTransform: "none",
+  whiteSpace: "nowrap",
+  [theme.breakpoints.down("sm")]: {
+    padding: "6px 8px",
+  },
 }));
 
-const ButtonTypography = styled(Typography)({
+const ButtonTypography = styled(Typography)(({ theme }) => ({
   fontWeight: 500,
   fontSize: "14px",
-});
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "11px",
+  },
+}));
 
 type HeaderProps = {
   refs: SectionRefs;

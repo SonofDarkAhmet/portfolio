@@ -23,11 +23,14 @@ const ModalCard = styled(Box)({
   boxShadow: "var(--shadow-raised)",
 });
 
-const ModalImage = styled("img")({
+const ModalImageWrap = styled(Box)({
   width: "100%",
   height: "280px",
-  objectFit: "cover",
-  display: "block",
+  overflow: "hidden",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  background: "var(--surface-sunken)",
 });
 
 const ModalBody = styled(Box)({
@@ -101,7 +104,13 @@ export default function ProjectModal({
         <ModalCard onClick={(e) => e.stopPropagation()}>
           {project && (
             <>
-              <ModalImage src={project.images[0]} alt={project.title} />
+              <ModalImageWrap>
+                <img
+                  src={project.images[0]}
+                  alt={project.title}
+                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                />
+              </ModalImageWrap>
               <ModalBody>
                 <ModalHeader>
                   <ModalTitle>{project.title}</ModalTitle>

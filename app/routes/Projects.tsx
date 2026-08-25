@@ -7,14 +7,17 @@ import ProjectList from "../components/projects/ProjectList";
 import ProjectModal from "../components/projects/ProjectModal";
 import { projects } from "../data";
 
-const ProjectBox = styled(Box)({
+const ProjectBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   padding: "20px 80px 100px",
   maxWidth: "var(--content-max)",
   margin: "0 auto",
-});
+  [theme.breakpoints.down("sm")]: {
+    padding: "20px 24px 60px",
+  },
+}));
 
 type ProjectsProps = {
   ref: React.RefObject<HTMLDivElement | null>;
@@ -29,19 +32,25 @@ export default function Projects({ ref }: ProjectsProps): React.ReactElement {
     : null;
 
   const handleOpen = (id: number) => {
-    setSearchParams((prev) => {
-      const next = new URLSearchParams(prev);
-      next.set("project", String(id));
-      return next;
-    });
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.set("project", String(id));
+        return next;
+      },
+      { replace: true, preventScrollReset: true }
+    );
   };
 
   const handleClose = () => {
-    setSearchParams((prev) => {
-      const next = new URLSearchParams(prev);
-      next.delete("project");
-      return next;
-    });
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.delete("project");
+        return next;
+      },
+      { replace: true, preventScrollReset: true }
+    );
   };
 
   return (

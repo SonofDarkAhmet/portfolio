@@ -1,11 +1,15 @@
 import React from "react";
 import { Box, Stack, Typography, IconButton, styled } from "@mui/material";
 
-const FooterBox = styled(Box)({
+const FooterBox = styled(Box)(({ theme }) => ({
   padding: "28px 80px",
   background: "var(--gradient-aurora)",
   borderTop: "1px solid var(--border-subtle)",
-});
+  [theme.breakpoints.down("sm")]: {
+    padding: "24px",
+    textAlign: "center",
+  },
+}));
 
 const FooterStack = styled(Stack)(({ theme }) => ({
   flexDirection: "row",
