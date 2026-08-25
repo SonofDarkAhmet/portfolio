@@ -11,6 +11,8 @@ const StyledModal = styled(Modal)({
 });
 
 const ModalCard = styled(Box)({
+  position: "relative",
+  zIndex: 1,
   width: "720px",
   maxWidth: "100%",
   maxHeight: "80vh",
