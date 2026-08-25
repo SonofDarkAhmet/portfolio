@@ -33,8 +33,8 @@ const StyledStack = styled(Stack)(({ theme }) => ({
   borderRadius: "var(--radius-pill)",
   boxShadow: "var(--shadow-card)",
   [theme.breakpoints.down("sm")]: {
-    justifyContent: "flex-start",
-    minWidth: "340px",
+    justifyContent: "center",
+    minWidth: "fit-content",
     maxWidth: "94vw",
     padding: "4px 6px",
     overflowX: "auto",
