@@ -5,6 +5,11 @@
 # React Router
 /.react-router/
 /build/
+/dist/
+
+# Design reference / tooling (not app source)
+/portfolio-website-redesign/
+/.agents/
 
 package-lock.json
 yarn.lock
