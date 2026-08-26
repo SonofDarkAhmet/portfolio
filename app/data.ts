@@ -5,7 +5,7 @@ export const vitaeContext: string =
   "the core pillars of mechatronics: mechanical design, control systems and " +
   "software development. I enjoy adapting quickly and expanding my " +
   "knowledge to deliver innovative, high-impact solutions.";
-  
+
 export const heroName: string = "Raif Karaahmetoğlu";
 export const jobTitle: string = "SOFTWARE & CONTROL ENGINEER";
 
@@ -43,10 +43,26 @@ export type Stat = {
 };
 
 export const stats: Stat[] = [
-  { value: "€5M+", label: "Annual revenue safeguarded", sub: "Modernized AVL's ISAC library to protect its real-time simulation market position" },
-  { value: "€1.5M", label: "R&D budget secured", sub: "TEYDEB-funded diesel control program" },
-  { value: "66%", label: "Test benches restored", sub: "Full department turnaround in one year" },
-  { value: "3", label: "Published papers", sub: "IEEE Transactions & OTEKON congress" },
+  {
+    value: "€5M+",
+    label: "Annual revenue safeguarded",
+    sub: "Modernized AVL's ISAC library to protect its real-time simulation market position",
+  },
+  {
+    value: "€1.5M",
+    label: "R&D budget secured",
+    sub: "TEYDEB-funded diesel control program",
+  },
+  {
+    value: "66%",
+    label: "Test benches restored",
+    sub: "Full department turnaround in one year",
+  },
+  {
+    value: "3",
+    label: "Published papers",
+    sub: "IEEE Transactions & OTEKON congress",
+  },
 ];
 
 export type ExperienceItem = {
@@ -66,8 +82,9 @@ export const experience: ExperienceItem[] = [
     company: "AVL MTC Motortestcenter AB",
     location: "Stockholm, Sweden",
     period: "09/2024 — Present",
-    summary: "Python mapping application generating drivable areas from LiDAR/GPS for autonomous mining vehicles.",
-    detail: "Automated the build/install process via CI pipelines, redesigned the threaded data-download procedure, and introduced a UI architecture separating interface from logic. Ensured auxiliary C++ projects meet MISRA C++ 23 at Scania, and ran systems-engineering work on hauler wiper control and IMU self-calibration at Volvo Construction Equipment.",
+    summary: "Working on automotive and autonomous vehicle customer projects",
+    detail:
+      "Scania: Developed a mapping application generating drivable areas from LiDAR and GPS data. Volvo Construction Equipment: Performed systems-engineering activities for hauler wiper control and IMU self-calibration.",
   },
   {
     id: "e2",
@@ -75,8 +92,10 @@ export const experience: ExperienceItem[] = [
     company: "AVL List GmbH",
     location: "Istanbul, Türkiye",
     period: "07/2018 — 09/2024",
-    summary: "Modernized the ISAC vehicle-simulation library and integrated the EPA GEM model onto a real power-pack test rig.",
-    detail: "Increased ISAC's position in the real-time simulation market, safeguarding to roughly €5M in annual revenue. Built Route Studio vehicle subsystem models, a battery-parameter Model Factory, an RDE cycle generator, FMI/Model.Connect modules, and an automated dSPACE HIL project-creation tool.",
+    summary:
+      "Developed control and software solutions focusing on real-time simulation, test automation, and system integration.",
+    detail:
+      "Increased ISAC's position in the real-time simulation market, safeguarding to roughly €5M in annual revenue. Built Route Studio vehicle subsystem models, integration of a battery-parameter identification tool (Model Factory) and an RDE cycle generator algorithm. Development of FMI/Model.Connect IPC modules, and an automated dSPACE HIL project-creation tool.",
   },
   {
     id: "e3",
@@ -84,8 +103,10 @@ export const experience: ExperienceItem[] = [
     company: "Hema Endüstri A.Ş.",
     location: "Tekirdağ, Türkiye",
     period: "08/2016 — 02/2018",
-    summary: "Led the Test Systems department, recommissioning 66% of inoperable test benches within a year.",
-    detail: "Coordinated electro-hydraulic steering control unit development, set guidelines curbing wiring and interference issues, mentored test engineers, and led a Bluetooth-controlled electro-hydraulic lift project shown at exhibitions.",
+    summary:
+      "Led the Test Systems department, recommissioning 66% of inoperable test benches within a year.",
+    detail:
+      "Coordinated steering control unit supplier activities, developed real-time vehicle dynamics models for steering systems, led the development of a Bluetooth-controlled electro-hydraulic lift system and test system deparment, and developed a GPS-based automatic steering controller for agricultural vehicles.",
   },
   {
     id: "e4",
@@ -93,8 +114,10 @@ export const experience: ExperienceItem[] = [
     company: "Tümosan A.Ş.",
     location: "Istanbul, Türkiye",
     period: "10/2013 — 01/2015",
-    summary: "Secured a €1.5M TEYDEB-funded program to build the company's control & electronics lab.",
-    detail: "Developed mean-value and zero-dimensional diesel engine simulation models and led a small controls engineering team.",
+    summary:
+      "Secured a €1.5M TEYDEB-funded program to build the company's control & electronics lab.",
+    detail:
+      "Developed mean-value and zero-dimensional diesel engine simulation models and led a small controls engineering team.",
   },
   {
     id: "e5",
@@ -102,8 +125,10 @@ export const experience: ExperienceItem[] = [
     company: "Otokar A.Ş.",
     location: "Sakarya, Türkiye",
     period: "03/2012 — 08/2013",
-    summary: "Designed the mechanical infrastructure for UCOK, a compact remote-controlled weapon station.",
-    detail: "Delivered the turret and RCWS mechanical design from concept through integration into the company's ground-defence vehicle product line.",
+    summary:
+      "Designed the mechanical infrastructure for UCOK, a compact remote-controlled weapon station.",
+    detail:
+      "Delivered the turret and RCWS mechanical design from concept through integration into the company's ground-defence vehicle product line.",
   },
   {
     id: "e6",
@@ -111,8 +136,10 @@ export const experience: ExperienceItem[] = [
     company: "Mekar Laboratory",
     location: "Istanbul, Türkiye",
     period: "06/2010 — 08/2011",
-    summary: "Built the semi-autonomous vehicle and CACC control algorithm for the Grand Cooperative Driving Challenge.",
-    detail: "Team Mekar finished 7th of 11 overall entries at GCDC 2011 in the Netherlands; the work was later published in IEEE Transactions on Intelligent Transportation Systems.",
+    summary:
+      "Built the semi-autonomous vehicle and CACC control algorithm for the Grand Cooperative Driving Challenge.",
+    detail:
+      "Team Mekar finished 7th of 11 overall entries at GCDC 2011 in the Netherlands; the work was later published in IEEE Transactions on Intelligent Transportation Systems.",
   },
 ];
 
@@ -189,7 +216,7 @@ The tuned model represents the engine fast and accurately, combining mechanical 
 
 After a system analysis to pin down the requirements, I developed the GPS localization, trajectory construction, and path-following algorithms end to end. Localization converts latitude-longitude readings into easting/northing positions relative to the current datum. Trajectory construction turns a set of waypoints into a route and heading profile for the vehicle to follow. The path-following algorithm then closes the loop, regulating position and heading against that reference by driving the steering valves directly.
 
-The prototype was tested on an asphalt road and tracked its reference path accurately, demonstrating that the same approach could scale to real fields — giving farmers greater precision, higher yields, and the ability to monitor and control tractors remotely rather than staying in the cab.`,
+The prototype was tested on an asphalt road and tracked its reference path accurately, demonstrating that the same approach could scale to real fields — giving farmers greater precision, higher yields, and the ability to monitor and control tractors.`,
   },
   {
     id: 5,
