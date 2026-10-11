@@ -44,7 +44,7 @@ export type Stat = {
 
 export const stats: Stat[] = [
   {
-    value: "€5M+",
+    value: "Multi-€M",
     label: "Annual revenue safeguarded",
     sub: "Modernized AVL's ISAC library to protect its real-time simulation market position",
   },
@@ -95,7 +95,7 @@ export const experience: ExperienceItem[] = [
     summary:
       "Developed control and software solutions focusing on real-time simulation, test automation, and system integration.",
     detail:
-      "Increased ISAC's position in the real-time simulation market, safeguarding to roughly €5M in annual revenue. Built Route Studio vehicle subsystem models, integration of a battery-parameter identification tool (Model Factory) and an RDE cycle generator algorithm. Development of FMI/Model.Connect IPC modules, and an automated dSPACE HIL project-creation tool.",
+      "Increased ISAC's position in the real-time simulation market, safeguarding multi-million-euro annual revenue. Built Route Studio vehicle subsystem models, integration of a battery-parameter identification tool (Model Factory) and an RDE cycle generator algorithm. Development of FMI/Model.Connect IPC modules, and an automated dSPACE HIL project-creation tool.",
   },
   {
     id: "e3",
@@ -242,12 +242,12 @@ The integration shipped successfully, and the offline-model-plus-Matlab-scripts 
     description: "Real time vehicle simulations on testbed",
     images: ["/images/isac-1.png"],
     headline:
-      "Modernized AVL's ISAC vehicle simulation library with new powertrain, kinematics/dynamics, and tire-road interaction models for contemporary vehicle architectures.",
+      "Modernized AVL's ISAC vehicle simulation library with new powertrain, braking, and tire-road interaction models for contemporary vehicle architectures.",
     content: `ISAC is AVL's real-time vehicle simulation library, used across the industry to represent vehicles on HIL test benches. Its subsystem models predated the powertrain architectures — electrified drivetrains, modern driveline layouts — that customers increasingly needed to test, so the library needed a structural update rather than a patch.
 
-I developed new powertrain components covering contemporary drivetrain configurations, rebuilt the vehicle kinematics and dynamics models for better accuracy across operating conditions, and added detailed tire-road interaction models to capture handling behavior that the older models simplified away.
+I developed new powertrain components covering contemporary drivetrain configurations, and integrated simplified tire-road interaction models that compensate the distinct dynamics of an e-motor coupled directly to the wheel flange.
 
-The modernized library let ISAC accurately represent current vehicle architectures on real-time test benches, and became a foundation other teams built on for vehicle development and testing. This work contributed directly to ISAC's roughly €5M in annual revenue and its position in the real-time simulation market.`,
+The modernized library let ISAC accurately represent current vehicle architectures on real-time test benches, and became a foundation other teams built on for vehicle development and testing. This work contributed directly to ISAC's multi-million-euro annual revenue and its position in the real-time simulation market.`,
   },
   {
     id: 7,
