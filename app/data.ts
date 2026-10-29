@@ -314,8 +314,6 @@ export const skillGroups: SkillGroup[] = [
       "Docker",
       "Git",
       "GitHub CI/CD",
-      "TeamCity",
-      "Microsoft TFS",
       "Jira/Confluence",
       "Scrum/Agile",
     ],
